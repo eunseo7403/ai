@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>국민건강보험공단 건강검진정보(2024) 비시각화 EDA 분석 보고서</title>
+  <style>
+    :root{
+      --bg:#0b0c10;
+      --card:#12141a;
+      --text:#e8eaf0;
+      --muted:#a7adbb;
+      --line:#2a2f3a;
+      --accent:#7aa2ff;
+      --accent2:#7dffb2;
+      --warn:#ffb86b;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 10% 0%, rgba(122,162,255,.14), transparent 60%),
+                  radial-gradient(900px 600px at 90% 10%, rgba(125,255,178,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{max-width:1040px; margin:0 auto; padding:28px 18px 80px}
+
+    header{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      padding:22px 22px 18px;
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border-radius:18px;
+      box-shadow:var(--shadow);
+    }
+    .title{
+      font-size:22px;
+      font-weight:800;
+      letter-spacing:-.02em;
+      margin:0;
+    }
+    .subtitle{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:8px;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      color:var(--muted);
+      font-size:12.5px;
+    }
+    .dot{width:8px; height:8px; border-radius:999px; background:var(--accent)}
+    .dot.green{background:var(--accent2)}
+    .dot.warn{background:var(--warn)}
+
+    nav{
+      margin-top:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+      border-radius:16px;
+      padding:14px 16px;
+    }
+    nav .nav-title{font-weight:700; font-size:13px; color:var(--muted); margin:0 0 8px}
+    nav ul{margin:0; padding-left:18px; display:grid; gap:6px}
+    nav li{color:var(--muted); font-size:13px}
+
+    main{margin-top:18px; display:grid; gap:14px}
+    section{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+      border-radius:18px;
+      padding:18px 18px 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.22);
+    }
+    section h2{margin:0 0 10px; font-size:16px; letter-spacing:-.01em}
+    section h3{margin:14px 0 8px; font-size:14.5px; color:var(--text)}
+    p{margin:0 0 10px; color:var(--text)}
+    .muted{color:var(--muted)}
+
+    .grid2{display:grid; grid-template-columns:1fr; gap:12px}
+    @media (min-width:860px){ .grid2{grid-template-columns:1fr 1fr;} }
+
+    .callout{
+      border:1px dashed rgba(122,162,255,.55);
+      background: rgba(122,162,255,.08);
+      padding:12px 12px;
+      border-radius:14px;
+      color:var(--text);
+    }
+    .callout strong{color:var(--text)}
+
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.18);
+      margin:8px 0 4px;
+    }
+    th, td{
+      padding:10px 12px;
+      border-bottom:1px solid var(--line);
+      font-size:13.5px;
+      vertical-align:top;
+    }
+    th{color:var(--muted); font-weight:700; text-align:left; background:rgba(255,255,255,.03)}
+    tr:last-child td{border-bottom:none}
+
+    .kpi{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:10px;
+      margin-top:10px;
+    }
+    @media (min-width:860px){ .kpi{grid-template-columns: repeat(4, minmax(0,1fr));} }
+    .kpi .box{
+      padding:12px 12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:16px;
+    }
+    .kpi .label{color:var(--muted); font-size:12px; margin:0}
+    .kpi .value{font-size:16px; font-weight:800; margin:6px 0 0}
+
+    footer{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:12.5px;
+      text-align:center;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:12.5px;
+    }
+    .hr{height:1px; background:var(--line); margin:12px 0}
+
+    /* Print */
+    @media print{
+      :root{--bg:#fff; --text:#111; --muted:#444; --card:#fff; --line:#ddd; --shadow:none}
+      body{background:#fff}
+      header, section, nav{box-shadow:none; background:#fff}
+      a{color:#111; text-decoration:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1 class="title">국민건강보험공단 건강검진정보(2024) 비시각화 EDA 분석 보고서</h1>
+      <p class="subtitle">시각화 없이(Non-visual) 통계 요약과 수치 기반 관계 분석으로 분포 특성과 주요 연관성을 확인</p>
+      <div class="meta">
+        <span class="chip"><span class="dot"></span>데이터 규모: 1,000,000명 × 33변수</span>
+        <span class="chip"><span class="dot green"></span>기준년도: 2024(단일값)</span>
+        <span class="chip"><span class="dot warn"></span>방법: 요약통계 · 상관분석 · 집단평균 비교</span>
+      </div>
+
+      <div class="kpi" aria-label="핵심 요약">
+        <div class="box"><p class="label">관측치 수</p><p class="value">1,000,000</p></div>
+        <div class="box"><p class="label">변수 수</p><p class="value">33</p></div>
+        <div class="box"><p class="label">핵심 변수</p><p class="value">허리둘레</p></div>
+        <div class="box"><p class="label">강한 상관</p><p class="value">혈압(SBP↔DBP)</p></div>
+      </div>
+    </header>
+
+    <nav>
+      <p class="nav-title">목차</p>
+      <ul>
+        <li><a href="#sec1">1. 분석 목적</a></li>
+        <li><a href="#sec2">2. 데이터 개요</a></li>
+        <li><a href="#sec3">3. 일변량 분석 결과 요약</a></li>
+        <li><a href="#sec4">4. 다변량 분석 결과 요약</a></li>
+        <li><a href="#sec5">5. 종합 결론</a></li>
+        <li><a href="#sec6">6. 향후 분석 제언</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="sec1">
+        <h2>1. 분석 목적</h2>
+        <p>본 분석은 국민건강보험공단 2024년 건강검진 데이터를 대상으로, 시각화 없이 통계적 요약과 변수 간 수치적 관계(상관계수, 집단 평균 비교)를 통해 건강지표의 분포 특성과 주요 연관성을 파악하는 것을 목적으로 한다.</p>
+        <div class="callout"><strong>원칙</strong>: 본 보고서는 확인 가능한 수치(요약 통계·상관계수·집단 평균)만을 근거로 작성되며, 상관관계를 인과로 해석하지 않는다.</div>
+      </section>
+
+      <section id="sec2">
+        <h2>2. 데이터 개요</h2>
+        <div class="grid2">
+          <div>
+            <h3>2.1 기본 정보</h3>
+            <ul>
+              <li class="muted">데이터 출처: 국민건강보험공단 건강검진정보(2024)</li>
+              <li class="muted">관측치: 1,000,000명</li>
+              <li class="muted">변수: 33개</li>
+              <li class="muted">연도: 2024(단일 연도)</li>
+            </ul>
+          </div>
+          <div>
+            <h3>2.2 해석 상 주의</h3>
+            <ul>
+              <li class="muted">표본이 매우 커 평균/분위수 통계는 안정적이다.</li>
+              <li class="muted">단일 연도 자료이므로 시계열 변화는 다루지 않는다.</li>
+              <li class="muted">일부 지표(혈압·혈당·지질 등)는 이상치가 존재할 수 있어 정제 규칙이 필요하다.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="sec3">
+        <h2>3. 일변량 분석 결과 요약</h2>
+
+        <h3>3.1 식별·상수 변수</h3>
+        <p><span class="badge">기준년도</span>는 전 관측치에서 동일한 값(2024)으로 확인된 상수 변수로 분석적 의미가 없으며, <span class="badge">가입자일련번호</span>는 개인 식별용 변수로 분석/예측 변수로 부적절하다.</p>
+        <div class="callout"><strong>권장</strong>: 기준년도·가입자일련번호는 향후 모델링/추가 분석에서 제외</div>
+
+        <div class="hr"></div>
+
+        <h3>3.2 수치형 건강지표 분포 특성(정성 요약)</h3>
+        <ul>
+          <li class="muted">신장/체중: 전반적으로 정상 범위에 분포하나 0 또는 비현실적 값이 일부 존재 가능 → 이상치 처리 필요</li>
+          <li class="muted">허리둘레: 상위 분위에서 증가폭이 커지는 경향 → 대사 위험 지표로 중요</li>
+          <li class="muted">혈압(수축기/이완기): 평균은 정상~경계 수준, 극단적으로 큰 값이 일부 존재 가능 → 상한 컷오프 권장</li>
+          <li class="muted">공복혈당/중성지방: 우측 꼬리 분포 → 고위험군(소수) 존재를 시사</li>
+        </ul>
+
+        <h3>3.3 범주형 변수 분포 특성</h3>
+        <ul>
+          <li class="muted">성별: 남/여 비율이 비교적 균형적</li>
+          <li class="muted">흡연상태: 비흡연자 비중이 가장 크며, 과거흡연자·현재흡연자가 뒤를 잇는 구조</li>
+          <li class="muted">음주여부: 음주자 비중이 과반</li>
+        </ul>
+      </section>
+
+      <section id="sec4">
+        <h2>4. 다변량 분석 결과 요약</h2>
+
+        <h3>4.1 허리둘레 중심 연관성(상관계수)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>변수 쌍</th>
+              <th>상관계수(r)</th>
+              <th>해석</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>허리둘레 ↔ 수축기혈압</td>
+              <td><strong>0.34</strong></td>
+              <td class="muted">중간 수준 양의 상관</td>
+            </tr>
+            <tr>
+              <td>허리둘레 ↔ 이완기혈압</td>
+              <td><strong>0.31</strong></td>
+              <td class="muted">중간 수준 양의 상관</td>
+            </tr>
+            <tr>
+              <td>허리둘레 ↔ HDL 콜레스테롤</td>
+              <td><strong>-0.39</strong></td>
+              <td class="muted">비교적 강한 음의 상관(허리둘레↑ → HDL↓)</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout"><strong>요약</strong>: 허리둘레는 혈압 상승 및 HDL 감소와 동반되는 패턴으로 확인되어, 대사 위험을 대표하는 핵심 변수로 판단된다.</div>
+
+        <h3>4.2 혈압 지표 간 관계</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>변수 쌍</th>
+              <th>상관계수(r)</th>
+              <th>해석</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>수축기혈압 ↔ 이완기혈압</td>
+              <td><strong>0.71</strong></td>
+              <td class="muted">강한 양의 상관(정보 중복 가능)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>4.3 혈당·지질 지표 간 관계</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>변수 쌍</th>
+              <th>상관계수(r)</th>
+              <th>해석</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>공복혈당 ↔ 중성지방</td>
+              <td><strong>0.20</strong></td>
+              <td class="muted">약~중간 양의 상관(고혈당군에서 TG 상승 경향)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>4.4 연령대 효과</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>변수 쌍</th>
+              <th>상관계수(r)</th>
+              <th>해석</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>연령대 ↔ 수축기혈압</td>
+              <td><strong>0.28</strong></td>
+              <td class="muted">나이 증가와 혈압 상승의 연관이 비교적 뚜렷</td>
+            </tr>
+            <tr>
+              <td>연령대 ↔ 허리둘레</td>
+              <td><strong>0.13</strong></td>
+              <td class="muted">완만한 양의 상관</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>4.5 흡연상태별 지표 평균(집단 비교)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>흡연상태</th>
+              <th>HDL</th>
+              <th>중성지방</th>
+              <th>공복혈당</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>비흡연</td>
+              <td>59.3</td>
+              <td>115.5</td>
+              <td>99.1</td>
+            </tr>
+            <tr>
+              <td>과거흡연</td>
+              <td>54.2</td>
+              <td>138.6</td>
+              <td>104.0</td>
+            </tr>
+            <tr>
+              <td>현재흡연</td>
+              <td><strong>52.5</strong></td>
+              <td><strong>167.7</strong></td>
+              <td><strong>104.6</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout"><strong>요약</strong>: 흡연상태는 HDL 감소와 중성지방/혈당 증가라는 복합 악화 패턴과 연관된다(집단 평균 기준).</div>
+
+        <h3>4.6 성별 차이(집단 평균)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>성별</th>
+              <th>허리둘레</th>
+              <th>수축기혈압</th>
+              <th>HDL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>남성</td>
+              <td>86.3</td>
+              <td>125.1</td>
+              <td>52.7</td>
+            </tr>
+            <tr>
+              <td>여성</td>
+              <td>76.4</td>
+              <td>120.1</td>
+              <td>62.4</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout"><strong>요약</strong>: 성별은 허리둘레·혈압·HDL에서 뚜렷한 평균 차이를 보이며, 분석 시 중요한 층화/통제 변수로 고려할 필요가 있다.</div>
+      </section>
+
+      <section id="sec5">
+        <h2>5. 종합 결론</h2>
+        <ol>
+          <li class="muted">허리둘레는 혈압 상승 및 HDL 감소와 동반되는 핵심 대사 위험 지표로 확인되었다.</li>
+          <li class="muted">수축기혈압과 이완기혈압은 상관이 매우 높아(0.71) 일부 정보 중복이 존재한다.</li>
+          <li class="muted">공복혈당과 중성지방은 약하지만 일관된 양의 상관(0.20)을 보여, 고위험군에서 동반 상승 경향이 있다.</li>
+          <li class="muted">연령대는 특히 수축기혈압과의 연관이 비교적 뚜렷(0.28)하며, 허리둘레와의 연관은 완만(0.13)하다.</li>
+          <li class="muted">흡연상태·성별·연령대는 주요 지표에 영향을 미칠 수 있는 강력한 교란 변수로, 향후 분석에서 통제 또는 층화가 필요하다.</li>
+        </ol>
+      </section>
+
+      <section id="sec6">
+        <h2>6. 향후 분석 제언</h2>
+        <ul>
+          <li class="muted">이상치 제거 및 변수 정제(예: 혈압·혈당·지질의 상한/하한 컷오프) 후 모델링 진행</li>
+          <li class="muted">성별·연령·흡연상태를 통제한 조건부 분석으로 순수 효과 검증(예: 비흡연자만의 허리둘레-혈당 관계)</li>
+          <li class="muted">로지스틱 회귀/트리 기반 모델로 고혈압·고혈당 위험 분류 및 변수 중요도 도출</li>
+        </ul>
+        <div class="callout"><strong>참고</strong>: 본 보고서는 시각화를 배제하고 수치로 확인 가능한 결과만 근거로 작성되었다.</div>
+      </section>
+
+      <footer>
+        <p>© 2024 건강검진정보(EDA) 보고서 — Non-visual statistical report</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
