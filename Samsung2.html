@@ -161,18 +161,26 @@
       background: rgba(122,162,255,.06);
     }
     figure .ph{
-      height: 260px;
+      /* 이미지 컨테이너: 반응형(잘림/찌그러짐 방지) */
+      height: auto;               /* 고정 높이 제거 */
       border-radius: 12px;
       border: 1px solid rgba(38,48,71,.8);
       background: linear-gradient(135deg, rgba(122,162,255,.18), rgba(103,232,249,.10));
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding: 16px;
+      display:block;              /* flex 제거 */
+      padding: 12px;
+      overflow: hidden;           /* 테두리 밖으로 삐져나오는 경우 방지 */
       color: var(--muted);
       font-size: 13px;
     }
+    figure .ph img{
+      width: 100%;
+      max-width: 960px;           /* 본문 폭 기준 권장 */
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+
     figcaption{
       margin-top: 8px;
       color: var(--muted);
@@ -214,6 +222,19 @@
       figure .ph{background:#fff}
       .note{border-left-color:#333}
     }
+/* 이미지 공통(figure/표 모두 동일하게 맞추기) */
+img.table-figure{
+  width: 100%;
+  max-width: 960px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+table td img.table-figure{
+  max-width: 720px; /* 표 안에서는 과도하게 커지지 않게 제한 */
+}
+
   </style>
 </head>
 <body>
@@ -320,14 +341,15 @@
         <h3>4-1. 일변량(시각화) 요약</h3>
         <figure>
           <div class="ph">
-            <img src="https://eunseo7403.github.io/ai/output1.png" alt="종가 추이"/>
+<img src="https://eunseo7403.github.io/ai/output1.png" alt="예측 그래프" class="table-figure" loading="lazy">
+
           </div>
           <figcaption>상반기 횡보 → 하반기 급등 → 고점권 변동성 확대가 관찰됨</figcaption>
         </figure>
 
         <figure>
           <div class="ph">
-            <img src="https://eunseo7403.github.io/ai/output2.png" alt="종가 추이"/>
+            <img src="https://eunseo7403.github.io/ai/output3.png" alt="종가 추이" class="table-figure" loading="lazy">
           </div>
           <figcaption>거래량/거래대금은 상위 꼬리가 긴 분포로 이벤트성 급증이 존재</figcaption>
         </figure>
@@ -335,7 +357,7 @@
         <h3>4-2. 다변량(상관) 요약</h3>
         <figure>
           <div class="ph">
-            <img src="https://eunseo7403.github.io/ai/output2.png" alt="종가 추이"/>
+            <img src="https://eunseo7403.github.io/ai/output3.png" alt="종가 추이" class="table-figure" loading="lazy">
           </div>
           <figcaption>
             가격 레벨(종가/시가/고가/저가/시가총액)은 상관이 매우 높아 중복 정보가 큼.
@@ -371,7 +393,7 @@
 
         <figure>
           <div class="ph">
-            <img src="https://eunseo7403.github.io/ai/output3.png" alt="종가 추이"/>
+            <img src="https://eunseo7403.github.io/ai/output2.png" alt="종가 추이" class="table-figure" loading="lazy">
           </div>
           <figcaption>예측 경로(점예측)와 예측구간(음영) 및 목표일 표식 포함</figcaption>
         </figure>
