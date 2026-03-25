@@ -46,7 +46,6 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        /* 핵심 수정: 이미지의 상단을 기준으로 배치하여 머리 잘림 방지 */
         object-position: top;
         position: absolute;
         top: 0;
@@ -91,7 +90,7 @@
         font-weight: 500;
       }
 
-      /* 메인 배너 섹션 - 높이를 800px로 약간 상향 조정 */
+      /* 메인 배너 섹션 */
       .main-banner {
         width: 100%;
         height: 800px;
@@ -152,25 +151,65 @@
       .grid-4 {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 20px 15px;
+        gap: 40px 15px; /* 하단 여백을 조금 더 확보 */
         margin-bottom: 50px;
+      }
+
+      .grid-4-item {
+        position: relative;
       }
 
       .grid-4-item .img-box {
         height: 400px;
-        margin-bottom: 12px;
+        margin-bottom: 15px;
+        position: relative;
+      }
+
+      /* 상품 정보 스타일 수정 (상품명과 북마크 가로 정렬) */
+      .grid-4-item .info {
+        padding: 0 2px;
+      }
+
+      .item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 6px;
       }
 
       .grid-4-item .info .item-name {
         font-size: 12px;
         font-weight: bold;
-        margin-bottom: 4px;
         display: block;
+        letter-spacing: -0.2px;
+      }
+
+      /* 북마크(원본 스타일) 아이콘 */
+      .bookmark-icon {
+        width: 14px;
+        height: 14px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .bookmark-icon svg {
+        width: 100%;
+        height: 100%;
+        fill: none;
+        stroke: #ccc; /* 원본의 연한 회색 느낌 */
+        stroke-width: 2.5px;
+      }
+
+      .bookmark-icon:hover svg {
+        stroke: #000;
       }
 
       .grid-4-item .info .item-price {
         font-size: 12px;
         color: #333;
+        display: block;
       }
 
       /* 더보기 버튼 */
@@ -220,7 +259,7 @@
         color: #999;
       }
 
-      /* 우측 퀵 버튼 (상하 스크롤) */
+      /* 우측 퀵 버튼 */
       .quick-buttons {
         position: fixed;
         right: 20px;
@@ -321,75 +360,139 @@
       </section>
 
       <div class="grid-4">
+        <!-- 아이템 1~8 공통 구조 적용 -->
         <div class="grid-4-item">
           <div class="img-box img-placeholder">
             <img src="./images/img.jpg" alt="아이템1" />
           </div>
           <div class="info">
-            <span class="item-name">레이어드 배색 나시 원피스</span>
+            <div class="item-header">
+              <span class="item-name">레이어드 배색 나시 원피스</span>
+              <div class="bookmark-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+                </svg>
+              </div>
+            </div>
             <span class="item-price">32,000원</span>
           </div>
         </div>
+
         <div class="grid-4-item">
           <div class="img-box img-placeholder">
             <img src="./images/img-1.jpg" alt="아이템2" />
           </div>
           <div class="info">
-            <span class="item-name">빈티지 워싱 데님 팬츠</span>
+            <div class="item-header">
+              <span class="item-name">빈티지 워싱 데님 팬츠</span>
+              <div class="bookmark-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+                </svg>
+              </div>
+            </div>
             <span class="item-price">45,000원</span>
           </div>
         </div>
+
         <div class="grid-4-item">
           <div class="img-box img-placeholder">
             <img src="./images/img-2.jpg" alt="아이템3" />
           </div>
           <div class="info">
-            <span class="item-name">슬림핏 크롭 티셔츠</span>
+            <div class="item-header">
+              <span class="item-name">슬림핏 크롭 티셔츠</span>
+              <div class="bookmark-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+                </svg>
+              </div>
+            </div>
             <span class="item-price">18,000원</span>
           </div>
         </div>
+
         <div class="grid-4-item">
           <div class="img-box img-placeholder">
             <img src="./images/img-3.jpg" alt="아이템4" />
           </div>
           <div class="info">
-            <span class="item-name">체크 패턴 미니 스커트</span>
+            <div class="item-header">
+              <span class="item-name">체크 패턴 미니 스커트</span>
+              <div class="bookmark-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+                </svg>
+              </div>
+            </div>
             <span class="item-price">29,000원</span>
           </div>
         </div>
+
         <div class="grid-4-item">
           <div class="img-box img-placeholder">
             <img src="./images/img-4.jpg" alt="아이템5" />
           </div>
           <div class="info">
-            <span class="item-name">스트라이프 셔츠</span>
+            <div class="item-header">
+              <span class="item-name">스트라이프 셔츠</span>
+              <div class="bookmark-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+                </svg>
+              </div>
+            </div>
             <span class="item-price">34,000원</span>
           </div>
         </div>
+
         <div class="grid-4-item">
           <div class="img-box img-placeholder">
             <img src="./images/img-5.jpg" alt="아이템6" />
           </div>
           <div class="info">
-            <span class="item-name">핀턱 와이드 슬랙스</span>
+            <div class="item-header">
+              <span class="item-name">핀턱 와이드 슬랙스</span>
+              <div class="bookmark-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+                </svg>
+              </div>
+            </div>
             <span class="item-price">38,000원</span>
           </div>
         </div>
+
         <div class="grid-4-item">
           <div class="img-box img-placeholder">
             <img src="./images/img-6.jpg" alt="아이템7" />
           </div>
           <div class="info">
-            <span class="item-name">프릴 민소매 탑</span>
+            <div class="item-header">
+              <span class="item-name">프릴 민소매 탑</span>
+              <div class="bookmark-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+                </svg>
+              </div>
+            </div>
             <span class="item-price">22,000원</span>
           </div>
         </div>
+
         <div class="grid-4-item">
           <div class="img-box img-placeholder">
             <img src="./images/img-7.jpg" alt="아이템8" />
           </div>
           <div class="info">
-            <span class="item-name">레터링 그래픽 티셔츠</span>
+            <div class="item-header">
+              <span class="item-name">레터링 그래픽 티셔츠</span>
+              <div class="bookmark-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+                </svg>
+              </div>
+            </div>
             <span class="item-price">24,000원</span>
           </div>
         </div>
