@@ -46,6 +46,8 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        /* 핵심 수정: 이미지의 상단을 기준으로 배치하여 머리 잘림 방지 */
+        object-position: top;
         position: absolute;
         top: 0;
         left: 0;
@@ -89,10 +91,10 @@
         font-weight: 500;
       }
 
-      /* 메인 배너 섹션 */
+      /* 메인 배너 섹션 - 높이를 800px로 약간 상향 조정 */
       .main-banner {
         width: 100%;
-        height: 700px;
+        height: 800px;
         position: relative;
         margin-bottom: 80px;
       }
@@ -319,7 +321,6 @@
       </section>
 
       <div class="grid-4">
-        <!-- 아이템 반복 (8개 예시) -->
         <div class="grid-4-item">
           <div class="img-box img-placeholder">
             <img src="./images/img.jpg" alt="아이템1" />
@@ -356,7 +357,6 @@
             <span class="item-price">29,000원</span>
           </div>
         </div>
-        <!-- 아래 줄 -->
         <div class="grid-4-item">
           <div class="img-box img-placeholder">
             <img src="./images/img-4.jpg" alt="아이템5" />
