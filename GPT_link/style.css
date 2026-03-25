@@ -22,6 +22,9 @@ h1 {
   font-weight: bold;
   margin-bottom: 24px;
 }
+.main h1 {
+  color: #355600;
+}
 
 /* 메인 페이지 */
 body.main {
