@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Malgun Gothic", "맑은 고딕", sans-serif;
+  text-align: center;
+}
+
+/* 공통 가운데 박스 */
+.container {
+  width: 500px;
+  margin: 0 auto;
+  padding-top: 24px;
+}
+
+/* 제목 */
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+/* 메인 페이지 */
+body.main {
+  background-color: #c7eb74;
+}
+
+.main .line {
+  width: 500px;
+  height: 6px;
+  background-color: #3b3b3b;
+  margin: 0 auto 18px;
+}
+
+.menu a {
+  display: block;
+  font-size: 18px;
+  color: #000;
+  text-decoration: none;
+  margin: 16px 0;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  margin-top: 18px;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* 서브 페이지 공통 */
+.sub .line {
+  width: 500px;
+  height: 6px;
+  background-color: #3b3b3b;
+  margin: 0 auto 18px;
+}
+
+.photo {
+  width: 500px;
+  height: 330px;
+  display: block;
+  object-fit: cover;
+  margin: 0 auto 20px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 18px;
+  color: #000;
+  text-decoration: none;
+}
+
+/* 페이지별 배경색 */
+body.spring {
+  background-color: #e8a7e1;
+}
+
+body.summer {
+  background-color: #9bb0df;
+}
+
+body.autumn {
+  background-color: #f0a06f;
+}
+
+body.winter {
+  background-color: #d3d3d3;
+}
+
+/* 페이지별 제목 색상 */
+.spring h1 {
+  color: #8b003b;
+}
+
+.summer h1 {
+  color: #3a4c7a;
+}
+
+.autumn h1 {
+  color: #7a2d00;
+}
+
+.winter h1 {
+  color: #6a6aff;
+}
