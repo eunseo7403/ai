@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>list 목록 태그</title>
+    <style>
+      ul li {
+        color: red;
+        list-style: circle;
+        list-style: square;
+        list-style: disc;
+        list-style: none;
+        list-style: circle;
+      }
+      ol li {
+        color: blue;
+        list-style: upper-alpha;
+        list-style: lower-alpha;
+        list-style: lower-roman;
+        list-style: upper-roman;
+        list-style: decimal;
+      }
+      ul li ol li {
+        list-style: upper-alpha;
+      }
+      ul li ol li ul li {
+        list-style: circle;
+        color: darkgreen;
+      }
+      ul li ul li {
+        list-style: square;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>순서 없는 목록(타는 것)</h1>
+    <hr />
+    <ul>
+      <li>
+        비행기
+        <ol>
+          <li>국내용</li>
+          <li>
+            국제용
+            <ul>
+              <li>미주지역</li>
+              <li>아시아지역</li>
+              <li>유럽지역</li>
+            </ul>
+          </li>
+        </ol>
+      </li>
+      <li>
+        버스
+        <ul>
+          <li>시내버스</li>
+          <li>시외버스</li>
+        </ul>
+      </li>
+      <li>기차</li>
+    </ul>
+    <hr />
+    <h1>순서 있는 목록(먹는 것)</h1>
+    <hr />
+    <ol>
+      <li>바나나</li>
+      <li>딸기</li>
+      <li>수박</li>
+    </ol>
+  </body>
+</html>
