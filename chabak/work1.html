@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>차박 온보딩</title>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+
+        html, body {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          height: 100%;
+          font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", sans-serif;
+          background: #ffffff;
+        }
+
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #334a84;
+        }
+
+        .app {
+          position: relative;
+          width: 100%;
+          max-width: 375px;
+          height: 812px;
+          background: #f7f7f8;
+          overflow: hidden;
+        }
+
+        .screen {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          flex-direction: column;
+          padding: 76px 24px 34px;
+          background: linear-gradient(180deg, #f8f8f9 0%, #f5f5f7 100%);
+        }
+
+        .headline {
+          position: relative;
+          z-index: 2;
+        }
+
+        .title {
+          margin: 0;
+          font-size: 24px;
+          line-height: 1.35;
+          font-weight: 700;
+          color: #405c99;
+          letter-spacing: -0.5px;
+          white-space: pre-line;
+        }
+
+        .subtitle {
+          margin: 18px 0 0;
+          font-size: 16px;
+          line-height: 1.55;
+          font-weight: 500;
+          color: #b5bfd7;
+          letter-spacing: -0.3px;
+          white-space: pre-line;
+        }
+
+        .visual-wrap {
+          position: relative;
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 0;
+          margin-top: 8px;
+        }
+
+        .bg-wave {
+          position: absolute;
+          right: -98px;
+          bottom: 52px;
+          width: 360px;
+          height: 180px;
+          background: #e6e8f0;
+          border-radius: 140px;
+          transform: rotate(-8deg);
+          opacity: 0.95;
+        }
+
+        .scene {
+          position: relative;
+          z-index: 2;
+          width: 275px;
+          height: 300px;
+        }
+
+        .map-paper {
+          position: absolute;
+          left: 12px;
+          bottom: 34px;
+          width: 78px;
+          height: 38px;
+          background: #f3e9be;
+          border-radius: 6px;
+          transform: rotate(-14deg);
+          box-shadow: inset 0 0 0 1px rgba(108, 112, 122, 0.08);
+        }
+
+        .map-paper::before,
+        .map-paper::after {
+          content: "";
+          position: absolute;
+          inset: 8px;
+          border-radius: 4px;
+          background:
+            radial-gradient(circle at 16px 10px, #8ca25e 0 4px, transparent 4px),
+            linear-gradient(90deg, transparent 0 8px, #ab9162 8px 10px, transparent 10px 22px, #ab9162 22px 24px, transparent 24px),
+            linear-gradient(0deg, transparent 0 10px, #ab9162 10px 12px, transparent 12px 22px, #ab9162 22px 24px, transparent 24px);
+          opacity: 0.7;
+        }
+
+        .bear {
+          position: absolute;
+          left: 54px;
+          bottom: 14px;
+          width: 160px;
+          height: 250px;
+        }
+
+        .body-shape {
+          position: absolute;
+          left: 24px;
+          bottom: 26px;
+          width: 96px;
+          height: 150px;
+          background: #4a92cf;
+          border-radius: 48px 48px 42px 44px;
+          transform: rotate(-2deg);
+        }
+
+        .body-shape::after {
+          content: "";
+          position: absolute;
+          right: 8px;
+          top: 34px;
+          width: 28px;
+          height: 68px;
+          background: #8ec2e9;
+          border-radius: 16px;
+          opacity: 0.45;
+        }
+
+        .head {
+          position: absolute;
+          left: 52px;
+          top: 24px;
+          width: 62px;
+          height: 62px;
+          background: #4a92cf;
+          border-radius: 50%;
+          z-index: 3;
+        }
+
+        .face {
+          position: absolute;
+          right: 3px;
+          top: 14px;
+          width: 34px;
+          height: 34px;
+          background: #f4f0dc;
+          border-radius: 52% 48% 58% 42%;
+        }
+
+        .ear {
+          position: absolute;
+          top: 30px;
+          width: 18px;
+          height: 18px;
+          background: #2f5f95;
+          border-radius: 50%;
+          z-index: 2;
+        }
+
+        .ear.left { left: 48px; }
+        .ear.right { left: 98px; }
+
+        .eye {
+          position: absolute;
+          right: 19px;
+          top: 20px;
+          width: 5px;
+          height: 5px;
+          background: #26324d;
+          border-radius: 50%;
+          z-index: 4;
+        }
+
+        .nose {
+          position: absolute;
+          right: 9px;
+          top: 28px;
+          width: 8px;
+          height: 6px;
+          background: #26324d;
+          border-radius: 50px;
+          z-index: 4;
+        }
+
+        .mouth {
+          position: absolute;
+          right: 12px;
+          top: 36px;
+          width: 10px;
+          height: 6px;
+          border-bottom: 2px solid #26324d;
+          border-radius: 0 0 10px 10px;
+          z-index: 4;
+        }
+
+        .hat-brim {
+          position: absolute;
+          left: 40px;
+          top: 18px;
+          width: 86px;
+          height: 18px;
+          background: #f0c64e;
+          border-radius: 30px;
+          z-index: 5;
+          box-shadow: inset 0 -3px 0 rgba(0,0,0,0.08);
+        }
+
+        .hat-top {
+          position: absolute;
+          left: 60px;
+          top: 0;
+          width: 44px;
+          height: 26px;
+          background: #f0c64e;
+          border-radius: 24px 24px 10px 10px;
+          z-index: 6;
+        }
+
+        .hat-dot {
+          position: absolute;
+          top: 22px;
+          width: 12px;
+          height: 12px;
+          background: #3f6da8;
+          border-radius: 50%;
+          z-index: 6;
+        }
+
+        .hat-dot.left { left: 36px; }
+        .hat-dot.right { left: 118px; }
+
+        .arm {
+          position: absolute;
+          background: #4a92cf;
+          border-radius: 20px;
+          z-index: 4;
+        }
+
+        .arm.left {
+          left: 30px;
+          top: 118px;
+          width: 64px;
+          height: 20px;
+          transform: rotate(18deg);
+        }
+
+        .arm.right {
+          left: 78px;
+          top: 114px;
+          width: 48px;
+          height: 20px;
+          transform: rotate(-12deg);
+        }
+
+        .phone {
+          position: absolute;
+          left: 96px;
+          top: 110px;
+          width: 22px;
+          height: 40px;
+          background: #355f96;
+          border-radius: 7px;
+          z-index: 7;
+          transform: rotate(8deg);
+        }
+
+        .phone::after {
+          content: "";
+          position: absolute;
+          left: 8px;
+          bottom: 6px;
+          width: 5px;
+          height: 5px;
+          background: #9ed0ef;
+          border-radius: 50%;
+        }
+
+        .leg {
+          position: absolute;
+          bottom: 18px;
+          width: 24px;
+          height: 54px;
+          b38px;
+          background: #f3e9be;
+          border-radius: 6px;
+          transform: rotate(-14deg);
+          box-shadow: inset 0 0 0 1px rgba(108, 112, 122, 0.08);
+        }
+
+        .map-paper::before,
+        .map-paper::after {
+          content: "";
+          position: absolute;
+          inset: 8px;
+          border-radius: 4px;
+          background:
+            radial-gradient(circle at 16px 10px, #8ca25e 0 4px, transparent 4px),
+            linear-gradient(90deg, transparent 0 8px, #ab9162 8px 10px, transparent 10px 22px, #ab9162 22px 24px, transparent 24px),
+            linear-gradient(0deg, transparent 0 10px, #ab9162 10px 12px, transparent 12px 22px, #ab9162 22px 24px, transparent 24px);
+          opacity: 0.7;
+        }
+
+        .bear {
+          position: absolute;
+          left: 54px;
+          bottom: 14px;
+          width: 160px;
+          height: 250px;
+        }
+
+        .body-shape {
+          position: absolute;
+          left: 24px;
+          bottom: 26px;
+          width: 96px;
+          height: 150px;
+          background: #4a92cf;
+          border-radius: 48px 48px 42px 44px;
+          transform: rotate(-2deg);
+        }
+
+        .body-shape::after {
+          content: "";
+          position: absolute;
+          right: 8px;
+          top: 34px;
+          width: 28px;
+          height: 68px;
+          background: #8ec2e9;
+          border-radius: 16px;
+          opacity: 0.45;
+        }
+
+        .head {
+          position: absolute;
+          left: 52px;
+          top: 24px;
+          width: 62px;
+          height: 62px;
+          background: #4a92cf;
+          border-radius: 50%;
+          z-index: 3;
+        }
+
+        .face {
+          position: absolute;
+          right: 3px;
+          top: 14px;
+          width: 34px;
+          height: 34px;
+          background: #f4f0dc;
+          border-radius: 52% 48% 58% 42%;
+        }
+
+        .ear {
+          position: absolute;
+          top: 30px;
+          width: 18px;
+          height: 18px;
+          background: #2f5f95;
+          border-radius: 50%;
+          z-index: 2;
+        }
+
+        .ear.left { left: 48px; }
+        .ear.right { left: 98px; }
+
+        .eye {
+          position: absolute;
+          right: 19px;
+          top: 20px;
+          width: 5px;
+          height: 5px;
+          background: #26324d;
+          border-radius: 50%;
+      <section class="visual-wrap" aria-hidden="true">
+            <div class="bg-wave"></div>
+
+            <div class="scene">
+              <div class="map-paper"></div>
+
+              <div class="bear">
+                <div class="hat-brim"></div>
+                <div class="hat-top"></div>
+                <div class="hat-dot left"></div>
+                <div class="hat-dot right"></div>
+
+                <div class="ear left"></div>
+                <div class="ear right"></div>
+                <div class="head">
+                  <div class="face"></div>
+                  <div class="eye"></div>
+                  <div class="nose"></div>
+                  <div class="mouth"></div>
+                </div>
+                <div class="body-shape"></div>
+                <div class="arm left"></div>
+                <div class="arm right"></div>
+                <div class="phone"></div>
+                <div class="leg left"></div>
+                <div class="leg right"></div>
+                <div class="foot left"></div>
+                <div class="foot right"></div>
+              </div>
+
+              <div class="laptop">
+                <div class="screen-map"></div>
+                <div class="base"></div>
+              </div>
+            </div>
+          </section>0px;
+          z-index: 4;
+        }
+
+        .mouth {
+          position: absolute;
+          right: 12px;
+          top: 36px;
+          width: 10px;
+          height: 6px;
+          border-bottom: 2px solid #26324d;
+          border-radius: 0 0 10px 10px;
+          z-index: 4;
+        }
+
+        .hat-brim {
+          position: absolute;
+          left: 40px;
+          top: 18px;
+          width: 86px;
+          height: 18px;
+          background: #f0c64e;
+          border-radius: 30px;
+          z-index: 5;
+          box-shadow: inset 0 -3px 0 rgba(0,0,0,0.08);
+        }
+
+        .hat-top {
+          position: absolute;
+          left: 60px;
+          top: 0;
+          width: 44px;
+          height: 26px;
+          background: #f0c64e;
+          border-radius: 24px 24px 10px 10px;
+          z-index: 6;
+        }
+
+        .hat-dot {
+          position: absolute;
+          top: 22px;
+          width: 12px;
+          height: 12px;
+          background: #3f6da8;
+          border-radius: 50%;
+          z-index: 6;
+        }
+
+        .hat-dot.left { left: 36px; }
+        .hat-dot.right { left: 118px; }
+
+        .arm {
+          position: absolute;
+          background: #4a92cf;
+          border-radius: 20px;
+          z-index: 4;
+        }
+
+        .arm.left {
+          left: 30px;
+          top: 118px;
+          width: 64px;
+          height: 20px;
+          transform: rotate(18deg);
+        }
+
+        .arm.right {
+          left: 78px;
+          top: 114px;
+          width: 48px;
+          height: 20px;
+          transform: rotate(-12deg);
+        }
+
+        .phone {
+          position: absolute;
+          left: 96px;
+          top: 110px;
+          width: 22px;
+          height: 40px;
+          background: #355f96;
+          border-radius: 7px;
+          z-index: 7;
+          transform: rotate(8deg);
+        }
+
+        .phone::after {
+          content: "";
+          position: absolute;
+          left: 8px;
+          bottom: 6px;
+          width: 5px;
+          height: 5px;
+          background: #9ed0ef;
+          border-radius: 50%;
+        }
+
+        .leg {
+          position: absolute;
+          bottom: 18px;
+          width: 24px;
+          height: 54px;
+          background: #4a92cf;
+          border-radius: 20px;
+          z-index: 1;
+        }
+
+        .leg.left {
+          left: 58px;
+          transform: rotate(12deg);
+        }
+
+        .leg.right {
+          left: 102px;
+          transform: rotate(-8deg);
+        }
+
+        .foot {
+          position: absolute;
+          bottom: 4px;
+          w      border-radius: 50px;
+          z-index: 2;
+        }
+
+        .foot.left { left: 54px; }
+        .foot.right { left: 104px; }
+
+        .laptop {
+          position: absolute;
+          right: 8px;
+          bottom: 38px;
+          width: 80px;
+          height: 60px;
+        }
+
+        .screen-map {
+          position: absolute;
+          left: 8px;
+          top: 0;
+          width: 58px;
+          height: 38px;
+          background: #6ea8d8;
+          border: 4px solid #58739a;
+          border-bottom-width: 6px;
+          border-radius: 6px 6px 2px 2px;
+          overflow: hidden;
+          transform: skew(-8deg);
+        }
+
+        .screen-map::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background:
+            radial-gradient(circle at 42px 10px, #f0cb52 0 6px, transparent 6px),
+            linear-gradient(135deg, transparent 0 10px, #dde7d1 10px 14px, transparent 14px 22px, #dde7d1 22px 26px, transparent 26px),
+            linear-gradient(45deg, transparent 0 8px, #d8ede2 8px 12px, transparent 12px 22px, #d8ede2 22px 26px, transparent 26px),
+            linear-gradient(90deg, transparent 0 6px, #8ab3df 6px 10px, transparent 10px 16px, #8ab3df 16px 20px, transparent 20px);
+          opacity: 0.95;
+        }
+
+        .base {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 76px;
+          height: 16px;
+          background: #7aa7d8;
+          clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+          border-radius: 2px;
+        }
+
+        .bottom {
+          position: relative;
+          z-index: 2;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 34px;
+          margin-top: 10px;
+        }
+
+        .pagination {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 11px;
+        }
+
+        .dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #d6d6d8;
+          transition: all 0.2s ease;
+        }
+
+        .dot.active {
+          background: #6178bf;
+          transform: scale(1.02);
+        }
+
+        .start-btn {
+          width: 100%;
+          height: 56px;
+          border: 0;
+          border-radius: 14px;
+          background: #6178bf;
+          color: #ffffff;
+          font-size: 18px;
+          font-weight: 700;
+          letter-spacing: -0.2px;
+          cursor: pointer;
+          box-shadow: 0 10px 20px rgba(97, 120, 191, 0.16);
+          transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+        }
+
+        .start-btn:active {
+          transform: translateY(1px);
+          box-shadow: 0 6px 12px rgba(97, 120, 191, 0.14);
+          background: #566fb8;
+        }
+
+        .toast {
+          position: absolute;
+          left: 50%;
+          bottom: 108px;
+          transform: translateX(-50%) translateY(12px);
+          min-width: 210px;
+          padding: 12px 16px;
+          border-radius: 12px;
+          background: rgba(49, 62, 102, 0.92);
+          color: #fff;
+          font-size: 14px;
+          text-align: center;
+          opacity: 0;
+          pointer-events: none;
+          transition: all 0.24s ease;
+          z-index: 5;
+        }
+
+        .toast.show {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0);
+        }
+
+        @media (max-width: 390px) {
+          .app {
+            max-width: 100vw;
+            height: 100vh;
+          }
+
+          .screen {
+            padding-top: 74px;
+            padding-bottom: 32px;
+          }
+        }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <main class="screen">
+        <section class="headline">
+          <h1 class="title">차박, 어디로 떠나야 할지 모르겠나요?</h1>
+          <p class="subtitle">
+            지도기반 위치 앱 및 키워드 검색으로 내가 원하는 장소를 한번에.
+          </p>
+        </section>
+
+        <section class="visual-wrap" aria-hidden="true">
+          <div class="bg-wave"></div>
+
+          <div class="scene">
+            <div class="map-paper"></div>
+
+            <div class="bear">
+              <div class="hat-brim"></div>
+              <div class="hat-top"></div>
+              <div class="hat-dot left"></div>
+              <div class="hat-dot right"></div>
+
+              <div class="ear left"></div>
+              <div class="ear right"></div>
+              <div class="head">
+                <div class="face"></div>
+                <div class="eye"></div>
+                <div class="nose"></div>
+                <div class="mouth"></div>
+              </div>
+              <div class="body-shape"></div>
+              <div class="arm left"></div>
+              <div class="arm right"></div>
+              <div class="phone"></div>
+              <div class="leg left"></div>
+              <div class="leg right"></div>
+              <div class="foot left"></div>
+              <div class="foot right"></div>
+            </div>
+
+            <div class="laptop">
+              <div class="screen-map"></div>
+              <div class="base"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="bottom">
+          <div class="pagination" aria-label="온보딩 페이지 표시">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+
+          <button class="start-btn" id="startButton" type="button">
+            시작하기
+          </button>
+        </section>
+      </main>
+
+      <div class="toast" id="toast">시작하기 버튼이 눌렸습니다.</div>
+    </div>
+
+    <script>
+      const startButton = document.getElementById("startButton");
+      const toast = document.getElementById("toast");
+      let toastTimer;
+
+      startButton.addEventListener("click", () => {
+        toast.classList.add("show");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toast.classList.remove("show");
+        }, 1600);
+      });
+    </script>
+  </body>
+</html>
