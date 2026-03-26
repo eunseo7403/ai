@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claude Navigation V3</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --accent: #d97757;
+        --nav-text: #333333;
+        --white: #ffffff;
+        --border: #e7e7e7;
+      }
+
+      body {
+        font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+        background: #ffffff;
+        color: var(--nav-text);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      .header {
+        position: relative;
+        width: 100%;
+        background: #ffffff;
+        border-bottom: 1px solid var(--border);
+        z-index: 100;
+      }
+
+      .header-inner {
+        width: 1280px;
+        height: 92px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+      }
+
+      .logo-image {
+        display: block;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .nav-wrap {
+        display: flex;
+        align-items: center;
+        gap: 54px;
+        height: 100%;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 44px;
+        height: 100%;
+      }
+
+      .nav-group {
+        position: relative;
+        height: 100%;
+      }
+
+      .nav-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 92px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #333333;
+        text-transform: uppercase;
+        transition: color 0.25s ease;
+      }
+
+      .nav-item::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 0;
+        height: 4px;
+        background: var(--accent);
+        transform: translateX(-50%);
+        transition: width 0.25s ease;
+      }
+
+      .nav-group:hover > .nav-item {
+        color: var(--accent);
+      }
+
+      .nav-group:hover > .nav-item::after {
+        width: calc(100% - 6px);
+      }
+
+      .submenu-wrap {
+        position: absolute;
+        top: 92px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 264px;
+        background: #ffffff;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition:
+          opacity 0.2s ease,
+          visibility 0.2s ease;
+        z-index: 120;
+      }
+
+      .nav-group.has-submenu:hover .submenu-wrap {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .submenu-inner {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .submenu-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 78px;
+        padding: 20px 16px;
+        background: #ffffff;
+        color: #333333;
+        font-size: 15px;
+        font-weight: 700;
+        text-align: center;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+      }
+
+      .submenu-link:hover {
+        background: var(--accent);
+        color: #ffffff;
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-shrink: 0;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 116px;
+        height: 44px;
+        padding: 0 20px;
+        border-radius: 999px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #ffffff;
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .btn:hover {
+        opacity: 0.92;
+        transform: translateY(-1px);
+      }
+
+      .btn-dark {
+        background: #333333;
+      }
+
+      .btn-accent {
+        background: #d97757;
+      }
+
+      .hero {
+        width: 100%;
+        height: calc(100vh - 92px);
+        background: #000000;
+        overflow: hidden;
+      }
+
+      .hero-content {
+        width: 100%;
+        height: 100%;
+      }
+
+      .hero-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <a href="#" class="logo">
+          <!-- 로고 이미지를 넣을 영역입니다. -->
+          <!-- 아래 src="./images/img2.png" 부분을 원하는 로고 이미지 경로로 변경하시면 됩니다. -->
+          <!-- 현재 요청하신 로고 이미지명: ./images/img2.png -->
+          <img src="./images/img2.png" alt="Claude 로고" class="logo-image" />
+        </a>
+
+        <div class="nav-wrap">
+          <nav>
+            <ul class="nav">
+              <li class="nav-group has-submenu">
+                <a href="#" class="nav-item">ABOUT</a>
+                <div class="submenu-wrap">
+                  <div class="submenu-inner">
+                    <a href="#" class="submenu-link">대표 인사말</a>
+                    <a href="#" class="submenu-link">기업 소개</a>
+                    <a href="#" class="submenu-link">비주얼 아이덴티티</a>
+                    <a href="#" class="submenu-link">사회공헌</a>
+                    <a href="#" class="submenu-link">오시는길</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-group has-submenu">
+                <a href="#" class="nav-item">PRODUCT</a>
+                <div class="submenu-wrap">
+                  <div class="submenu-inner">
+                    <a href="#" class="submenu-link">AI &amp; 인공지능</a>
+                    <a href="#" class="submenu-link">Sonnet 모델</a>
+                    <a href="#" class="submenu-link">Coding Pro</a>
+                    <a href="#" class="submenu-link">대표적인 AI</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-group has-submenu">
+                <a href="#" class="nav-item">PARTNERSHIP</a>
+                <div class="submenu-wrap">
+                  <div class="submenu-inner">
+                    <a href="#" class="submenu-link">가맹점 현황</a>
+                    <a href="#" class="submenu-link">가맹점 개설 안내</a>
+                    <a href="#" class="submenu-link">가맹점 개설 문의</a>
+                    <a href="#" class="submenu-link">제휴 문의</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-group">
+                <a href="#" class="nav-item">EDUCATION</a>
+              </li>
+              <li class="nav-group">
+                <a href="#" class="nav-item">WHAT'S NEW</a>
+              </li>
+              <li class="nav-group">
+                <a href="#" class="nav-item">SUPPORT</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="actions">
+            <a href="#" class="btn btn-dark">매장찾기</a>
+            <a href="#" class="btn btn-accent">클로드 마켓</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="hero">
+      <div class="hero-content">
+        <!-- 메인 비주얼 이미지를 넣을 영역입니다. -->
+        <!-- 아래 src="./images/img1.png" 부분을 원하는 메인 비주얼 이미지 경로로 변경하시면 됩니다. -->
+        <!-- 현재 요청하신 메인 비주얼 이미지명: ./images/img1.png -->
+        <img
+          src="./images/img1.png"
+          alt="메인 비주얼 이미지"
+          class="hero-image"
+        />
+      </div>
+    </main>
+  </body>
+</html>
