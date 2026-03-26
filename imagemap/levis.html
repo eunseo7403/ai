@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>levis 상품</title>
+    <style>
+      p {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="mainimg">
+      <img src="./images/levis.jpg" alt="메인화면" usemap="#main" />
+      <map name="main">
+        <area
+          shape="rect"
+          coords="13,60,270,138"
+          href="#levis1"
+          alt="1번 상품"
+        />
+        <area
+          shape="rect"
+          coords="304,63,552,137"
+          href="#levis2"
+          alt="2번 상품"
+        />
+        <area
+          shape="rect"
+          coords="586,66,829,135"
+          href="#levis3"
+          alt="3번 상품"
+        />
+      </map>
+    </p>
+    <p id="levis1">
+      <img src="./images/levis1.jpg" alt="1번 상품 이미지" usemap="#le1" />
+      <map name="le1">
+        <area shape="circle" coords="803,5305,42" href="#mainimg" alt="위로" />
+      </map>
+    </p>
+    <p id="levis2">
+      <img src="./images/levis2.jpg" alt="2번 상품 이미지" usemap="#le2" />
+      <map name="le2">
+        <area shape="circle" coords="809,6561,42" href="#mainimg" alt="위로" />
+      </map>
+    </p>
+    <p id="levis3">
+      <img src="./images/levis3.jpg" alt="3번 상품 이미지" usemap="#le3" />
+      <map name="le3">
+        <area shape="circle" coords="803,5945,42" href="#mainimg" alt="위로" />
+      </map>
+    </p>
+  </body>
+</html>
