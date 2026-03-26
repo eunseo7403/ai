@@ -101,6 +101,10 @@
         height: 100%;
       }
 
+      .nav-group {
+        list-style: none;
+      }
+
       .nav-item {
         position: relative;
         height: 92px;
@@ -113,7 +117,6 @@
         transition: color 0.25s ease;
       }
 
-      /* ABOUT처럼 hover 시 하단 라인 + 글자색 변화 */
       .nav-item::after {
         content: "";
         position: absolute;
@@ -127,16 +130,12 @@
         border-radius: 999px;
       }
 
-      .nav-item:hover {
+      .nav-group:hover > .nav-item {
         color: var(--accent);
       }
 
-      .nav-item:hover::after {
+      .nav-group:hover > .nav-item::after {
         width: calc(100% - 6px);
-      }
-
-      .about-item {
-        list-style: none;
       }
 
       .submenu-wrap {
@@ -159,7 +158,7 @@
         z-index: 30;
       }
 
-      .about-item:hover .submenu-wrap {
+      .nav-group.has-submenu:hover .submenu-wrap {
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
@@ -169,11 +168,22 @@
         width: 1280px;
         height: 100%;
         margin: 0 auto;
-        padding-left: 260px;
         display: flex;
         align-items: center;
         justify-content: flex-start;
         gap: 56px;
+      }
+
+      .submenu-about {
+        padding-left: 260px;
+      }
+
+      .submenu-product {
+        padding-left: 380px;
+      }
+
+      .submenu-partnership {
+        padding-left: 500px;
       }
 
       .submenu-link {
@@ -290,10 +300,10 @@
         <div class="nav-wrap">
           <nav>
             <ul class="nav">
-              <li class="about-item">
+              <li class="nav-group has-submenu">
                 <a href="#" class="nav-item">ABOUT</a>
                 <div class="submenu-wrap">
-                  <div class="submenu-inner">
+                  <div class="submenu-inner submenu-about">
                     <a href="#" class="submenu-link">대표 인사말</a>
                     <a href="#" class="submenu-link">기업 소개</a>
                     <a href="#" class="submenu-link">비주얼 아이덴티티</a>
@@ -302,17 +312,46 @@
                   </div>
                 </div>
               </li>
-              <li><a href="#" class="nav-item">PRODUCT</a></li>
-              <li><a href="#" class="nav-item">PARTNERSHIP</a></li>
-              <li><a href="#" class="nav-item">EDUCATION</a></li>
-              <li><a href="#" class="nav-item">WHAT'S NEW</a></li>
-              <li><a href="#" class="nav-item">SUPPORT</a></li>
+
+              <li class="nav-group has-submenu">
+                <a href="#" class="nav-item">PRODUCT</a>
+                <div class="submenu-wrap">
+                  <div class="submenu-inner submenu-product">
+                    <a href="#" class="submenu-link">AI &amp; 인공지능</a>
+                    <a href="#" class="submenu-link">Sonnet 모델</a>
+                    <a href="#" class="submenu-link">Coding Pro</a>
+                    <a href="#" class="submenu-link">대표적인 AI</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-group has-submenu">
+                <a href="#" class="nav-item">PARTNERSHIP</a>
+                <div class="submenu-wrap">
+                  <div class="submenu-inner submenu-partnership">
+                    <a href="#" class="submenu-link">가맹점 현황</a>
+                    <a href="#" class="submenu-link">가맹점 개설 안내</a>
+                    <a href="#" class="submenu-link">가맹점 개설 문의</a>
+                    <a href="#" class="submenu-link">제휴 문의</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-group">
+                <a href="#" class="nav-item">EDUCATION</a>
+              </li>
+              <li class="nav-group">
+                <a href="#" class="nav-item">WHAT'S NEW</a>
+              </li>
+              <li class="nav-group">
+                <a href="#" class="nav-item">SUPPORT</a>
+              </li>
             </ul>
           </nav>
 
           <div class="actions">
             <a href="#" class="btn btn-dark">매장찾기</a>
-            <a href="#" class="btn btn-accent">글로드 마켓</a>
+            <a href="#" class="btn btn-accent">클로드 마켓</a>
           </div>
         </div>
       </div>
@@ -321,10 +360,10 @@
     <main class="hero">
       <div class="hero-content">
         <span class="hero-subtitle">HTML + CSS Only</span>
-        <h1>ABOUT 메뉴처럼 hover 되는<br />상단 내비게이션 예시입니다</h1>
+        <h1>1차 메뉴 hover 시<br />2차 메뉴가 내려오는 구조입니다</h1>
         <p>
-          마우스를 메뉴 위에 올리면 글자 색상이 변경되고,<br />
-          아래에 오렌지색 라인이 자연스럽게 나타나도록 구현했습니다.
+          ABOUT, PRODUCT, PARTNERSHIP에 각각 2차 메뉴를 넣었고,<br />
+          2차 메뉴 기본 색상은 #333333, hover 색상은 #D97757로 적용했습니다.
         </p>
       </div>
     </main>
