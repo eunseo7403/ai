@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover Navigation Demo</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --accent: #d97757;
+        --text: #1f1f1f;
+        --muted: #5a5a5a;
+        --light-bg: #ffffff;
+        --dark: #0e0e0e;
+      }
+
+      body {
+        font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+        color: var(--text);
+        background: #ffffff;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      .header {
+        position: relative;
+        width: 100%;
+        background: var(--light-bg);
+        border-bottom: 1px solid #e7e7e7;
+        z-index: 20;
+      }
+
+      .header-inner {
+        width: 1280px;
+        height: 92px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+      }
+
+      .logo-mark {
+        width: 22px;
+        height: 22px;
+        position: relative;
+        transform: rotate(45deg);
+      }
+
+      .logo-mark::before,
+      .logo-mark::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: var(--accent);
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+      }
+
+      .logo-mark::before {
+        width: 22px;
+        height: 3px;
+      }
+
+      .logo-mark::after {
+        width: 3px;
+        height: 22px;
+      }
+
+      .nav-wrap {
+        display: flex;
+        align-items: center;
+        gap: 54px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 44px;
+        height: 100%;
+      }
+
+      .nav-item {
+        position: relative;
+        height: 92px;
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+        font-weight: 700;
+        color: #333333;
+        text-transform: uppercase;
+        transition: color 0.25s ease;
+      }
+
+      /* ABOUT처럼 hover 시 하단 라인 + 글자색 변화 */
+      .nav-item::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 0;
+        height: 4px;
+        background: var(--accent);
+        transform: translateX(-50%);
+        transition: width 0.28s ease;
+        border-radius: 999px;
+      }
+
+      .nav-item:hover {
+        color: var(--accent);
+      }
+
+      .nav-item:hover::after {
+        width: calc(100% - 6px);
+      }
+
+      .about-item {
+        list-style: none;
+      }
+
+      .submenu-wrap {
+        position: absolute;
+        top: 92px;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background: #ffffff;
+        border-top: 1px solid #ececec;
+        border-bottom: 1px solid #ececec;
+        display: flex;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition:
+          opacity 0.25s ease,
+          visibility 0.25s ease;
+        z-index: 30;
+      }
+
+      .about-item:hover .submenu-wrap {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .submenu-inner {
+        width: 1280px;
+        height: 100%;
+        margin: 0 auto;
+        padding-left: 260px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 56px;
+      }
+
+      .submenu-link {
+        font-size: 15px;
+        font-weight: 700;
+        color: #333333;
+        white-space: nowrap;
+        transition: color 0.25s ease;
+      }
+
+      .submenu-link:hover {
+        color: var(--accent);
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 116px;
+        height: 44px;
+        padding: 0 20px;
+        border-radius: 999px;
+        font-size: 15px;
+        font-weight: 700;
+        transition:
+          transform 0.2s ease,
+          opacity 0.2s ease,
+          background 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+        opacity: 0.92;
+      }
+
+      .btn-dark {
+        background: #333333;
+        color: #ffffff;
+      }
+
+      .btn-accent {
+        background: #d97757;
+        color: #ffffff;
+      }
+
+      .hero {
+        width: 100%;
+        min-height: calc(100vh - 92px);
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.58)),
+          radial-gradient(
+            circle at 30% 25%,
+            rgba(255, 255, 255, 0.08),
+            transparent 25%
+          ),
+          radial-gradient(
+            circle at 70% 35%,
+            rgba(255, 255, 255, 0.05),
+            transparent 24%
+          ),
+          #111;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      .hero-content {
+        max-width: 900px;
+      }
+
+      .hero-subtitle {
+        display: inline-block;
+        margin-bottom: 18px;
+        padding: 10px 18px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 999px;
+        font-size: 14px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .hero h1 {
+        font-size: 62px;
+        line-height: 1.15;
+        letter-spacing: -0.04em;
+        margin-bottom: 18px;
+      }
+
+      .hero p {
+        font-size: 19px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.78);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <a href="#" class="logo">
+          <span class="logo-mark"></span>
+          <span>Claude</span>
+        </a>
+
+        <div class="nav-wrap">
+          <nav>
+            <ul class="nav">
+              <li class="about-item">
+                <a href="#" class="nav-item">ABOUT</a>
+                <div class="submenu-wrap">
+                  <div class="submenu-inner">
+                    <a href="#" class="submenu-link">대표 인사말</a>
+                    <a href="#" class="submenu-link">기업 소개</a>
+                    <a href="#" class="submenu-link">비주얼 아이덴티티</a>
+                    <a href="#" class="submenu-link">사회공헌</a>
+                    <a href="#" class="submenu-link">오시는 길</a>
+                  </div>
+                </div>
+              </li>
+              <li><a href="#" class="nav-item">PRODUCT</a></li>
+              <li><a href="#" class="nav-item">PARTNERSHIP</a></li>
+              <li><a href="#" class="nav-item">EDUCATION</a></li>
+              <li><a href="#" class="nav-item">WHAT'S NEW</a></li>
+              <li><a href="#" class="nav-item">SUPPORT</a></li>
+            </ul>
+          </nav>
+
+          <div class="actions">
+            <a href="#" class="btn btn-dark">매장찾기</a>
+            <a href="#" class="btn btn-accent">글로드 마켓</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="hero">
+      <div class="hero-content">
+        <span class="hero-subtitle">HTML + CSS Only</span>
+        <h1>ABOUT 메뉴처럼 hover 되는<br />상단 내비게이션 예시입니다</h1>
+        <p>
+          마우스를 메뉴 위에 올리면 글자 색상이 변경되고,<br />
+          아래에 오렌지색 라인이 자연스럽게 나타나도록 구현했습니다.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
