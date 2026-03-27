@@ -1,0 +1,31 @@
+@charset "utf-8";
+body {
+  font-family: "맑은 고딕";
+}
+table {
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 600px;
+  margin: 0 auto;
+}
+
+th {
+  text-align: center;
+  border: 1px solid #000;
+  width: 200px;
+  height: 40px;
+  background: #ffcc01;
+}
+
+td {
+  text-align: center;
+  border: 1px solid #000;
+  height: 40px;
+  width: 200px;
+  background: #f2f2f2;
+}
+
+.total {
+  background: #00ccff;
+}
