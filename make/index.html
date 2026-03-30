@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUMIEL - Your Ritual, Your Rhythm</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav-container">
+        <div class="nav-content">
+          <!-- Logo -->
+          <a href="/" class="logo">LUMIEL</a>
+
+          <!-- Desktop Menu -->
+          <ul class="nav-menu desktop-menu">
+            <li><a href="#philosophy" class="nav-link">Philosophy</a></li>
+            <li><a href="#collection" class="nav-link">Collection</a></li>
+            <li><a href="#routine" class="nav-link">Routine</a></li>
+            <li><a href="#story" class="nav-link">Story</a></li>
+          </ul>
+
+          <!-- Mobile Menu Button -->
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴">
+            <svg
+              class="menu-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+            <svg
+              class="close-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <ul class="nav-menu mobile-menu" id="mobileMenu">
+          <li>
+            <a href="#philosophy" class="nav-link mobile-nav-link"
+              >Philosophy</a
+            >
+          </li>
+          <li>
+            <a href="#collection" class="nav-link mobile-nav-link"
+              >Collection</a
+            >
+          </li>
+          <li>
+            <a href="#routine" class="nav-link mobile-nav-link">Routine</a>
+          </li>
+          <li><a href="#story" class="nav-link mobile-nav-link">Story</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <!-- Background Image -->
+        <div class="hero-bg">
+          <img
+            src="https://images.unsplash.com/photo-1555820585-c5ae44394b79?q=80&w=725&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="LUMIEL Beauty"
+            class="hero-img"
+          />
+          <div class="hero-overlay"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="hero-content">
+          <h1 class="hero-title">Your Ritual,<br />Your Rhythm</h1>
+          <p class="hero-subtitle">
+            당신만의 시간, 당신만의 루틴. LUMIEL과 함께하는 일상의 작은 의식
+          </p>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+          <div class="scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- Philosophy Section -->
+      <section id="philosophy" class="philosophy-section">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-label">Philosophy</p>
+            <h2 class="section-title">예쁨보다 무드,<br />완벽보다 신뢰</h2>
+          </div>
+
+          <div class="philosophy-grid">
+            <div class="philosophy-item">
+              <h3 class="philosophy-subtitle">나만의 시간</h3>
+              <p class="philosophy-text">
+                LUMIEL은 단순한 뷰티 브랜드가 아닙니다. 하루 중 나를 위한 순간,
+                조용히 마주하는 거울 앞의 시간. 그 순간을 더 특별하게 만들어주는
+                동반자입니다.
+              </p>
+            </div>
+
+            <div class="philosophy-item">
+              <h3 class="philosophy-subtitle">신뢰의 루틴</h3>
+              <p class="philosophy-text">
+                트렌드를 쫓기보다 당신의 피부가 진정으로 원하는 것을 담았습니다.
+                매일 반복되는 루틴 속에서 피부와 마음 모두 편안해지는 경험을
+                선사합니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="philosophy-quote">
+            <p class="quote-text">
+              "Beauty is not about being perfect, it's about being yourself."
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Collection Section -->
+      <section id="collection" class="collection-section">
+        <div class="container-large">
+          <div class="section-header-large">
+            <p class="section-label">Collection</p>
+            <h2 class="section-title">당신을 위한 선택</h2>
+          </div>
+
+          <div class="collection-grid">
+            <!-- Product 1 -->
+            <div class="product-item">
+              <div class="product-image">
+                <img
+                  src="https://images.unsplash.com/photo-1770732766528-d0e9fd0df233?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="젠틀 클렌징 오일"
+                />
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Gentle Cleansing Oil</h3>
+                <p class="product-name-kr">젠틀 클렌징 오일</p>
+                <p class="product-desc">하루의 끝, 부드럽게 정리하는 시간</p>
+              </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-item">
+              <div class="product-image">
+                <img
+                  src="https://images.unsplash.com/photo-1755699192991-1f49f76a8f0d?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+
+"
+                  alt="하이드레이팅 에센스"
+                />
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Hydrating Essence</h3>
+                <p class="product-name-kr">하이드레이팅 에센스</p>
+                <p class="product-desc">피부 깊숙이 스며드는 수분</p>
+              </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-item">
+              <div class="product-image">
+                <img
+                  src="https://images.unsplash.com/photo-1704118548878-a122a1f35145?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3NtZXRpYyUyMGJvdHRsZSUyMGVsZWdhbnR8ZW58MXx8fHwxNzc0ODM3MjA1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  alt="너리싱 크림"
+                />
+              </div>
+              <div class="product-info">
+                <h3 class="product-name">Nourishing Cream</h3>
+                <p class="product-name-kr">너리싱 크림</p>
+                <p class="product-desc">밤사이 피부를 감싸는 영양</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Routine Section -->
+      <section id="routine" class="routine-section">
+        <div class="container-medium">
+          <div class="section-header-large">
+            <p class="section-label routine-label">Routine</p>
+            <h2 class="section-title">하루의 리듬</h2>
+            <p class="routine-subtitle">
+              당신의 일상에 자연스럽게 스며드는 루틴
+            </p>
+          </div>
+
+          <div class="routine-content">
+            <!-- Morning -->
+            <div class="routine-step">
+              <div class="routine-text">
+                <div class="routine-time">
+                  <span class="time-en">Morning</span>
+                  <span class="time-kr">아침</span>
+                </div>
+                <h3 class="routine-title">하루를 여는 의식</h3>
+                <p class="routine-desc">
+                  맑은 피부로 시작하는 하루. 가벼운 클렌징과 수분 충전으로
+                  피부에 생기를 더합니다.
+                </p>
+              </div>
+              <div class="routine-image">
+                <img src="./images/01.png" alt="루틴 이미지" />
+              </div>
+            </div>
+
+            <!-- Day -->
+            <div class="routine-step routine-step-reverse">
+              <div class="routine-image routine-image-left">
+                <div class="routine-image">
+                  <img src="./images/02.png" alt="루틴 이미지" />
+                </div>
+              </div>
+              <div class="routine-text">
+                <div class="routine-time">
+                  <span class="time-en">Day</span>
+                  <span class="time-kr">낮</span>
+                </div>
+                <h3 class="routine-title">일상 속 케어</h3>
+                <p class="routine-desc">
+                  바쁜 하루 속에서도 피부는 쉬지 않습니다. 간단한 터치업으로
+                  피부 밸런스를 유지합니다.
+                </p>
+              </div>
+            </div>
+
+            <!-- Night -->
+            <div class="routine-step">
+              <div class="routine-text">
+                <div class="routine-time">
+                  <span class="time-en">Night</span>
+                  <span class="time-kr">밤</span>
+                </div>
+                <h3 class="routine-title">나를 위한 시간</h3>
+                <p class="routine-desc">
+                  하루의 피로를 씻어내고, 충분한 영양으로 내일을 준비합니다.
+                  가장 중요한 나만의 시간.
+                </p>
+              </div>
+              <div class="routine-image">
+                <img src="./images/03.png" alt="루틴 이미지" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Story Section -->
+      <section id="story" class="story-section">
+        <div class="container-large">
+          <!-- Main Story Grid -->
+          <div class="story-main">
+            <!-- Image -->
+            <div class="story-image">
+              <img
+                src="https://images.unsplash.com/photo-1720118492579-eaeb5e878bb7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWF1dHklMjByb3V0aW5lJTIwc29mdCUyMG1vcm5pbmd8ZW58MXx8fHwxNzc0ODM3MjA0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                alt="LUMIEL Story"
+              />
+            </div>
+
+            <!-- Text -->
+            <div class="story-text">
+              <p class="section-label">Story</p>
+              <h2 class="story-title">
+                당신의 이야기가<br />우리의 이야기입니다
+              </h2>
+              <p class="story-desc">
+                LUMIEL은 프랑스어 'Lumière(빛)'에서 영감을 받았습니다. 당신 안에
+                있는 고유한 빛을 발견하고, 그것을 더욱 빛나게 하는 것. 그것이
+                우리가 추구하는 아름다움입니다.
+              </p>
+              <p class="story-desc">
+                매일 아침 거울을 보며 자신을 마주하는 그 순간, 우리는 당신이
+                진정으로 자신을 사랑할 수 있기를 바랍니다.
+              </p>
+            </div>
+          </div>
+
+          <!-- Secondary Image Grid -->
+          <div class="story-gallery">
+            <div class="gallery-image gallery-image-1">
+              <img
+                src="https://images.unsplash.com/photo-1753758541974-e9e1d66cfbd9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuYXR1cmFsJTIwc2tpbmNhcmUlMjBhZXN0aGV0aWN8ZW58MXx8fHwxNzc0ODM3MjA1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                alt="LUMIEL Wellness"
+              />
+            </div>
+            <div class="gallery-image gallery-image-2">
+              <img
+                src="https://images.unsplash.com/photo-1751991713869-7e5ae07db1fb?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+"
+                alt="LUMIEL Natural"
+              />
+            </div>
+            <div class="gallery-image gallery-image-3">
+              <img
+                src="https://images.unsplash.com/photo-1752398760609-e4be4e766ecb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBza2luY2FyZSUyMG1pbmltYWx8ZW58MXx8fHwxNzc0ODM3MjA0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                alt="LUMIEL Luxury"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container-large">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <h3 class="footer-logo">LUMIEL</h3>
+            <p class="footer-tagline">당신 안에 있는 빛을 발견하세요</p>
+          </div>
+
+          <!-- Links -->
+          <div class="footer-links">
+            <h4 class="footer-heading">Explore</h4>
+            <ul class="footer-menu">
+              <li><a href="#philosophy" class="footer-link">Philosophy</a></li>
+              <li><a href="#collection" class="footer-link">Collection</a></li>
+              <li><a href="#routine" class="footer-link">Routine</a></li>
+              <li><a href="#story" class="footer-link">Story</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="footer-links">
+            <h4 class="footer-heading">Connect</h4>
+            <ul class="footer-menu">
+              <li>
+                <a href="mailto:hello@lumiel.com" class="footer-link"
+                  >hello@lumiel.com</a
+                >
+              </li>
+              <li><a href="#" class="footer-link">Instagram</a></li>
+              <li><a href="#" class="footer-link">Newsletter</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+          <p class="footer-copyright">© 2026 LUMIEL. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script/script.js"></script>
+  </body>
+</html>
