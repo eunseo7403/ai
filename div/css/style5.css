@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+body {
+  font-family: "맑은 고딕";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  margin: 0 auto;
+  width: 640px;
+  border: solid 2px #f00;
+  padding: 36px 24px;
+}
+
+div h1 {
+  text-align: center;
+  padding: 17px;
+  background: #ffff00;
+  margin-bottom: 25px;
+}
+
+div h2 {
+  text-align: center;
+  background: #d3d3d3;
+  font-weight: 400;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+li {
+  margin-left: 40px;
+}
+
+div .li {
+  margin-bottom: 40px;
+}
+
+div p {
+  font-size: small;
+  margin-bottom: 48px;
+  font-weight: 500;
+}
+
+div p.last {
+  margin-bottom: 35px;
+}
+
+span {
+  font-size: small;
+  background: #840081;
+  color: #fff;
+  padding: 6px;
+}
+
+div h3 {
+  font-weight: 400;
+  color: #241ff6;
+  margin-bottom: 20px;
+}
+
+div .click {
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 20px;
+}
