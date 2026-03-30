@@ -23,12 +23,13 @@ div h1 {
   margin-bottom: 25px;
 }
 
-div h2 {
+div h3 {
   text-align: center;
   background: #d3d3d3;
   font-weight: 400;
   padding: 10px;
   margin-bottom: 20px;
+  font-size: x-large;
 }
 
 li {
@@ -56,10 +57,11 @@ span {
   padding: 6px;
 }
 
-div h3 {
+div h2 {
   font-weight: 400;
   color: #241ff6;
   margin-bottom: 20px;
+  font-size: large;
 }
 
 div .click {
