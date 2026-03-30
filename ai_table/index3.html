@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>테이블 예제</title>
+    <link rel="stylesheet" href="./css/style3.css" />
+  </head>
+  <body>
+    <!-- 첫번째 표 -->
+    <table class="table1">
+      <tr>
+        <th colspan="4">2020년 판매현황</th>
+      </tr>
+      <tr>
+        <th colspan="2">전반기</th>
+        <th colspan="2">후반기</th>
+      </tr>
+      <tr>
+        <th>계획</th>
+        <th>실적</th>
+        <th>계획</th>
+        <th>실적</th>
+      </tr>
+      <tr>
+        <td>100</td>
+        <td>89</td>
+        <td>100</td>
+        <td>92</td>
+      </tr>
+    </table>
+
+    <!-- 두번째 표 -->
+    <table class="table2">
+      <colgroup>
+        <col style="width: 130px" />
+        <col style="width: 270px" />
+      </colgroup>
+      <tr>
+        <th>분류</th>
+        <th>사이트주소(URL)</th>
+      </tr>
+      <tr>
+        <td rowspan="2">검색엔진</td>
+        <td>
+          <a href="https://www.naver.com/" target="_blank">네이버(NAVER)</a>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="https://www.daum.net/" target="_blank">다음(DAUM)</a></td>
+      </tr>
+      <tr>
+        <td rowspan="2">오픈마켓</td>
+        <td>
+          <a href="https://www.auction.co.kr/" target="_blank">옥션(AUCTION)</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://www.gmarket.co.kr/" target="_blank"
+            >G-마켓(GMARKET)</a
+          >
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
