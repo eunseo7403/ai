@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+body {
+  font-family: "맑은 고딕";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  /* 가로 사이즈를 브라우저 가득차게 */
+  width: 100%;
+  height: 843px;
+  /* 배경 이미지 채우기 */
+  background: url(../images/bg_about.jpg) no-repeat;
+  /* 안쪽여백 */
+  padding: 300px 0 100px;
+}
+
+section .box .imgbox {
+  width: 400px;
+  height: 230px;
+  background: brown;
+}
+
+section .box .imgbox img {
+  width: 400px;
+  height: 230px;
+}
+
+section .box .text {
+  width: 400px;
+  height: 45px;
+  background: #fff;
+  text-align: center;
+  /* 글자 위 아래 가운데 정렬 */
+  line-height: 45px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #111;
+}
+
+section .boxwrap {
+  width: 1280px;
+  /* 박스 옆으로 배치 */
+  display: flex;
+  /* 요소 간격 */
+  gap: 40px;
+}
+
+section .box_h2_wrap {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+section .box_h2_wrap h2 {
+  color: #fff;
+  font-size: 50px;
+  line-height: 75px;
+  margin-bottom: 50px;
+}
