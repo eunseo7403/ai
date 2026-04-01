@@ -1,0 +1,146 @@
+@charset "utf-8";
+/* 웹 폰트 설정 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  width: 100%;
+  padding: 180px 0 100px;
+}
+
+section .title {
+  text-align: center;
+}
+
+section .title h2 {
+  font-size: 40px;
+  font-weight: 900;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+section .title p {
+  font-size: 21px;
+  color: #212121;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+/* SNS */
+section ul {
+  display: flex;
+  gap: 16px;
+  /* flex  */
+  justify-content: center;
+  margin-top: 72px;
+  margin-bottom: 50px;
+}
+
+section ul li {
+  list-style: none;
+}
+
+/* 제일 큰 부모 */
+section .box_total_wrap {
+  width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+}
+
+/* 왼쪽 박스 */
+section .box_total_wrap .left {
+  width: 313px;
+  height: 655px;
+  border: #333 solid 1px;
+}
+
+/* 가운데 박스 */
+section .box_total_wrap .center {
+  width: 474px;
+  height: 655px;
+}
+
+/* 홍보영상 */
+section .box_total_wrap .center .video {
+  width: 100%;
+  height: 428px;
+  border: #333 solid 1px;
+  padding: 30px 40px;
+}
+
+/* 고객문의 */
+section .box_total_wrap .center .cs {
+  width: 100%;
+  height: 207px;
+  margin-top: 20px;
+  border: #333 solid 1px;
+  padding: 30px 40px;
+}
+
+/* 오른쪽 박스 */
+section .box_total_wrap .right {
+  width: 313px;
+  height: 655px;
+}
+
+/* 맛있는 나눔 */
+section .box_total_wrap .right .food {
+  width: 100%;
+  height: 212px;
+  border: #333 solid 1px;
+  padding: 30px;
+}
+
+/* 공지사항 */
+section .box_total_wrap .right .notic {
+  width: 100%;
+  height: 196px;
+  margin-top: 20px;
+  border: #333 solid 1px;
+  padding: 30px;
+}
+
+/* 삼양식품 공식몰 */
+section .box_total_wrap .right .shop {
+  width: 100%;
+  height: 207px;
+  margin-top: 20px;
+  border: #333 solid 1px;
+  padding: 30px;
+}
+
+/* 전체 박스 한번에 제목 스타일 바꾸기 */
+section .box_total_wrap div h3 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+section .box_total_wrap div p {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  line-height: 20px;
+  margin-top: 16px;
+}
+
+section .box_total_wrap div button {
+  margin-top: 32px;
+  background: #ff6103;
+  color: #fff;
+  width: 90px;
+  height: 26px;
+  border: 1px solid #ff6103;
+  border-radius: 999px;
+  /* 버튼에 손모양 */
+  cursor: pointer;
+}
