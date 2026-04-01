@@ -1050,6 +1050,118 @@
       .counting {
         display: inline-block;
       }
+
+      /* ── Modal ──────────────────────────────────────────── */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        background: rgba(10, 15, 30, 0.55);
+        backdrop-filter: blur(6px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+      .modal-overlay.open {
+        opacity: 1;
+        pointer-events: all;
+      }
+      .modal-box {
+        background: var(--white);
+        border-radius: 24px;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18);
+        width: 92%;
+        max-width: 640px;
+        overflow: hidden;
+        transform: translateY(24px) scale(0.97);
+        transition: transform 0.35s cubic-bezier(0.22, 0.68, 0, 1.2);
+        position: relative;
+      }
+      .modal-overlay.open .modal-box {
+        transform: translateY(0) scale(1);
+      }
+      .modal-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 24px 16px;
+        border-bottom: 1px solid var(--gray-200);
+      }
+      .modal-title {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--dark);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .modal-close {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: none;
+        background: var(--gray-100);
+        color: var(--gray-500);
+        font-size: 1.2rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          background 0.2s,
+          color 0.2s;
+        line-height: 1;
+      }
+      .modal-close:hover {
+        background: var(--gray-200);
+        color: var(--dark);
+      }
+      .modal-iframe-wrap {
+        position: relative;
+        width: 100%;
+        height: 580px;
+      }
+      .modal-iframe-wrap iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+      }
+      .modal-loading {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        background: var(--white);
+        transition: opacity 0.4s;
+        pointer-events: none;
+      }
+      .modal-loading.hidden {
+        opacity: 0;
+      }
+      .spinner {
+        width: 36px;
+        height: 36px;
+        border: 3px solid var(--gray-200);
+        border-top-color: var(--blue);
+        border-radius: 50%;
+        animation: spin 0.7s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .modal-loading p {
+        font-size: 0.85rem;
+        color: var(--gray-500);
+      }
     </style>
   </head>
   <body>
@@ -1061,15 +1173,7 @@
           <li><a href="#why">왜 AI 협업인가</a></li>
           <li><a href="#how">실무 활용법</a></li>
           <li><a href="#change">달라지는 일상</a></li>
-          <li>
-            <a
-              href="https://forms.gle/4kw7qebKY4FLGzuw6"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="nav-cta"
-              >지금 시작하기</a
-            >
-          </li>
+          <li><a href="#" class="nav-cta open-modal">지금 시작하기</a></li>
         </ul>
       </div>
     </nav>
@@ -1096,12 +1200,7 @@
             내일 당장 써먹는 실무 AI 협업법을 알려드립니다.
           </p>
           <div class="hero-actions reveal reveal-delay-3">
-            <a
-              href="https://forms.gle/4kw7qebKY4FLGzuw6"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-primary"
-            >
+            <a href="#" class="btn-primary open-modal">
               지금 바로 시작하기
               <svg
                 width="16"
@@ -1600,10 +1699,8 @@
             </div>
           </div>
           <a
-            href="https://forms.gle/4kw7qebKY4FLGzuw6"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn-primary"
+            href="#"
+            class="btn-primary open-modal"
             style="
               flex-shrink: 0;
               background: white;
@@ -1638,13 +1735,7 @@
             구글 폼에서 간단한 정보를 입력하시면,<br />
             실무에서 바로 쓸 수 있는 AI 협업 가이드를 보내드립니다.
           </p>
-          <a
-            href="https://forms.gle/4kw7qebKY4FLGzuw6"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn-cta"
-            id="ctaBtn"
-          >
+          <a href="#" class="btn-cta open-modal" id="ctaBtn">
             📋 구글 폼 바로가기
             <svg
               width="16"
@@ -1691,7 +1782,73 @@
       </p>
     </footer>
 
+    <!-- ════════════════ MODAL ════════════════ -->
+    <div class="modal-overlay" id="formModal">
+      <div class="modal-box">
+        <div class="modal-header">
+          <div class="modal-title">📋 <span>AI×Work</span> — 신청 폼</div>
+          <button class="modal-close" id="modalClose" aria-label="닫기">
+            ✕
+          </button>
+        </div>
+        <div class="modal-iframe-wrap">
+          <div class="modal-loading" id="modalLoading">
+            <div class="spinner"></div>
+            <p>폼을 불러오는 중...</p>
+          </div>
+          <iframe
+            id="formIframe"
+            src=""
+            data-src="https://forms.gle/4kw7qebKY4FLGzuw6"
+            title="AI×Work 신청 폼"
+            allow="autoplay"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
     <script>
+      /* ── Modal ─────────────────────────────────── */
+      const modal = document.getElementById("formModal");
+      const iframe = document.getElementById("formIframe");
+      const loading = document.getElementById("modalLoading");
+      const closeBtn = document.getElementById("modalClose");
+      let iframeLoaded = false;
+
+      function openModal() {
+        document.body.style.overflow = "hidden";
+        modal.classList.add("open");
+        if (!iframeLoaded) {
+          iframe.src = iframe.dataset.src;
+          iframe.addEventListener(
+            "load",
+            () => {
+              loading.classList.add("hidden");
+              iframeLoaded = true;
+            },
+            { once: true },
+          );
+        }
+      }
+      function closeModal() {
+        modal.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      document.querySelectorAll(".open-modal").forEach((el) => {
+        el.addEventListener("click", (e) => {
+          e.preventDefault();
+          openModal();
+        });
+      });
+      closeBtn.addEventListener("click", closeModal);
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+      });
+
       /* ── Navbar scroll ─────────────────────────── */
       const navbar = document.getElementById("navbar");
       window.addEventListener("scroll", () => {
