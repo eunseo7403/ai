@@ -84,7 +84,7 @@ section .box_total_wrap .center .cs {
   height: 207px;
   margin-top: 20px;
   border: #333 solid 1px;
-  padding: 30px 40px;
+  padding: 24px 40px;
 }
 
 /* 오른쪽 박스 */
@@ -107,7 +107,7 @@ section .box_total_wrap .right .notic {
   height: 196px;
   margin-top: 20px;
   border: #333 solid 1px;
-  padding: 30px;
+  padding: 24px 30px;
 }
 
 /* 삼양식품 공식몰 */
@@ -116,7 +116,7 @@ section .box_total_wrap .right .shop {
   height: 207px;
   margin-top: 20px;
   border: #333 solid 1px;
-  padding: 30px;
+  padding: 24px 30px;
 }
 
 /* 전체 박스 한번에 제목 스타일 바꾸기 */
