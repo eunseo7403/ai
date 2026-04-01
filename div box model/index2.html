@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card UI Preview</title>
+    <style>
+      @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Pretendard", Arial, sans-serif;
+        background: #f5f5f5;
+        min-height: 100vh;
+        padding: 40px 0 0;
+      }
+
+      .card-list {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      .card-item {
+        flex: 0 0 auto;
+      }
+
+      .card {
+        width: 430px;
+        height: 525px;
+        background: #ffffff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08);
+      }
+
+      .card-image {
+        width: 100%;
+        height: 255px;
+        background: #e5e5e5;
+        overflow: hidden;
+      }
+
+      .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .card-content {
+        padding: 32px 26px 20px;
+      }
+
+      .card-category {
+        font-size: 18px;
+        font-weight: 600;
+        color: #009c75;
+        margin: 0 0 18px;
+        line-height: 1.2;
+      }
+
+      .card-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #262626;
+        margin: 0 0 18px;
+        line-height: 1.3;
+        word-break: keep-all;
+      }
+
+      .card-description {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 1.4;
+        color: #6d6d6d;
+        margin: 0 0 40px;
+      }
+
+      .card-price {
+        font-size: 26px;
+        font-weight: 700;
+        color: #262626;
+        text-align: right;
+        margin: 0;
+        line-height: 1.2;
+      }
+
+      .card-price-unit {
+        font-size: 20px;
+        font-weight: 400;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="card-list">
+      <li class="card-item">
+        <div class="card">
+          <div class="card-image">
+            <img src="./images/635713457277990389.png" alt="여행 이미지" />
+          </div>
+          <div class="card-content">
+            <p class="card-category">해외여행</p>
+            <h2 class="card-title">
+              [서유럽 여행] ★런던/프랑스/스위스/이탈리아
+            </h2>
+            <p class="card-description">
+              #6월연휴기간출발 #가족여행추천 #베스트상품
+            </p>
+            <p class="card-price">
+              3,199,000<span class="card-price-unit">원 ~</span>
+            </p>
+          </div>
+        </div>
+      </li>
+
+      <li class="card-item">
+        <div class="card">
+          <div class="card-image">
+            <img src="./images/636844607357281152.png" alt="여행 이미지" />
+          </div>
+          <div class="card-content">
+            <p class="card-category">해외여행</p>
+            <h2 class="card-title">
+              [서유럽 여행] ★런던/프랑스/스위스/이탈리아
+            </h2>
+            <p class="card-description">
+              #6월연휴기간출발 #가족여행추천 #베스트상품
+            </p>
+            <p class="card-price">
+              3,199,000<span class="card-price-unit">원 ~</span>
+            </p>
+          </div>
+        </div>
+      </li>
+
+      <li class="card-item">
+        <div class="card">
+          <div class="card-image">
+            <img src="./images/638689081315238278.jpg" alt="여행 이미지" />
+          </div>
+          <div class="card-content">
+            <p class="card-category">해외여행</p>
+            <h2 class="card-title">
+              [서유럽 여행] ★런던/프랑스/스위스/이탈리아
+            </h2>
+            <p class="card-description">
+              #6월연휴기간출발 #가족여행추천 #베스트상품
+            </p>
+            <p class="card-price">
+              3,199,000<span class="card-price-unit">원 ~</span>
+            </p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </body>
+</html>
