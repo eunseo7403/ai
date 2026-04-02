@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "맑은 고딕";
+  background: #111;
+}
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+}
+
+.formbox {
+  width: 925px;
+  margin: 150px auto 0;
+}
+
+.formbox input[type="text"],
+input[type="email"] {
+  width: 100%;
+  height: 58px;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 30px;
+  background: #262626;
+  padding: 24px 16px;
+  color: #6d6d6d;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.formbox input::placeholder {
+  font-size: 18px;
+}
+
+.formbox textarea {
+  width: 100%;
+  height: 185px;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 40px;
+  background: #262626;
+  padding: 24px 16px;
+  color: #6d6d6d;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.formbox textarea::placeholder {
+  font-size: 18px;
+  color: #6d6d6d;
+}
+
+.formbox .btn {
+  padding: 21px 62px;
+  background: #ff0050;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
