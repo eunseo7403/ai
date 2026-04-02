@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+body {
+  font-family: "맑은 고딕";
+}
+
+form {
+  width: 425px;
+  margin-bottom: 20px;
+}
+
+form ol li {
+  list-style: none;
+  margin-bottom: 22px;
+}
+
+form ol .name {
+  margin-left: 32px;
+}
+
+form ol .id {
+  margin-left: 16px;
+}
+
+.etc {
+  width: 525px;
+}
+
+.last {
+  border: 0 none;
+  margin-bottom: 8px;
+  padding: 0;
+}
