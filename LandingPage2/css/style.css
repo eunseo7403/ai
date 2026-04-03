@@ -147,9 +147,10 @@ body {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  margin-bottom: 34px;
+  width: 640px;
+  grid-template-columns: repeat(3, 200px);
+  gap: 20px;
+  margin: 0 auto 30px;
   align-items: start;
 }
 
@@ -164,12 +165,12 @@ body {
 
 .product-inner {
   position: relative;
-  min-height: 320px;
+  height: 280px;
   background: #fff;
   border: 1px solid #d6d6d6;
   border-radius: 16px;
   text-align: center;
-  padding: 24px 18px 18px;
+  padding: 18px 16px 14px;
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease,
@@ -182,25 +183,25 @@ body {
 
 .product-card.selected .product-inner,
 .product-card input[type="radio"]:checked + .product-inner {
-  border: 2px solid #1d69d8;
+  border: 3px solid #1d69d8;
   background: #fff;
-  box-shadow: inset 0 0 0 1px rgba(29, 105, 216, 0.04);
+  box-shadow: inset 0 0 0 1px rgba(29, 105, 216, 0.03);
 }
 
 .product-name {
-  min-height: 48px;
-  font-size: 16px;
+  min-height: 42px;
+  font-size: 15px;
   font-weight: 700;
   color: #333333;
   letter-spacing: -0.6px;
   line-height: 1.35;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .product-image-wrap {
-  width: 170px;
-  height: 150px;
-  margin: 0 auto 18px;
+  width: 132px;
+  height: 96px;
+  margin: 0 auto 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -215,12 +216,13 @@ body {
 
 .product-stock {
   position: relative;
-  font-size: 14px;
+  width: 100%;
+  font-size: 13px;
   color: #666666;
   letter-spacing: -0.4px;
-  margin-bottom: 28px;
   line-height: 1;
-  padding-bottom: 18px;
+  padding-bottom: 14px;
+  margin-bottom: 8px;
 }
 
 .product-stock::after {
@@ -229,7 +231,7 @@ body {
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: 85%;
+  width: 78%;
   height: 1px;
   background: #d9d9d9;
 }
@@ -245,11 +247,13 @@ body {
 
 .product-radio {
   position: relative;
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  border: 1px solid #cfcfcf;
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 0 auto;
+  border: 2px solid #cfcfcf;
   border-radius: 50%;
+  background: #ffffff;
 }
 
 .product-card.selected .product-radio,
@@ -266,8 +270,8 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   background: #1d69d8;
   border-radius: 50%;
   transform: translate(-50%, -50%);
@@ -299,17 +303,17 @@ body {
 .soldout-badge {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 48%;
   transform: translate(-50%, -50%) rotate(-13deg);
-  width: 88px;
-  height: 88px;
+  width: 80px;
+  height: 80px;
   border: 4px solid #1466d8;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.9);
   color: #1466d8;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
-  line-height: 80px;
+  line-height: 72px;
   text-align: center;
   letter-spacing: -1px;
   z-index: 2;
@@ -317,7 +321,7 @@ body {
 
 .apply-btn {
   display: block;
-  width: 364px;
+  width: 640px;
   height: 50px;
   margin: 0 auto;
   border: 0;
@@ -335,7 +339,6 @@ body {
   background: #0057ba;
 }
 
-/* 모달 */
 .modal-overlay {
   position: fixed;
   inset: 0;
