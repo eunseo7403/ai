@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const APPS_SCRIPT_URL = "여기에_배포한_웹앱_URL_붙여넣기";
+  const APPS_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbwoywbtdLZH1Gcrw-40_0mcI5E828uFBF9CG7ODEAg2a2ocJM8ccMiSktkoHlMkVyE8og/exec";
 
   const digitMap = {
     0: document.getElementById("hour-tens"),
