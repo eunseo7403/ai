@@ -21,7 +21,7 @@ textarea {
 body {
   font-family: "Noto Sans KR", sans-serif;
   background: #0a3b7a;
-  color: #222;
+  color: #222222;
 }
 
 .page-bg {
@@ -43,7 +43,12 @@ body {
 .event-page {
   width: 100%;
   min-height: 100vh;
-  padding: 55px 20px 90px;
+  padding: 55px 0 90px;
+}
+
+.event-inner {
+  width: 940px;
+  margin: 0 auto;
 }
 
 .event-header {
@@ -119,12 +124,12 @@ body {
 }
 
 .event-panel {
-  width: 612px;
+  width: 100%;
   margin: 0 auto;
-  background: #fff;
+  background: #f4f4f4;
   border: 1px solid #d7d7d7;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
-  padding: 30px 53px 34px;
+  padding: 34px 54px 40px;
   height: auto;
 }
 
@@ -132,7 +137,7 @@ body {
   font-size: 14px;
   color: #777777;
   text-align: center;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
   letter-spacing: -0.5px;
 }
 
@@ -143,8 +148,8 @@ body {
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-bottom: 30px;
+  gap: 22px;
+  margin-bottom: 34px;
   align-items: start;
 }
 
@@ -159,12 +164,12 @@ body {
 
 .product-inner {
   position: relative;
-  min-height: 215px;
-  background: #fff;
+  min-height: 320px;
+  background: #f8f8f8;
   border: 1px solid #d6d6d6;
-  border-radius: 7px;
+  border-radius: 16px;
   text-align: center;
-  padding: 21px 14px 16px;
+  padding: 24px 18px 18px;
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease,
@@ -183,19 +188,19 @@ body {
 }
 
 .product-name {
-  min-height: 40px;
-  font-size: 14px;
+  min-height: 48px;
+  font-size: 16px;
   font-weight: 700;
   color: #333333;
   letter-spacing: -0.6px;
   line-height: 1.35;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .product-image-wrap {
-  width: 110px;
-  height: 88px;
-  margin: 0 auto 14px;
+  width: 170px;
+  height: 150px;
+  margin: 0 auto 18px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -209,11 +214,24 @@ body {
 }
 
 .product-stock {
+  position: relative;
   font-size: 14px;
   color: #666666;
   letter-spacing: -0.4px;
-  margin-bottom: 12px;
+  margin-bottom: 28px;
   line-height: 1;
+  padding-bottom: 18px;
+}
+
+.product-stock::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 85%;
+  height: 1px;
+  background: #d9d9d9;
 }
 
 .product-stock strong {
@@ -228,8 +246,8 @@ body {
 .product-radio {
   position: relative;
   display: inline-block;
-  width: 12px;
-  height: 12px;
+  width: 18px;
+  height: 18px;
   border: 1px solid #cfcfcf;
   border-radius: 50%;
 }
@@ -248,8 +266,8 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   background: #1d69d8;
   border-radius: 50%;
   transform: translate(-50%, -50%);
@@ -281,25 +299,26 @@ body {
 .soldout-badge {
   position: absolute;
   left: 50%;
-  top: 104px;
+  top: 50%;
   transform: translate(-50%, -50%) rotate(-13deg);
-  width: 78px;
-  height: 78px;
+  width: 88px;
+  height: 88px;
   border: 4px solid #1466d8;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.85);
   color: #1466d8;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
-  line-height: 70px;
+  line-height: 80px;
   text-align: center;
   letter-spacing: -1px;
+  z-index: 2;
 }
 
 .apply-btn {
   display: block;
   width: 364px;
-  height: 44px;
+  height: 50px;
   margin: 0 auto;
   border: 0;
   border-radius: 6px;

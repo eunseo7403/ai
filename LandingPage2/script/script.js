@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const APPS_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbwoywbtdLZH1Gcrw-40_0mcI5E828uFBF9CG7ODEAg2a2ocJM8ccMiSktkoHlMkVyE8og/exec";
+  const APPS_SCRIPT_URL = "여기에_배포한_웹앱_URL_붙여넣기";
 
   const digitMap = {
     0: document.getElementById("hour-tens"),
@@ -11,11 +10,26 @@ document.addEventListener("DOMContentLoaded", function () {
     5: document.getElementById("second-ones"),
   };
 
-  function updateClock() {
+  function updateCountdown() {
     const now = new Date();
-    const hours = String(now.getHours()).padStart(2, "0");
-    const minutes = String(now.getMinutes()).padStart(2, "0");
-    const seconds = String(now.getSeconds()).padStart(2, "0");
+
+    const target = new Date();
+    target.setHours(22, 0, 0, 0);
+
+    if (now >= target) {
+      target.setDate(target.getDate() + 1);
+    }
+
+    const diff = target - now;
+
+    const totalSeconds = Math.floor(diff / 1000);
+    const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
+    const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(
+      2,
+      "0",
+    );
+    const seconds = String(totalSeconds % 60).padStart(2, "0");
+
     const timeString = `${hours}${minutes}${seconds}`;
 
     for (let i = 0; i < timeString.length; i++) {
@@ -25,8 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  updateClock();
-  setInterval(updateClock, 1000);
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
 
   const cards = document.querySelectorAll(".product-card");
   const radios = document.querySelectorAll('input[name="gift"]');

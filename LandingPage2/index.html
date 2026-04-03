@@ -21,141 +21,145 @@
     </div>
 
     <main class="event-page">
-      <section class="event-header">
-        <h1 class="event-title">
-          매일 밤 <span>10시</span> 이벤트가 시작됩니다!
-        </h1>
+      <div class="event-inner">
+        <section class="event-header">
+          <h1 class="event-title">
+            매일 밤 <span>10시</span> 이벤트가 시작됩니다!
+          </h1>
 
-        <div class="clock" aria-label="현재 시간">
-          <div class="clock-digit" id="hour-tens">0</div>
-          <div class="clock-digit" id="hour-ones">0</div>
-          <div class="clock-colon">:</div>
-          <div class="clock-digit" id="minute-tens">0</div>
-          <div class="clock-digit" id="minute-ones">0</div>
-          <div class="clock-colon">:</div>
-          <div class="clock-digit" id="second-tens">0</div>
-          <div class="clock-digit" id="second-ones">0</div>
-        </div>
-
-        <p class="coupon-count">나의 응모권 갯수 : <strong>3</strong>개</p>
-      </section>
-
-      <section class="event-panel">
-        <p class="panel-desc">응모권을 사용해서 원하는 경품을 얻어보세요!</p>
-
-        <div class="product-form">
-          <div class="product-grid">
-            <!-- 1 -->
-            <label class="product-card selected">
-              <input
-                type="radio"
-                name="gift"
-                value="소니 미러리스 A5100"
-                checked
-              />
-              <div class="product-inner">
-                <h3 class="product-name">소니 미러리스 A5100</h3>
-
-                <div class="product-image-wrap">
-                  <img src="./images/01.png" alt="소니 미러리스 A5100" />
-                </div>
-
-                <p class="product-stock"><strong>24</strong>개 남음</p>
-                <span class="product-radio"></span>
-              </div>
-            </label>
-
-            <!-- 2 -->
-            <label class="product-card disabled">
-              <input
-                type="radio"
-                name="gift"
-                value="신라호텔 더 파크뷰 식사권 2인"
-                disabled
-              />
-              <div class="product-inner">
-                <h3 class="product-name">신라호텔 더 파크뷰<br />식사권 2인</h3>
-
-                <div class="product-image-wrap">
-                  <img
-                    src="./images/02.png"
-                    alt="신라호텔 더 파크뷰 식사권 2인"
-                  />
-                </div>
-
-                <div class="soldout-badge">마감</div>
-
-                <p class="product-stock"><strong>0</strong>개 남음</p>
-                <span class="product-radio"></span>
-              </div>
-            </label>
-
-            <!-- 3 -->
-            <label class="product-card">
-              <input type="radio" name="gift" value="외장하드 1TB" />
-              <div class="product-inner">
-                <h3 class="product-name">외장하드 1TB</h3>
-
-                <div class="product-image-wrap">
-                  <img src="./images/03.jpg" alt="외장하드 1TB" />
-                </div>
-
-                <p class="product-stock"><strong>20</strong>개 남음</p>
-                <span class="product-radio"></span>
-              </div>
-            </label>
-
-            <!-- 4 -->
-            <label class="product-card">
-              <input type="radio" name="gift" value="라미 만년필" />
-              <div class="product-inner">
-                <h3 class="product-name">라미 만년필</h3>
-
-                <div class="product-image-wrap">
-                  <img src="./images/04.png" alt="라미 만년필" />
-                </div>
-
-                <p class="product-stock"><strong>1</strong>개 남음</p>
-                <span class="product-radio"></span>
-              </div>
-            </label>
-
-            <!-- 5 -->
-            <label class="product-card">
-              <input type="radio" name="gift" value="백화점 상품권 1만원" />
-              <div class="product-inner">
-                <h3 class="product-name">백화점 상품권 1만원</h3>
-
-                <div class="product-image-wrap">
-                  <img src="./images/05.png" alt="백화점 상품권 1만원" />
-                </div>
-
-                <p class="product-stock"><strong>30</strong>개 남음</p>
-                <span class="product-radio"></span>
-              </div>
-            </label>
-
-            <!-- 6 -->
-            <label class="product-card">
-              <input type="radio" name="gift" value="바나나맛 우유" />
-              <div class="product-inner">
-                <h3 class="product-name">바나나맛 우유</h3>
-
-                <div class="product-image-wrap">
-                  <img src="./images/06.png" alt="바나나맛 우유" />
-                </div>
-
-                <p class="product-stock"><strong>100</strong>개 남음</p>
-                <span class="product-radio"></span>
-              </div>
-            </label>
+          <div class="clock" aria-label="현재 시간">
+            <div class="clock-digit" id="hour-tens">0</div>
+            <div class="clock-digit" id="hour-ones">0</div>
+            <div class="clock-colon">:</div>
+            <div class="clock-digit" id="minute-tens">0</div>
+            <div class="clock-digit" id="minute-ones">0</div>
+            <div class="clock-colon">:</div>
+            <div class="clock-digit" id="second-tens">0</div>
+            <div class="clock-digit" id="second-ones">0</div>
           </div>
 
-          <button type="button" class="apply-btn" id="openApplyModal">
-            응모하기
-          </button>
-        </div>
-      </section>
+          <p class="coupon-count">나의 응모권 갯수 : <strong>3</strong>개</p>
+        </section>
+
+        <section class="event-panel">
+          <p class="panel-desc">응모권을 사용해서 원하는 경품을 얻어보세요!</p>
+
+          <div class="product-form">
+            <div class="product-grid">
+              <!-- 1 -->
+              <label class="product-card selected">
+                <input
+                  type="radio"
+                  name="gift"
+                  value="소니 미러리스 A5100"
+                  checked
+                />
+                <div class="product-inner">
+                  <h3 class="product-name">소니 미러리스 A5100</h3>
+
+                  <div class="product-image-wrap">
+                    <img src="./images/01.png" alt="소니 미러리스 A5100" />
+                  </div>
+
+                  <p class="product-stock"><strong>3</strong>개 남음</p>
+                  <span class="product-radio"></span>
+                </div>
+              </label>
+
+              <!-- 2 -->
+              <label class="product-card disabled">
+                <input
+                  type="radio"
+                  name="gift"
+                  value="신라호텔 더 파크뷰 식사권 2인"
+                  disabled
+                />
+                <div class="product-inner">
+                  <h3 class="product-name">
+                    신라호텔 더 파크뷰<br />식사권 2인
+                  </h3>
+
+                  <div class="product-image-wrap">
+                    <img
+                      src="./images/02.png"
+                      alt="신라호텔 더 파크뷰 식사권 2인"
+                    />
+                  </div>
+
+                  <div class="soldout-badge">마감</div>
+
+                  <p class="product-stock"><strong>0</strong>개 남음</p>
+                  <span class="product-radio"></span>
+                </div>
+              </label>
+
+              <!-- 3 -->
+              <label class="product-card">
+                <input type="radio" name="gift" value="외장하드 1TB" />
+                <div class="product-inner">
+                  <h3 class="product-name">외장하드 1TB</h3>
+
+                  <div class="product-image-wrap">
+                    <img src="./images/03.jpg" alt="외장하드 1TB" />
+                  </div>
+
+                  <p class="product-stock"><strong>20</strong>개 남음</p>
+                  <span class="product-radio"></span>
+                </div>
+              </label>
+
+              <!-- 4 -->
+              <label class="product-card">
+                <input type="radio" name="gift" value="라미 만년필" />
+                <div class="product-inner">
+                  <h3 class="product-name">라미 만년필</h3>
+
+                  <div class="product-image-wrap">
+                    <img src="./images/04.png" alt="라미 만년필" />
+                  </div>
+
+                  <p class="product-stock"><strong>1</strong>개 남음</p>
+                  <span class="product-radio"></span>
+                </div>
+              </label>
+
+              <!-- 5 -->
+              <label class="product-card">
+                <input type="radio" name="gift" value="백화점 상품권 1만원" />
+                <div class="product-inner">
+                  <h3 class="product-name">백화점 상품권 1만원</h3>
+
+                  <div class="product-image-wrap">
+                    <img src="./images/05.png" alt="백화점 상품권 1만원" />
+                  </div>
+
+                  <p class="product-stock"><strong>30</strong>개 남음</p>
+                  <span class="product-radio"></span>
+                </div>
+              </label>
+
+              <!-- 6 -->
+              <label class="product-card">
+                <input type="radio" name="gift" value="바나나맛 우유" />
+                <div class="product-inner">
+                  <h3 class="product-name">바나나맛 우유</h3>
+
+                  <div class="product-image-wrap">
+                    <img src="./images/06.png" alt="바나나맛 우유" />
+                  </div>
+
+                  <p class="product-stock"><strong>100</strong>개 남음</p>
+                  <span class="product-radio"></span>
+                </div>
+              </label>
+            </div>
+
+            <button type="button" class="apply-btn" id="openApplyModal">
+              응모하기
+            </button>
+          </div>
+        </section>
+      </div>
     </main>
 
     <!-- 모달 -->
