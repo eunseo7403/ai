@@ -69,3 +69,7 @@ input[type="email"] {
   border: none;
   cursor: pointer;
 }
+
+#msg {
+  color: #fff;
+}
