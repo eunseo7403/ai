@@ -126,7 +126,7 @@ body {
 .event-panel {
   width: 100%;
   margin: 0 auto;
-  background: #f4f4f4;
+  background: #fff;
   border: 1px solid #d7d7d7;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
   padding: 34px 54px 40px;
@@ -165,7 +165,7 @@ body {
 .product-inner {
   position: relative;
   min-height: 320px;
-  background: #f8f8f8;
+  background: #fff;
   border: 1px solid #d6d6d6;
   border-radius: 16px;
   text-align: center;
@@ -183,7 +183,7 @@ body {
 .product-card.selected .product-inner,
 .product-card input[type="radio"]:checked + .product-inner {
   border: 2px solid #1d69d8;
-  background: #ffffff;
+  background: #fff;
   box-shadow: inset 0 0 0 1px rgba(29, 105, 216, 0.04);
 }
 
@@ -305,7 +305,7 @@ body {
   height: 88px;
   border: 4px solid #1466d8;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.88);
   color: #1466d8;
   font-size: 20px;
   font-weight: 700;
@@ -353,7 +353,7 @@ body {
 .modal-box {
   position: relative;
   width: 420px;
-  background: #ffffff;
+  background: #fff;
   border-radius: 18px;
   padding: 32px 28px 28px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
@@ -413,6 +413,7 @@ body {
   border-radius: 10px;
   font-size: 15px;
   color: #111111;
+  background: #fff;
   outline: none;
 }
 
@@ -438,7 +439,7 @@ body {
 
 .modal-cancel-btn {
   border: 1px solid #d7d7d7;
-  background: #ffffff;
+  background: #fff;
   color: #333333;
 }
 
