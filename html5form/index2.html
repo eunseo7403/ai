@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>html5 추가 폼 요소 응용</title>
+    <link rel="stylesheet" href="./css/style2.css" />
+  </head>
+  <body>
+    <form action="" name="" method="post">
+      <h1>상품 주문서</h1>
+      <fieldset>
+        <legend>개인 정보</legend>
+        <ul>
+          <li>
+            <label for="">이름</label>
+            <input type="text" placeholder="여백없이 입력" required autofocus />
+          </li>
+          <li>
+            <label for="">비밀번호</label>
+            <input
+              type="password"
+              placeholder="비밀번호를 입력하시오"
+              required
+            />
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>배송지 정보</legend>
+        <ul>
+          <li>
+            <label for="">주소</label>
+            <input type="text" />
+          </li>
+          <li>
+            <label for="">전화번호</label>
+
+            <select name="" id="">
+              <option value="">011</option>
+              <option value="">010</option>
+            </select>
+            -
+            <input class="tel" type="text" maxlength="4" />
+            -
+            <input class="tel" type="text" maxlength="4" />
+          </li>
+          <li>
+            <label for="">메모</label>
+            <textarea
+              name=""
+              id=""
+              rows="2"
+              placeholder="여기에 메모를 입력하세요"
+            ></textarea>
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>주문 정보</legend>
+        <ul>
+          <li>
+            <label for=""> 과태밀라 안티구아 (100g) </label>
+            <input
+              class="nb"
+              type="number"
+              name=""
+              id=""
+              value="0"
+              min="0"
+              max="100"
+            />개
+          </li>
+          <li>
+            <label for=""> 인도네시아 만델링 (100g) </label>
+            <input
+              class="nb"
+              type="number"
+              name=""
+              id=""
+              value="0"
+              min="0"
+              max="100"
+            />개
+          </li>
+          <li>
+            <label for=""> 탐라는도다 (블렌딩) (100g) </label>
+            <input
+              class="nb"
+              type="number"
+              name=""
+              id=""
+              value="0"
+              min="0"
+              max="100"
+            />개
+          </li>
+          <li>
+            <label for="">01</label>
+            <input type="checkbox" name="" id="" />
+            <label for="">02</label>
+            <input type="checkbox" name="" id="" />
+            <label for="">03</label>
+            <input type="checkbox" name="" id="" />
+            <label for="">04</label>
+            <input type="checkbox" name="" id="" />
+          </li>
+          <li>
+            <label for="">r01</label>
+            <input type="radio" name="rnumber" id="" />
+            <label for="">r02</label>
+            <input type="radio" name="rnumber" id="" />
+            <label for="">r03</label>
+            <input type="radio" name="rnumber" id="" />
+            <label for="">r04</label>
+            <input type="radio" name="rnumber" id="" />
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>버튼모음</legend>
+        <button type="submit">주문하기</button>
+      </fieldset>
+    </form>
+  </body>
+</html>

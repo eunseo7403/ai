@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+body {
+  font-family: "맑은 고딕";
+  color: #010109;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+  margin-bottom: 10px;
+  background: #eeeeee;
+  padding: 10px 12px;
+  color: #222222;
+}
+
+form h1 {
+  margin-bottom: 32px;
+}
+
+form {
+  border: 5px solid #ffbfca;
+  padding: 20px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+fieldset {
+  color: #c29670;
+  border: 1px solid #ddc98b;
+  padding: 20px;
+  margin-bottom: 14px;
+}
+
+.tel {
+  width: 36px;
+}
+
+.nb {
+  width: 100px;
+}
+
+button {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 4px;
+}
+
+textarea {
+  width: 340px;
+}
