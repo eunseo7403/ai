@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI 협업 — 직장인을 위한 실무 가이드</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <meta
+      name="description"
+      content="AI 활용이 막막한 직장인에게 실무에서 바로 적용 가능한 AI 협업 방법을 제공합니다."
+    />
+    <meta property="og:title" content="AI 협업 — 직장인을 위한 실무 가이드" />
+    <meta
+      property="og:description"
+      content="반복 업무는 줄이고, 더 중요한 일에 집중하세요."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ════════════════ NAV ════════════════ -->
+    <nav id="navbar">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">AI<span>×</span>Work</a>
+        <ul class="nav-links">
+          <li><a href="#why">왜 AI 협업인가</a></li>
+          <li><a href="#how">실무 활용법</a></li>
+          <li><a href="#change">달라지는 일상</a></li>
+          <li><a href="#" class="nav-cta open-modal">지금 시작하기</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ════════════════ HERO ════════════════ -->
+    <section id="hero">
+      <div class="hero-bg"></div>
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="hero-inner">
+        <!-- Left -->
+        <div>
+          <div class="hero-badge reveal">
+            <span class="badge-dot"></span>
+            직장인 AI 협업 가이드
+          </div>
+          <h1 class="hero-title reveal reveal-delay-1">
+            반복 업무는 AI에게,<br />
+            <span class="highlight">창의적인 일</span>은<br />
+            나에게
+          </h1>
+          <p class="hero-sub reveal reveal-delay-2">
+            AI 활용이 막막한 직장인을 위해,<br />
+            내일 당장 써먹는 실무 AI 협업법을 알려드립니다.
+          </p>
+          <div class="hero-actions reveal reveal-delay-3">
+            <a href="#" class="btn-primary open-modal">
+              지금 바로 시작하기
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="#why" class="btn-ghost">
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="8" x2="12" y2="12" />
+                <line x1="12" y1="16" x2="12.01" y2="16" />
+              </svg>
+              더 알아보기
+            </a>
+          </div>
+          <div class="hero-stats reveal reveal-delay-4">
+            <div class="stat-item">
+              <span class="stat-num"
+                ><span class="counting" data-target="68">0</span
+                ><span>%</span></span
+              >
+              <span class="stat-label">반복 업무 비중 감소</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num"
+                ><span class="counting" data-target="3">0</span
+                ><span>배</span></span
+              >
+              <span class="stat-label">보고서 작성 속도 향상</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num"
+                ><span class="counting" data-target="92">0</span
+                ><span>%</span></span
+              >
+              <span class="stat-label">업무 만족도 상승</span>
+            </div>
+          </div>
+        </div>
+        <!-- Right -->
+        <div class="hero-visual reveal reveal-delay-2">
+          <div class="hero-card-stack">
+            <div class="hcard hcard-back"></div>
+            <div class="hcard hcard-main">
+              <div class="hcard-chip">✨ AI 협업 중</div>
+              <div class="hcard-title">주간 보고서 자동 초안 작성</div>
+              <div class="hcard-body">
+                지난주 실적 데이터를 바탕으로 AI가 초안을 완성했습니다.
+              </div>
+              <div class="hcard-progress-wrap">
+                <div class="hcard-progress-label">
+                  <span>작업 진행률</span><span>85%</span>
+                </div>
+                <div class="hcard-bar">
+                  <div class="hcard-bar-fill" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="hcard-progress-wrap" style="margin-top: 8px">
+                <div class="hcard-progress-label">
+                  <span>시간 절감</span><span>2시간 → 25분</span>
+                </div>
+                <div class="hcard-bar">
+                  <div class="hcard-bar-fill" style="width: 72%"></div>
+                </div>
+              </div>
+              <div class="hcard-avatars">
+                <div class="avatar av1">K</div>
+                <div class="avatar av2">L</div>
+                <div class="avatar av3">P</div>
+                <div class="avatar av4">J</div>
+                <span class="avatar-label">함께 쓰는 팀원 4명</span>
+              </div>
+            </div>
+            <div class="mini-card mini-card-1">
+              <span class="mini-icon">⚡</span>
+              <span
+                >이메일 초안 완성
+                <strong style="color: var(--blue)">30초</strong></span
+              >
+            </div>
+            <div class="mini-card mini-card-2">
+              <span class="mini-icon">🎯</span>
+              <span
+                >오늘 절감한 시간
+                <strong style="color: #10b981">2h 15m</strong></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════ WHY ════════════════ -->
+    <section id="why">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-eyebrow">왜 지금 AI 협업인가</p>
+          <h2 class="section-title">
+            막막했던 AI,<br />이제 실무 도구가 될 때
+          </h2>
+          <p class="section-sub">
+            여전히 반복 업무에 시간을 쏟고 있다면, AI는 이미 당신의 동료가
+            되어있을 수 있습니다.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-card reveal reveal-delay-1">
+            <div class="why-icon">📋</div>
+            <div class="why-card-title">보고서·문서 작성</div>
+            <div class="why-card-body">
+              매주 반복되는 보고서 작성에 몇 시간을 쓰고 계신가요? 같은 형식,
+              같은 구조를 매번 처음부터 작성하는 비효율을 AI가 해결합니다.
+            </div>
+            <div class="why-before-after">
+              <div class="ba-item ba-before">
+                <div class="ba-label">Before</div>
+                주간 보고서 작성<br />매주 <strong>2~3시간</strong>
+              </div>
+              <div class="ba-item ba-after">
+                <div class="ba-label">After</div>
+                AI 초안 + 검토<br />단 <strong>20분</strong> 완성
+              </div>
+            </div>
+          </div>
+          <div class="why-card reveal reveal-delay-2">
+            <div class="why-icon">📧</div>
+            <div class="why-card-title">이메일·커뮤니케이션</div>
+            <div class="why-card-body">
+              같은 맥락의 이메일을 유형별로 반복 작성하는 일, AI에게
+              템플릿화시키면 클릭 몇 번으로 완성할 수 있습니다.
+            </div>
+            <div class="why-before-after">
+              <div class="ba-item ba-before">
+                <div class="ba-label">Before</div>
+                협력사 제안 이메일<br /><strong>30~45분</strong> 작성
+              </div>
+              <div class="ba-item ba-after">
+                <div class="ba-label">After</div>
+                상황 입력 → AI 작성<br /><strong>5분</strong> 이내 발송
+              </div>
+            </div>
+          </div>
+          <div class="why-card reveal reveal-delay-3">
+            <div class="why-icon">🗂️</div>
+            <div class="why-card-title">회의·자료 준비</div>
+            <div class="why-card-body">
+              회의 아젠다 정리, 발표 자료 구조화, 회의록 작성. 회의 전후로
+              소비되는 시간을 AI로 획기적으로 줄일 수 있습니다.
+            </div>
+            <div class="why-before-after">
+              <div class="ba-item ba-before">
+                <div class="ba-label">Before</div>
+                회의 준비 + 회의록<br /><strong>1~2시간</strong> 소요
+              </div>
+              <div class="ba-item ba-after">
+                <div class="ba-label">After</div>
+                구조 + 요약 자동화<br /><strong>15분</strong> 완성
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-stat-row">
+          <div class="stat-callout reveal reveal-delay-1">
+            <span class="num counting" data-target="73">0</span>%
+            <div class="desc">
+              직장인이 반복 업무에<br />하루 2시간 이상 소비
+            </div>
+          </div>
+          <div
+            class="stat-callout reveal reveal-delay-2"
+            style="background: #f0fdf4; color: #166534"
+          >
+            <span class="num counting" style="color: #16a34a" data-target="40"
+              >0</span
+            >%
+            <div class="desc" style="color: #166534">
+              AI 도입 후 업무 시간<br />평균 단축 비율
+            </div>
+          </div>
+          <div
+            class="stat-callout reveal reveal-delay-3"
+            style="background: #fef3c7; color: #92400e"
+          >
+            <span class="num counting" style="color: #d97706" data-target="89"
+              >0</span
+            >%
+            <div class="desc" style="color: #92400e">
+              AI 협업 경험 후<br />지속 사용 의향
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════ HOW ════════════════ -->
+    <section id="how">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-eyebrow">실무 활용법</p>
+          <h2 class="section-title">직군별로 바로 쓰는<br />AI 협업 레시피</h2>
+          <p class="section-sub">
+            내 업무에 맞는 탭을 선택하고, 내일부터 바로 적용해보세요.
+          </p>
+        </div>
+
+        <div class="tabs reveal reveal-delay-1">
+          <button class="tab-btn active" data-tab="planning">
+            🗺️ 기획·전략
+          </button>
+          <button class="tab-btn" data-tab="marketing">📣 마케팅</button>
+          <button class="tab-btn" data-tab="hr">👥 HR·운영</button>
+          <button class="tab-btn" data-tab="sales">💼 영업·제안</button>
+        </div>
+
+        <!-- 기획 탭 -->
+        <div class="tab-panel active" id="tab-planning">
+          <div class="how-card reveal">
+            <div class="how-step">
+              <div class="step-num">1</div>
+              <div class="step-label">상황</div>
+            </div>
+            <div class="how-card-title">신규 프로젝트 기획안 작성</div>
+            <div class="how-card-body">
+              신규 서비스 기획안의 목차 구조, SWOT, 실행 계획을 빠르게 초안으로
+              만들어야 할 때
+            </div>
+            <div class="prompt-box">
+              <p>
+                "B2B SaaS 기업의 HR 자동화 서비스 기획안을 작성해줘. 시장 현황,
+                타겟 고객, 핵심 기능 3가지, 3개월 로드맵 포함. 실무 기획서
+                형식으로."
+              </p>
+            </div>
+            <div class="how-result">
+              ✅ 기대 효과: 초안 작성 시간 80% 단축, 논리 구조 검증 동시 가능
+            </div>
+          </div>
+          <div class="how-card reveal reveal-delay-1">
+            <div class="how-step">
+              <div class="step-num">2</div>
+              <div class="step-label">상황</div>
+            </div>
+            <div class="how-card-title">경쟁사 분석 리포트 정리</div>
+            <div class="how-card-body">
+              여러 출처의 경쟁사 정보를 수집하고, 비교 분석 프레임으로 정리해야
+              할 때
+            </div>
+            <div class="prompt-box">
+              <p>
+                "아래 경쟁사 3곳의 정보를 바탕으로 가격, 타겟, 핵심 기능, 약점을
+                비교하는 표를 만들고, 우리 서비스의 포지셔닝 전략을 제안해줘.
+                [정보 붙여넣기]"
+              </p>
+            </div>
+            <div class="how-result">
+              ✅ 기대 효과: 분산된 정보의 구조화 + 전략적 인사이트 도출
+            </div>
+          </div>
+        </div>
+
+        <!-- 마케팅 탭 -->
+        <div class="tab-panel" id="tab-marketing">
+          <div class="how-card reveal">
+            <div class="how-step">
+              <div class="step-num">1</div>
+              <div class="step-label">상황</div>
+            </div>
+            <div class="how-card-title">SNS 콘텐츠 기획·카피라이팅</div>
+            <div class="how-card-body">
+              인스타그램, 링크드인, 뉴스레터용 콘텐츠를 채널별로 최적화해서
+              빠르게 제작해야 할 때
+            </div>
+            <div class="prompt-box">
+              <p>
+                "HR SaaS 신규 기능 출시 소식을 인스타그램, 링크드인, 뉴스레터
+                3가지 채널에 맞게 각각 다른 톤으로 작성해줘. 타겟은 HR 담당자
+                30~40대."
+              </p>
+            </div>
+            <div class="how-result">
+              ✅ 기대 효과: 채널 3개 콘텐츠를 동시에, 30분 → 5분
+            </div>
+          </div>
+          <div class="how-card reveal reveal-delay-1">
+            <div class="how-step">
+              <div class="step-num">2</div>
+              <div class="step-label">상황</div>
+            </div>
+            <div class="how-card-title">광고 카피 A/B 변형 제작</div>
+            <div class="how-card-body">
+              퍼포먼스 마케팅을 위해 동일 메시지의 다양한 카피 변형을 빠르게
+              생성해야 할 때
+            </div>
+            <div class="prompt-box">
+              <p>
+                "'업무 시간을 절반으로 줄이는 AI 도구'라는 핵심 메시지로 감성형,
+                이성형, 긴급형 3가지 광고 카피를 각 3개씩 작성해줘."
+              </p>
+            </div>
+            <div class="how-result">
+              ✅ 기대 효과: 9개 카피 변형을 5분 내 생성, 즉시 테스트 가능
+            </div>
+          </div>
+        </div>
+
+        <!-- HR 탭 -->
+        <div class="tab-panel" id="tab-hr">
+          <div class="how-card reveal">
+            <div class="how-step">
+              <div class="step-num">1</div>
+              <div class="step-label">상황</div>
+            </div>
+            <div class="how-card-title">채용 공고 및 JD 작성</div>
+            <div class="how-card-body">
+              포지션별 직무기술서를 일관된 형식으로, 매력적인 어조로 빠르게
+              작성해야 할 때
+            </div>
+            <div class="prompt-box">
+              <p>
+                "B2B SaaS 스타트업의 마케팅 매니저 채용 공고를 작성해줘. 주요
+                업무 5가지, 자격요건, 우대사항, 복지 포함. 열정적이지만 과장
+                없는 톤으로."
+              </p>
+            </div>
+            <div class="how-result">
+              ✅ 기대 효과: JD 초안 작성 1시간 → 10분, 품질 일관성 유지
+            </div>
+          </div>
+          <div class="how-card reveal reveal-delay-1">
+            <div class="how-step">
+              <div class="step-num">2</div>
+              <div class="step-label">상황</div>
+            </div>
+            <div class="how-card-title">면접 질문 세트 설계</div>
+            <div class="how-card-body">
+              포지션 특성에 맞는 역량 기반 면접 질문과 평가 기준을 구조화해야 할
+              때
+            </div>
+            <div class="prompt-box">
+              <p>
+                "데이터 분석가 채용을 위한 역량 기반 면접 질문 10개를 작성해줘.
+                기술 역량, 문제 해결, 커뮤니케이션, 성장 가능성 영역 각
+                2~3개씩."
+              </p>
+            </div>
+            <div class="how-result">
+              ✅ 기대 효과: 면접 준비 시간 단축, 일관된 평가 기준 확보
+            </div>
+          </div>
+        </div>
+
+        <!-- 영업 탭 -->
+        <div class="tab-panel" id="tab-sales">
+          <div class="how-card reveal">
+            <div class="how-step">
+              <div class="step-num">1</div>
+              <div class="step-label">상황</div>
+            </div>
+            <div class="how-card-title">제안서 초안 및 맞춤 커버레터</div>
+            <div class="how-card-body">
+              고객사 정보를 바탕으로 개인화된 제안서와 이메일을 신속하게
+              작성해야 할 때
+            </div>
+            <div class="prompt-box">
+              <p>
+                "다음 고객사 정보를 바탕으로 맞춤형 제안 이메일을 작성해줘.
+                [회사명: 삼성물산 / 고민: HR 자동화 / 담당자: 인사팀 차장].
+                친근하지만 전문적인 톤."
+              </p>
+            </div>
+            <div class="how-result">
+              ✅ 기대 효과: 개인화 제안 이메일 45분 → 5분, 발송 수 3배 증가
+            </div>
+          </div>
+          <div class="how-card reveal reveal-delay-1">
+            <div class="how-step">
+              <div class="step-num">2</div>
+              <div class="step-label">상황</div>
+            </div>
+            <div class="how-card-title">고객 이의 처리 스크립트</div>
+            <div class="how-card-body">
+              반복되는 고객 이의 유형에 대한 응대 스크립트를 표준화하고 팀에
+              공유해야 할 때
+            </div>
+            <div class="prompt-box">
+              <p>
+                "SaaS 영업 시 자주 나오는 이의 5가지 유형을 정리하고, 각각에
+                대한 공감 → 재구성 → 대안 제시 구조의 응대 스크립트를 작성해줘."
+              </p>
+            </div>
+            <div class="how-result">
+              ✅ 기대 효과: 팀 전체 응대 품질 표준화, 신규 영업 온보딩 시간 단축
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════ CHANGE ════════════════ -->
+    <section id="change">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-eyebrow">달라지는 일하는 방식</p>
+          <h2 class="section-title">AI 협업 후,<br />무엇이 달라지나요?</h2>
+          <p class="section-sub">
+            단순히 시간이 줄어드는 것이 아닙니다. 일을 대하는 감정과 태도가
+            달라집니다.
+          </p>
+        </div>
+
+        <div class="change-grid">
+          <div class="change-card reveal reveal-delay-1">
+            <div class="change-icon-wrap">🎯</div>
+            <div>
+              <div class="change-card-title">중요한 일에만 집중하게 됩니다</div>
+              <div class="change-card-body">
+                반복 업무가 줄어들면 에너지는 고부가가치 업무로 재배분됩니다.
+                전략 수립, 관계 구축, 창의적 문제 해결 — 진짜 중요한 일들이요.
+              </div>
+              <div class="change-quote">
+                "이제 보고서 작성이 아니라 보고서 내용에 시간을 쓸 수 있게
+                됐어요"
+              </div>
+            </div>
+          </div>
+          <div class="change-card reveal reveal-delay-2">
+            <div class="change-icon-wrap">⚡</div>
+            <div>
+              <div class="change-card-title">의사결정이 빨라집니다</div>
+              <div class="change-card-body">
+                데이터 정리, 비교 분석, 초안 작성이 빨라지면 자연스럽게 실행
+                속도도 빨라집니다. 아이디어에서 실행까지의 거리가 짧아집니다.
+              </div>
+              <div class="change-quote">
+                "아이디어가 떠오르면 바로 초안을 만들어 공유할 수 있게 됐어요"
+              </div>
+            </div>
+          </div>
+          <div class="change-card reveal reveal-delay-1">
+            <div class="change-icon-wrap">🌱</div>
+            <div>
+              <div class="change-card-title">번아웃이 줄어듭니다</div>
+              <div class="change-card-body">
+                소모적인 반복 업무는 번아웃의 주요 원인입니다. AI가 그 부분을
+                맡아주면, 업무 에너지가 오래 유지됩니다. 퇴근 후 여유도
+                생깁니다.
+              </div>
+              <div class="change-quote">
+                "야근 횟수가 눈에 띄게 줄었고, 업무 집중력도 높아졌어요"
+              </div>
+            </div>
+          </div>
+          <div class="change-card reveal reveal-delay-2">
+            <div class="change-icon-wrap">✨</div>
+            <div>
+              <div class="change-card-title">일이 다시 즐거워집니다</div>
+              <div class="change-card-body">
+                AI로 루틴을 넘기면, 업무에서 좋아하는 부분만 남습니다. 사람들과
+                대화하고, 문제를 푸는 재미, 결과를 만드는 보람이 다시
+                느껴집니다.
+              </div>
+              <div class="change-quote">
+                "이 일을 왜 선택했는지 다시 떠올리게 됐어요"
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="emotion-banner reveal">
+          <div class="emotion-text">
+            <div class="emotion-title">
+              당신이 가장 잘 하는 일,<br />가장 좋아하는 일에 집중하세요.
+            </div>
+            <div class="emotion-sub">
+              AI는 도구입니다. 반복을 맡기고, 인간만이 할 수 있는 일에 에너지를
+              쏟을 수 있도록 도와드립니다.
+            </div>
+          </div>
+          <a
+            href="#"
+            class="btn-primary open-modal"
+            style="
+              flex-shrink: 0;
+              background: white;
+              color: var(--blue);
+              box-shadow: none;
+            "
+          >
+            시작하기
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════ CTA ════════════════ -->
+    <section id="cta">
+      <div class="container">
+        <div class="cta-box reveal">
+          <div class="cta-title">지금 바로 시작할 준비가<br />되셨나요?</div>
+          <p class="cta-sub">
+            구글 폼에서 간단한 정보를 입력하시면,<br />
+            실무에서 바로 쓸 수 있는 AI 협업 가이드를 보내드립니다.
+          </p>
+          <a href="#" class="btn-cta open-modal" id="ctaBtn">
+            📋 구글 폼 바로가기
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+          <p
+            style="
+              margin-top: 20px;
+              font-size: 0.8rem;
+              color: rgba(255, 255, 255, 0.35);
+            "
+          >
+            * 스팸 없음 · 언제든지 구독 취소 가능
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════ FOOTER ════════════════ -->
+    <footer>
+      <p
+        style="
+          margin-bottom: 8px;
+          font-weight: 600;
+          color: rgba(255, 255, 255, 0.7);
+          font-size: 0.88rem;
+        "
+      >
+        AI×Work
+      </p>
+      <p>직장인을 위한 AI 협업 가이드 · 실무에서 바로 쓰는 방법을 전달합니다</p>
+      <p style="margin-top: 16px; font-size: 0.76rem">
+        © 2025 AI×Work · <a href="#">개인정보 처리방침</a> ·
+        <a href="#">문의하기</a>
+      </p>
+    </footer>
+
+    <!-- ════════════════ MODAL ════════════════ -->
+    <div class="modal-overlay" id="formModal">
+      <div class="modal-box">
+        <div class="modal-header">
+          <div class="modal-title">📋 <span>AI×Work</span> — 신청 폼</div>
+          <button class="modal-close" id="modalClose" aria-label="닫기">
+            ✕
+          </button>
+        </div>
+
+        <div class="modal-form-wrap">
+          <p class="modal-form-desc">
+            아래 정보를 남겨주시면 AI 협업 가이드를 보내드립니다.
+          </p>
+
+          <form
+            id="leadForm"
+            class="lead-form"
+            action="https://script.google.com/macros/s/AKfycbwkugidLos6VtX-nCz4VsVM8cxggh3ptAYIIoZZ9rJjHug4brUTHk0qiHTWMzj6kv_9Ww/exec"
+            method="POST"
+            target="hidden_iframe"
+          >
+            <div class="form-group">
+              <label for="userName">이름</label>
+              <input
+                type="text"
+                id="userName"
+                name="name"
+                placeholder="이름을 입력해주세요"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="userPhone">전화번호</label>
+              <input
+                type="tel"
+                id="userPhone"
+                name="phone"
+                placeholder="010-0000-0000"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="userEmail">이메일 주소</label>
+              <input
+                type="email"
+                id="userEmail"
+                name="email"
+                placeholder="example@email.com"
+                required
+              />
+            </div>
+
+            <button type="submit" class="form-submit-btn">지금 신청하기</button>
+
+            <p class="form-note">
+              입력하신 정보는 신청 안내 및 연락 목적으로만 사용됩니다.
+            </p>
+            <p class="form-message" id="formMessage" aria-live="polite"></p>
+          </form>
+
+          <iframe
+            name="hidden_iframe"
+            id="hidden_iframe"
+            title="hidden frame"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+    <script src="./script/script.js"></script>
+  </body>
+</html>
