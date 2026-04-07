@@ -1,0 +1,314 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2")
+    format("woff2");
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2")
+    format("woff2");
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2")
+    format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2")
+    format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2")
+    format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2")
+    format("woff2");
+  font-weight: 900;
+  font-display: swap;
+}
+
+body {
+  font-family: "Pretendard";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 헤더 영역 */
+header {
+  width: 1200px;
+  height: 150px;
+  background: #ccc;
+  margin: 0 auto;
+  /* 박스 옆으로 배치 */
+  display: flex;
+  justify-content: space-between;
+  /* 부모 요소 기준으로 위아래 가운데 정렬 */
+  align-items: center;
+}
+
+/* 헤더-서치 */
+header .search {
+  width: 350px;
+  height: 60px;
+  background: red;
+}
+
+/* 헤더-로고 */
+header .logo {
+  width: 350px;
+  height: 70px;
+  background: forestgreen;
+}
+
+/* 헤더-오른쪽 박스 */
+header .right {
+  width: 350px;
+  height: 90px;
+  background: blueviolet;
+}
+
+/* 배너(슬라이드) 영역 */
+#slider {
+  width: 100%;
+  height: 450px;
+  background: #777;
+}
+
+/* 메인 영역 */
+main {
+  width: 1200px;
+  /* 최소 높이 */
+  min-height: 600px;
+  /* background: #ccc; */
+  margin: 0 auto;
+}
+
+/* 타이틀 */
+main .title {
+  text-align: center;
+}
+
+main .title h2 {
+  margin-bottom: 16px;
+  font-size: 28px;
+  font-weight: 600;
+  color: #111;
+}
+
+main .title p {
+  margin-bottom: 42px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #505050;
+}
+
+/* 반찬 영역 */
+main .banchan {
+  width: 100%;
+  height: 1256px;
+  padding: 50px 16px 16px;
+}
+
+/* 제품 박스 8개 */
+main .banchan .product {
+  width: 100%;
+  /* 자식 요소 옆으로 배치 */
+  display: flex;
+  /* 카드 사이 여백 */
+  gap: 16px;
+  /* 사이즈가 넘칠 경우 줄바꿈 */
+  flex-wrap: wrap;
+}
+
+/* 카드 영역 */
+main .banchan .product .card {
+  width: 280px;
+}
+
+main .banchan .product .card .imgbox {
+  width: 100%;
+  height: 370px;
+}
+
+main .banchan .product .card .imgbox img {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  /* 이미지 왜곡 발생하지 않게 */
+  object-fit: cover;
+}
+
+main .banchan .product .card .info {
+  width: 100%;
+  height: 162px;
+  padding: 16px 2px;
+  background: #fff;
+}
+
+main .banchan .product .card .info .tag-new {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #bd2420;
+  background: #f5dede;
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+main .banchan .product .card .info .tag-hot {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #316f35;
+  background: #dbe6dc;
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+main .banchan .product .card .info .tag-spicy {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #f39f1a;
+  background: #fdf0dc;
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+main .banchan .product .card .info h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #111;
+}
+
+main .banchan .product .card .info p {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  color: #505050;
+}
+
+main .banchan .product .card .info h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #111;
+}
+
+main .banchan .product .card .info .sale {
+  font-size: 18px;
+  font-weight: bold;
+  color: #bd2420;
+  margin-bottom: 8px;
+}
+
+main .banchan .product .card .info .price {
+  font-size: 14px;
+  font-weight: 400;
+  color: #767676;
+  text-decoration: line-through;
+}
+
+/* 정기적 반찬 */
+main .day-banchan {
+  width: 100%;
+  height: 600px;
+  border: 5px solid blue;
+}
+
+/* 신제품 반찬 */
+main .new-banchan {
+  width: 100%;
+  height: 1000px;
+  border: 5px solid red;
+}
+
+/* 배너 영역 */
+main .banner {
+  width: 100%;
+  height: 200px;
+  border: 5px solid green;
+}
+
+/* MD 추천 반찬 */
+main .md-banchan {
+  width: 100%;
+  height: 1000px;
+  border: 5px solid yellow;
+}
+
+/* Footer 영역 */
+footer {
+  width: 1200px;
+  height: 200px;
+  background: #777;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .footer-left {
+  width: 385px;
+  height: 125px;
+  background: indianred;
+}
+
+footer .footer-right {
+  width: 775px;
+  height: 125px;
+  background: cadetblue;
+}
