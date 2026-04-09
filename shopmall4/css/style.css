@@ -1,0 +1,576 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2")
+    format("woff2");
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2")
+    format("woff2");
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2")
+    format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2")
+    format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2")
+    format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2")
+    format("woff2");
+  font-weight: 900;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Pretendard", sans-serif;
+  background: #fff;
+  color: #111;
+  padding-top: 150px;
+}
+
+/* 헤더 영역 */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: #fff;
+  display: grid;
+  grid-template-columns: 350px 1fr 350px;
+  align-items: center;
+  padding-left: max(16px, calc((100% - 1200px) / 2));
+  padding-right: max(16px, calc((100% - 1200px) / 2));
+  z-index: 9999;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+header .search {
+  width: 350px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+header .search .search-box {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  background: #fff;
+  padding: 4px 5px 4px 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+header .search .search-box input {
+  flex: 1;
+  height: 100%;
+  border: 0;
+  outline: none;
+  background: transparent;
+  padding: 0 16px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #111111;
+  font-family: "Pretendard", sans-serif;
+}
+
+header .search .search-box input::placeholder {
+  color: #bcbcbc;
+}
+
+header .search .search-btn {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 8px;
+  background: #0f5f17;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+header .search .search-btn img {
+  width: 22px;
+  height: 22px;
+  display: block;
+  object-fit: contain;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+}
+
+header .logo a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .logo img {
+  display: block;
+  width: auto;
+  max-width: 220px;
+  max-height: 62px;
+  object-fit: contain;
+}
+
+header .right {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 18px;
+}
+
+header .right .top-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+header .right .top-menu a {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  color: #767676;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+header .right .bottom-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+header .right .bottom-menu a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1;
+  color: #333;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+header .right .bottom-menu a img {
+  width: 16px;
+  height: 16px;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* 배너(슬라이드) 영역 */
+#slider {
+  width: 100%;
+  height: 450px;
+  background: #777;
+}
+
+/* 메인 영역 */
+main {
+  width: 1200px;
+  min-height: 600px;
+  margin: 0 auto;
+}
+
+/* 공통 타이틀 */
+main .title {
+  text-align: center;
+}
+
+main .title h2 {
+  margin-bottom: 16px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+}
+
+main .title p {
+  margin-bottom: 42px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #505050;
+}
+
+/* 반찬 영역 */
+main .banchan {
+  width: 100%;
+  height: 1256px;
+  padding: 50px 16px 16px;
+}
+
+main .banchan .product {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* 집밥 한 끼 */
+main .day-banchan {
+  width: 100%;
+  padding: 52px 16px 16px;
+}
+
+main .day-banchan .title h2 {
+  margin-bottom: 14px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #111;
+}
+
+main .day-banchan .title p {
+  margin-bottom: 46px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #6f7f73;
+}
+
+main .day-banchan .meal-list {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+}
+
+/* 반찬 / 집밥 카드 공통 */
+main .banchan .card,
+main .day-banchan .meal-card {
+  width: 280px;
+  background: #fff;
+}
+
+main .banchan .card-thumb,
+main .day-banchan .meal-thumb {
+  position: relative;
+  width: 280px;
+  height: 380px;
+  background: #fff;
+  overflow: hidden;
+}
+
+main .banchan .card-thumb .food-img,
+main .day-banchan .meal-thumb .food-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+main .banchan .card-info,
+main .day-banchan .meal-info {
+  width: 100%;
+  min-height: 157px;
+  padding: 12px 0 16px;
+  background: #fff;
+}
+
+main .banchan .card-info .tag-wrap,
+main .day-banchan .meal-info .tag-wrap {
+  margin-bottom: 8px;
+}
+
+main .banchan .card-info .tag,
+main .day-banchan .meal-info .meal-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 4px 5px;
+  border-radius: 3px;
+  margin-right: 4px;
+}
+
+main .banchan .card-info .tag.tag-new,
+main .day-banchan .meal-info .meal-tag.tag-new {
+  color: #d24e44;
+  background: #f7d9d3;
+}
+
+main .banchan .card-info .tag.tag-hot {
+  color: #3b7f44;
+  background: #dbe6dc;
+}
+
+main .banchan .card-info .tag.tag-mild,
+main .day-banchan .meal-info .meal-tag.tag-mild {
+  color: #e29a1f;
+  background: #f9edd8;
+}
+
+main .banchan .card-info h3,
+main .day-banchan .meal-info h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #111;
+  margin-bottom: 6px;
+  word-break: keep-all;
+}
+
+main .banchan .card-info p,
+main .day-banchan .meal-info p {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #767676;
+  margin-bottom: 6px;
+  word-break: keep-all;
+}
+
+main .banchan .card-info .price-row,
+main .day-banchan .meal-info .price-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+main .banchan .card-info .price-row .sale,
+main .day-banchan .meal-info .price-row .sale {
+  font-size: 17px;
+  font-weight: 700;
+  color: #d84035;
+}
+
+main .banchan .card-info .price-row strong,
+main .day-banchan .meal-info .price-row strong {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111;
+}
+
+main .banchan .card-info .origin-price,
+main .day-banchan .meal-info .origin-price {
+  font-size: 13px;
+  font-weight: 600;
+  color: #b2b2b2;
+  text-decoration: line-through;
+}
+
+main .banchan .card-info .origin-price.empty-price {
+  visibility: hidden;
+}
+
+/* 집밥 한 끼 포지션 배지 */
+main .day-banchan .meal-thumb .sale-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 58px;
+  height: 58px;
+  display: block;
+  object-fit: contain;
+  z-index: 2;
+}
+
+main .day-banchan .meal-thumb .lock-badge {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  width: 42px;
+  height: 42px;
+  display: block;
+  object-fit: contain;
+  z-index: 2;
+}
+
+/* 신제품 반찬 */
+main .new-banchan {
+  width: 100%;
+  height: 1000px;
+  background: #e98b8c;
+}
+
+/* 배너 영역 */
+main .banner {
+  width: 100%;
+  height: 200px;
+  background: #8b9be9;
+}
+
+/* MD 추천 반찬 */
+main .md-banchan {
+  width: 100%;
+  height: 1000px;
+  background: #c86ae9;
+}
+
+/* Footer 영역 */
+footer {
+  width: 100%;
+  background: #ffffff;
+  border-top: 1px solid #e0e0e0;
+}
+
+footer .footer-inner {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 42px 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+footer .footer-left {
+  width: 360px;
+  background: transparent;
+}
+
+footer .footer-right {
+  width: 760px;
+  background: transparent;
+}
+
+footer .footer-left h2 {
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #333333;
+}
+
+footer .footer-left strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #333333;
+}
+
+footer .footer-left a {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #333333;
+  text-decoration: none;
+}
+
+footer .footer-left p {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #767676;
+  word-break: keep-all;
+}
+
+footer .footer-right h2 {
+  margin-bottom: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #767676;
+}
+
+footer .footer-right .company-info {
+  margin-bottom: 18px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #333333;
+  word-break: keep-all;
+}
+
+footer .footer-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+footer .footer-links a {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #767676;
+  text-decoration: underline;
+}
+
+footer .footer-links span {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  color: #cccccc;
+}
+
+footer .copyright {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #cccccc;
+}
