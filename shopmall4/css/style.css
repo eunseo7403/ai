@@ -284,20 +284,6 @@ main .day-banchan {
   padding: 52px 16px 16px;
 }
 
-main .day-banchan .title h2 {
-  margin-bottom: 14px;
-  font-size: 28px;
-  font-weight: 800;
-  color: #111;
-}
-
-main .day-banchan .title p {
-  margin-bottom: 46px;
-  font-size: 15px;
-  font-weight: 600;
-  color: #6f7f73;
-}
-
 main .day-banchan .meal-list {
   width: 100%;
   display: flex;
