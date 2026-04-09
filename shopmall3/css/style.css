@@ -1,0 +1,374 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2")
+    format("woff2");
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2")
+    format("woff2");
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2")
+    format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2")
+    format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2")
+    format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2")
+    format("woff2");
+  font-weight: 900;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Pretendard", sans-serif;
+}
+
+/* 헤더 영역 */
+header {
+  width: 1200px;
+  height: 150px;
+  background: #ccc;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 헤더-서치 */
+header .search {
+  width: 350px;
+  height: 60px;
+  background: red;
+}
+
+/* 헤더-로고 */
+header .logo {
+  width: 350px;
+  height: 70px;
+  background: forestgreen;
+}
+
+/* 헤더-오른쪽 박스 */
+header .right {
+  width: 350px;
+  height: 90px;
+  background: blueviolet;
+}
+
+/* 배너(슬라이드) 영역 */
+#slider {
+  width: 100%;
+  height: 450px;
+  background: #777;
+}
+
+/* 메인 영역 */
+main {
+  width: 1200px;
+  min-height: 600px;
+  margin: 0 auto;
+}
+
+/* 공통 타이틀 */
+main .title {
+  text-align: center;
+}
+
+main .title h2 {
+  margin-bottom: 16px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+}
+
+main .title p {
+  margin-bottom: 42px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #505050;
+}
+
+/* 반찬 영역 */
+main .banchan {
+  width: 100%;
+  height: 1256px;
+  padding: 50px 16px 16px;
+}
+
+main .banchan .product {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* 집밥 한 끼 */
+main .day-banchan {
+  width: 100%;
+  padding: 52px 16px 16px;
+}
+
+main .day-banchan .title h2 {
+  margin-bottom: 14px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #111;
+}
+
+main .day-banchan .title p {
+  margin-bottom: 46px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #6f7f73;
+}
+
+main .day-banchan .meal-list {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+}
+
+/* 반찬 / 집밥 카드 공통 */
+main .banchan .card,
+main .day-banchan .meal-card {
+  width: 280px;
+  background: #fff;
+}
+
+main .banchan .card-thumb,
+main .day-banchan .meal-thumb {
+  position: relative;
+  width: 280px;
+  height: 380px;
+  background: #fff;
+  overflow: hidden;
+}
+
+main .banchan .card-thumb .food-img,
+main .day-banchan .meal-thumb .food-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+main .banchan .card-info,
+main .day-banchan .meal-info {
+  width: 100%;
+  min-height: 157px;
+  padding: 16px 14px 18px;
+  background: #fff;
+}
+
+main .banchan .card-info .tag-wrap,
+main .day-banchan .meal-info .tag-wrap {
+  margin-bottom: 8px;
+}
+
+main .banchan .card-info .tag,
+main .day-banchan .meal-info .meal-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 4px 5px;
+  border-radius: 3px;
+  margin-right: 4px;
+}
+
+main .banchan .card-info .tag.tag-new,
+main .day-banchan .meal-info .meal-tag.tag-new {
+  color: #d24e44;
+  background: #f7d9d3;
+}
+
+main .banchan .card-info .tag.tag-hot {
+  color: #3b7f44;
+  background: #dbe6dc;
+}
+
+main .banchan .card-info .tag.tag-mild,
+main .day-banchan .meal-info .meal-tag.tag-mild {
+  color: #e29a1f;
+  background: #f9edd8;
+}
+
+main .banchan .card-info h3,
+main .day-banchan .meal-info h3 {
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.35;
+  color: #111;
+  margin-bottom: 8px;
+  word-break: keep-all;
+}
+
+main .banchan .card-info p,
+main .day-banchan .meal-info p {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #767676;
+  margin-bottom: 10px;
+  word-break: keep-all;
+}
+
+main .banchan .card-info .price-row,
+main .day-banchan .meal-info .price-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 6px;
+}
+
+main .banchan .card-info .price-row .sale,
+main .day-banchan .meal-info .price-row .sale {
+  font-size: 14px;
+  font-weight: 800;
+  color: #d84035;
+}
+
+main .banchan .card-info .price-row strong,
+main .day-banchan .meal-info .price-row strong {
+  font-size: 17px;
+  font-weight: 900;
+  color: #111;
+}
+
+main .banchan .card-info .origin-price,
+main .day-banchan .meal-info .origin-price {
+  font-size: 13px;
+  font-weight: 600;
+  color: #b2b2b2;
+  text-decoration: line-through;
+}
+
+main .banchan .card-info .origin-price.empty-price {
+  visibility: hidden;
+}
+
+/* 집밥 한 끼 포지션 배지 */
+main .day-banchan .meal-thumb .sale-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 58px;
+  height: 58px;
+  display: block;
+  object-fit: contain;
+  z-index: 2;
+}
+
+main .day-banchan .meal-thumb .lock-badge {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  width: 42px;
+  height: 42px;
+  display: block;
+  object-fit: contain;
+  z-index: 2;
+}
+
+/* 신제품 반찬 */
+main .new-banchan {
+  width: 100%;
+  height: 1000px;
+  background: #e98b8c;
+}
+
+/* 배너 영역 */
+main .banner {
+  width: 100%;
+  height: 200px;
+  background: #8b9be9;
+}
+
+/* MD 추천 반찬 */
+main .md-banchan {
+  width: 100%;
+  height: 1000px;
+  background: #c86ae9;
+}
+
+/* Footer 영역 */
+footer {
+  width: 1200px;
+  height: 200px;
+  background: #58e4e8;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .footer-left {
+  width: 385px;
+  height: 125px;
+  background: indianred;
+}
+
+footer .footer-right {
+  width: 775px;
+  height: 125px;
+  background: yellowgreen;
+}
