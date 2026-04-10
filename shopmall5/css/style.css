@@ -1,0 +1,710 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2")
+    format("woff2");
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2")
+    format("woff2");
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2")
+    format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2")
+    format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2")
+    format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2")
+    format("woff2");
+  font-weight: 900;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Pretendard", sans-serif;
+  background: #fff;
+  color: #111;
+  padding-top: 150px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+}
+
+/* 헤더 영역 */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: #fff;
+  display: grid;
+  grid-template-columns: 350px 1fr 350px;
+  align-items: center;
+  padding-left: max(16px, calc((100% - 1200px) / 2));
+  padding-right: max(16px, calc((100% - 1200px) / 2));
+  z-index: 9999;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+header .search {
+  width: 350px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+header .search .search-box {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  background: #fff;
+  padding: 4px 5px 4px 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+header .search .search-box input {
+  flex: 1;
+  height: 100%;
+  border: 0;
+  outline: none;
+  background: transparent;
+  padding: 0 16px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #111111;
+  font-family: "Pretendard", sans-serif;
+}
+
+header .search .search-box input::placeholder {
+  color: #bcbcbc;
+}
+
+header .search .search-btn {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 8px;
+  background: #0f5f17;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+header .search .search-btn img {
+  width: 22px;
+  height: 22px;
+  display: block;
+  object-fit: contain;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+}
+
+header .logo a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .logo img {
+  display: block;
+  width: auto;
+  max-width: 220px;
+  max-height: 62px;
+  object-fit: contain;
+}
+
+header .right {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 20px;
+}
+
+header .right .top-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+header .right .top-menu a {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  color: #767676;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+header .right .bottom-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+header .right .bottom-menu a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1;
+  color: #333;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+header .right .bottom-menu a img {
+  width: 16px;
+  height: 16px;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* 배너(슬라이드) 영역 */
+#slider {
+  width: 100%;
+  height: 500px;
+  background: url("../images/banner/imgi_35_banner_4f8fd895dc91e1c17e274d2ee73a8da4.png")
+    no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* 메인 영역 */
+main {
+  width: 1200px;
+  min-height: 600px;
+  margin: 0 auto;
+}
+
+/* 공통 타이틀 */
+main .title {
+  text-align: center;
+}
+
+main .title h2 {
+  margin-bottom: 16px;
+  font-size: 28px;
+  font-weight: 600;
+  color: #111;
+}
+
+main .title p {
+  margin-bottom: 42px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #505050;
+}
+
+/* 반찬 영역 */
+main .banchan {
+  width: 100%;
+  min-height: 1256px;
+  padding: 50px 16px 16px;
+}
+
+main .banchan .product {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* 집밥 한 끼 */
+main .day-banchan {
+  width: 100%;
+  padding: 50px 16px 16px;
+}
+
+main .day-banchan .meal-list {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+}
+
+/* 새로 나온 반찬 */
+main .new-banchan {
+  width: 100%;
+  padding: 50px 16px 16px;
+}
+
+main .new-banchan .new-product {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* MD 추천 반찬 */
+main .md-banchan {
+  width: 100%;
+  padding: 50px 16px 16px;
+}
+
+main .md-banchan .category-list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 26px 0 42px;
+}
+
+main .md-banchan .category-list a {
+  height: 34px;
+  padding: 24px;
+  border-radius: 999px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+}
+
+main .md-banchan .category-list a:not(.active) {
+  font-weight: 500;
+}
+
+main .md-banchan .category-list a.active {
+  background: #0d5611;
+  color: #fff;
+  font-weight: 600;
+}
+
+main .md-banchan .md-product {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* 반찬 / 집밥 / 새반찬 / MD 카드 공통 */
+main .banchan .card,
+main .day-banchan .meal-card,
+main .new-banchan .card,
+main .md-banchan .card {
+  width: 280px;
+  background: #0d5611;
+}
+
+main .banchan .card-thumb,
+main .day-banchan .meal-thumb,
+main .new-banchan .card-thumb,
+main .md-banchan .card-thumb {
+  position: relative;
+  width: 280px;
+  height: 370px;
+  background: #fff;
+  overflow: hidden;
+}
+
+main .banchan .card-thumb .food-img,
+main .day-banchan .meal-thumb .food-img,
+main .new-banchan .card-thumb .food-img,
+main .md-banchan .card-thumb .food-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+main .banchan .card-info,
+main .day-banchan .meal-info,
+main .new-banchan .card-info,
+main .md-banchan .card-info {
+  width: 100%;
+  height: 162px;
+  padding: 12px 0 16px;
+  background: #fff;
+}
+
+main .banchan .card-info .tag-wrap,
+main .day-banchan .meal-info .tag-wrap,
+main .new-banchan .card-info .tag-wrap,
+main .md-banchan .card-info .tag-wrap {
+  margin-bottom: 8px;
+}
+
+main .banchan .card-info .tag,
+main .day-banchan .meal-info .meal-tag,
+main .new-banchan .card-info .tag,
+main .md-banchan .card-info .tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 4px 5px;
+  border-radius: 3px;
+  margin-right: 4px;
+}
+
+main .banchan .card-info .tag.tag-new,
+main .day-banchan .meal-info .meal-tag.tag-new,
+main .new-banchan .card-info .tag.tag-new,
+main .md-banchan .card-info .tag.tag-new {
+  color: #d24e44;
+  background: #f7d9d3;
+}
+
+main .banchan .card-info .tag.tag-hot,
+main .new-banchan .card-info .tag.tag-hot,
+main .md-banchan .card-info .tag.tag-hot {
+  color: #3b7f44;
+  background: #dbe6dc;
+}
+
+main .banchan .card-info .tag.tag-mild,
+main .day-banchan .meal-info .meal-tag.tag-mild,
+main .new-banchan .card-info .tag.tag-mild,
+main .md-banchan .card-info .tag.tag-mild {
+  color: #e29a1f;
+  background: #f9edd8;
+}
+
+main .banchan .card-info h3,
+main .day-banchan .meal-info h3,
+main .new-banchan .card-info h3,
+main .md-banchan .card-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #111;
+  margin-bottom: 6px;
+  word-break: keep-all;
+}
+
+main .banchan .card-info p,
+main .day-banchan .meal-info p,
+main .new-banchan .card-info p,
+main .md-banchan .card-info p {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #565656;
+  margin-bottom: 6px;
+  word-break: keep-all;
+}
+
+main .banchan .card-info .price-row,
+main .day-banchan .meal-info .price-row,
+main .new-banchan .card-info .price-row,
+main .md-banchan .card-info .price-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+main .banchan .card-info .price-row .sale,
+main .day-banchan .meal-info .price-row .sale,
+main .new-banchan .card-info .price-row .sale,
+main .md-banchan .card-info .price-row .sale {
+  font-size: 18px;
+  font-weight: 700;
+  color: #bd2420;
+}
+
+main .banchan .card-info .price-row strong,
+main .day-banchan .meal-info .price-row strong,
+main .new-banchan .card-info .price-row strong,
+main .md-banchan .card-info .price-row strong {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+}
+
+main .banchan .card-info .origin-price,
+main .day-banchan .meal-info .origin-price,
+main .new-banchan .card-info .origin-price,
+main .md-banchan .card-info .origin-price {
+  font-size: 14px;
+  font-weight: 500;
+  color: #767676;
+  text-decoration: line-through;
+}
+
+main .banchan .card-info .origin-price.empty-price,
+main .new-banchan .card-info .origin-price.empty-price,
+main .md-banchan .card-info .origin-price.empty-price {
+  visibility: hidden;
+}
+
+/* 집밥 한 끼 / MD 할인 배지 */
+main .day-banchan .meal-thumb .sale-badge,
+main .md-banchan .card-thumb .sale-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #bd2420;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* 잠금 아이콘 */
+main .day-banchan .meal-thumb .lock-badge,
+main .new-banchan .card-thumb .card-lock,
+main .md-banchan .card-thumb .card-lock {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  width: 42px;
+  height: 42px;
+  display: block;
+  object-fit: contain;
+  z-index: 2;
+}
+
+/* 배너 영역 */
+main .banner {
+  width: 100%;
+  height: 200px;
+  align-content: center;
+}
+
+main .banner .banner-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+main .banner .banner-item {
+  width: calc((100% - 16px) / 3);
+  min-height: 92px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 18px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .banner .banner-text strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+main .banner .banner-text p {
+  font-size: 15px;
+  font-weight: 500;
+  color: #505050;
+}
+
+main .banner .banner-icon {
+  width: 48px;
+  height: 48px;
+  background: #0f5f17;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+main .banner .banner-icon img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* Footer 영역 */
+footer {
+  width: 100%;
+  background: #ffffff;
+  border-top: 1px solid #e0e0e0;
+}
+
+footer .footer-inner {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 42px 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+footer .footer-left {
+  width: 360px;
+  background: transparent;
+}
+
+footer .footer-right {
+  width: 760px;
+  background: transparent;
+}
+
+footer .footer-left h2 {
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #333333;
+}
+
+footer .footer-left strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #333333;
+}
+
+footer .footer-left a {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #333333;
+  text-decoration: none;
+}
+
+footer .footer-left p {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #767676;
+  word-break: keep-all;
+}
+
+footer .footer-right h2 {
+  margin-bottom: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #767676;
+}
+
+footer .footer-right .company-info {
+  margin-bottom: 18px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #333333;
+  word-break: keep-all;
+}
+
+footer .footer-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+footer .footer-links a {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #767676;
+  text-decoration: underline;
+}
+
+footer .footer-links span {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  color: #cccccc;
+}
+
+footer .copyright {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #cccccc;
+}
