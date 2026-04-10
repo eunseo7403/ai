@@ -61,31 +61,7 @@
   height: 100px;
   background: yellow;
   position: absolute;
-  left: 0;
-  top: 0;
+  left: -101px;
+  top: 0px;
   animation: box-ani2 2s ease-in-out infinite forwards;
-}
-
-/* 애니메이션 설정 */
-@keyframes box-ani2 {
-  0% {
-    left: -101px;
-    top: -101px;
-  }
-  25% {
-    left: 1000px;
-    top: -101px;
-  }
-  50% {
-    left: 1000px;
-    top: 300px;
-  }
-  75% {
-    left: -101px;
-    top: 300px;
-  }
-  100% {
-    left: -101px;
-    top: -101px;
-  }
 }
