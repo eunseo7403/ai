@@ -9,7 +9,9 @@
 .box-p {
   width: 1000px;
   height: 300px;
-  border: 3px solid blue;
+  border: 1px solid blue;
+  margin: 50px auto;
+  position: relative;
 }
 
 .box {
@@ -43,5 +45,47 @@
   100% {
     left: 0;
     top: 0;
+  }
+}
+
+.box-p2 {
+  width: 1000px;
+  height: 300px;
+  border: 1px solid red;
+  margin: 150px auto;
+  position: relative;
+}
+
+.box2 {
+  width: 100px;
+  height: 100px;
+  background: yellow;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: box-ani2 2s ease-in-out infinite forwards;
+}
+
+/* 애니메이션 설정 */
+@keyframes box-ani2 {
+  0% {
+    left: -101px;
+    top: -101px;
+  }
+  25% {
+    left: 1000px;
+    top: -101px;
+  }
+  50% {
+    left: 1000px;
+    top: 300px;
+  }
+  75% {
+    left: -101px;
+    top: 300px;
+  }
+  100% {
+    left: -101px;
+    top: -101px;
   }
 }
