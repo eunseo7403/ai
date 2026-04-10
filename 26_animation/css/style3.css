@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.box-p {
+  width: 1000px;
+  height: 300px;
+  border: 3px solid blue;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: purple;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: box-ani 2s ease-in-out infinite forwards;
+}
+
+/* 애니메이션 설정 */
+@keyframes box-ani {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  25% {
+    left: 900px;
+    top: 0;
+  }
+  50% {
+    left: 900px;
+    top: 200px;
+  }
+  75% {
+    left: 0;
+    top: 200px;
+  }
+  100% {
+    left: 0;
+    top: 0;
+  }
+}
