@@ -213,6 +213,48 @@ header .right .top-menu a {
   white-space: nowrap;
 }
 
+/* 내정보 드롭다운 */
+header .right .top-menu .myinfo-menu {
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: -12px;
+}
+
+header .right .top-menu .myinfo-btn {
+  display: inline-block;
+}
+
+header .right .top-menu .myinfo-dropdown {
+  position: absolute;
+  top: calc(100% -2px);
+  right: 0;
+  width: 110px;
+  height: 160px;
+  padding: 14px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 10000;
+}
+
+header .right .top-menu .myinfo-dropdown a {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  color: #333;
+  white-space: nowrap;
+}
+
+header .right .top-menu .myinfo-dropdown a:hover {
+  color: #0d5611;
+}
+
+header .right .top-menu .myinfo-menu:hover .myinfo-dropdown {
+  display: flex;
+}
+
 header .right .bottom-menu {
   display: flex;
   align-items: center;
