@@ -72,6 +72,14 @@
   font-display: swap;
 }
 
+body,
+input,
+button,
+textarea,
+select {
+  font-family: "Pretendard", sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
