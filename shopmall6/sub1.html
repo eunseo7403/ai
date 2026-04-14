@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상품상세화면</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/sub.css" />
+  </head>
+  <body>
+    <!-- 헤더 영역 -->
+    <header>
+      <!-- 검색 박스 -->
+      <div class="search">
+        <div class="search-box">
+          <input type="text" placeholder="반찬을 입력해주세요" />
+          <button type="button" class="search-btn">
+            <img src="./images/icon/search.png" alt="검색" />
+          </button>
+        </div>
+      </div>
+
+      <!-- 로고 박스 -->
+      <div class="logo">
+        <a href="./index.html">
+          <img src="./images/icon/logo.png" alt="집반찬연구소" />
+        </a>
+      </div>
+
+      <!-- 오른쪽 박스 -->
+      <div class="right">
+        <div class="top-menu">
+          <a href="#">로그인</a>
+          <a href="#">회원가입</a>
+
+          <div class="myinfo-menu">
+            <a href="#" class="myinfo-btn">내정보</a>
+
+            <div class="myinfo-dropdown">
+              <a href="#">식단 메뉴</a>
+              <a href="#">조리법</a>
+              <a href="#">공지사항</a>
+              <a href="#">자주묻는 질문</a>
+              <a href="#">1:1 문의</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-menu">
+          <a href="#">
+            <img src="./images/icon/tell.png" alt="" />
+            <span>전화주문</span>
+          </a>
+          <a href="#">
+            <img src="./images/icon/brand.png" alt="" />
+            <span>브랜드</span>
+          </a>
+          <a href="#">
+            <img src="./images/icon/banchan.png" alt="" />
+            <span>반찬보기</span>
+          </a>
+          <a href="#">
+            <img src="./images/icon/cart.png" alt="" />
+            <span>장바구니</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 메인 영역 -->
+    <main class="sub-page">
+      <div class="sub-inner">
+        <section class="product-top">
+          <div class="section-inner product-top-inner">
+            <div class="product-image-box">
+              <img
+                src="https://eunseo7403.github.io/ai/images/01.png"
+                alt="상품 이미지"
+              />
+            </div>
+
+            <div class="product-info-box">
+              <div class="product-title-wrap">
+                <h2>쭈꾸미 풋마늘 파스타</h2>
+                <p>봄기운 가득! 쭈꾸미와 풋마늘의 찰떡 궁합</p>
+              </div>
+
+              <div class="product-price-wrap">
+                <p class="sale-price">
+                  <span class="sale">7%</span>
+                  <strong>12,800원</strong>
+                </p>
+                <p class="origin-price">13,800원</p>
+              </div>
+
+              <div class="purchase-box">
+                <div class="purchase-row">
+                  <span class="label">상품 수량</span>
+
+                  <div class="count-box">
+                    <button type="button">-</button>
+                    <input type="text" value="1" readonly />
+                    <button type="button">+</button>
+                  </div>
+                </div>
+
+                <div class="purchase-row total-row">
+                  <span class="label">총 상품 금액</span>
+                  <strong>12,800원</strong>
+                </div>
+              </div>
+
+              <div class="btn-wrap">
+                <button type="button" class="wish-btn" aria-label="찜하기">
+                  ♡
+                </button>
+                <button type="button" class="cart-btn">장바구니 담기</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="review-box">
+          <div class="section-inner review-inner">
+            <p>
+              <span class="star">★</span>
+              <strong>4.8</strong>
+              <span class="review-text"
+                ><span class="review-count">2448</span>명의 고객님이 인증한
+                반찬</span
+              >
+            </p>
+          </div>
+        </section>
+
+        <section class="tab-menu">
+          <div class="section-inner tab-menu-inner">
+            <a href="#detail-desc" class="tab-btn">반찬설명</a>
+            <a href="#detail-info" class="tab-btn">상품정보</a>
+            <a href="#detail-review" class="tab-btn">상품후기</a>
+          </div>
+        </section>
+
+        <section class="detail-box detail-box-01">
+          <div class="section-inner detail-inner" id="detail-desc">
+            <img src="./images/Sang.JPG" alt="상세 이미지" />
+
+            <div class="detail-info-wrap" id="detail-info">
+              <table class="detail-info-table">
+                <tbody>
+                  <tr>
+                    <th scope="row">제품명</th>
+                    <td>상세정보참고</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">용량</th>
+                    <td>상세정보참고</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">소비기한</th>
+                    <td>상세정보참고</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">원재료명 및 함량</th>
+                    <td>상세정보참고</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">보관방법(취급방법)</th>
+                    <td>상세정보참고</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">식품의 유형</th>
+                    <td>상세정보참고</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">포장재질</th>
+                    <td>상세정보참고</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">제조원 및 판매원</th>
+                    <td>상세정보참고</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">알레르기식품</th>
+                    <td>상세정보참고</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">부정/불량식품 신고표시</th>
+                    <td>상세정보참고</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">소비자분쟁해결기준</th>
+                    <td>상세정보참고</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">소비자 상담 관련 전화번호</th>
+                    <td>상세정보참고</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">품목보고번호</th>
+                    <td>상세정보참고</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="detail-box detail-box-02">
+          <div class="section-inner detail-inner">
+            <div class="detail-new-banchan">
+              <div class="title">
+                <h2>새로 나온 반찬</h2>
+                <p>따끈따끈한 신메뉴 출시</p>
+              </div>
+
+              <div class="new-product-list">
+                <div class="new-card">
+                  <div class="new-card-thumb">
+                    <span class="sale-badge">11%</span>
+                    <img
+                      class="food-img"
+                      src="./images/imgi_64_655_ZIP_P_6100_T.jpg"
+                      alt="[원더스푼] 두부덮밥"
+                    />
+                    <img
+                      class="card-lock"
+                      src="./images/lock.png"
+                      alt="잠금 아이콘"
+                    />
+                  </div>
+                  <div class="new-card-info">
+                    <div class="tag-wrap">
+                      <span class="tag tag-new">신제품</span>
+                      <span class="tag tag-mild">맵지않음</span>
+                    </div>
+                    <h3>[원더스푼] 두부덮밥</h3>
+                    <p>아이들도 입맛 없는 날 뚝딱 한 그릇</p>
+                    <div class="price-row">
+                      <strong>3,500원</strong>
+                    </div>
+                    <span class="origin-price empty-price">0원</span>
+                  </div>
+                </div>
+
+                <div class="new-card">
+                  <div class="new-card-thumb">
+                    <span class="sale-badge">11%</span>
+                    <img
+                      class="food-img"
+                      src="./images/imgi_65_ZIP_P_8082_T.jpg"
+                      alt="[원더스푼] 한돈 순두부 덮밥"
+                    />
+                    <img
+                      class="card-lock"
+                      src="./images/lock.png"
+                      alt="잠금 아이콘"
+                    />
+                  </div>
+                  <div class="new-card-info">
+                    <div class="tag-wrap">
+                      <span class="tag tag-new">신제품</span>
+                      <span class="tag tag-mild">맵지않음</span>
+                    </div>
+                    <h3>[원더스푼] 한돈 순두부 덮밥</h3>
+                    <p>몽글몽글 부드러운 한돈 순두부 소스</p>
+                    <div class="price-row">
+                      <strong>3,800원</strong>
+                    </div>
+                    <span class="origin-price empty-price">0원</span>
+                  </div>
+                </div>
+
+                <div class="new-card">
+                  <div class="new-card-thumb">
+                    <span class="sale-badge">11%</span>
+                    <img
+                      class="food-img"
+                      src="./images/imgi_66_ZIP_P_8079_T.jpg"
+                      alt="[원더스푼] 한우 하이라이스 덮밥"
+                    />
+                    <img
+                      class="card-lock"
+                      src="./images/lock.png"
+                      alt="잠금 아이콘"
+                    />
+                  </div>
+                  <div class="new-card-info">
+                    <div class="tag-wrap">
+                      <span class="tag tag-new">신제품</span>
+                      <span class="tag tag-mild">맵지않음</span>
+                    </div>
+                    <h3>[원더스푼] 한우 하이라이스 덮밥</h3>
+                    <p>부드럽게 끓여낸 한우 하이라이스 소스</p>
+                    <div class="price-row">
+                      <strong>4,300원</strong>
+                    </div>
+                    <span class="origin-price empty-price">0원</span>
+                  </div>
+                </div>
+
+                <div class="new-card">
+                  <div class="new-card-thumb">
+                    <span class="sale-badge">11%</span>
+                    <img
+                      class="food-img"
+                      src="./images/imgi_67_ZIP_P_8084_T.jpg"
+                      alt="[원더스푼] 한우 삼색 소보로 덮밥"
+                    />
+                    <img
+                      class="card-lock"
+                      src="./images/lock.png"
+                      alt="잠금 아이콘"
+                    />
+                  </div>
+                  <div class="new-card-info">
+                    <div class="tag-wrap">
+                      <span class="tag tag-new">신제품</span>
+                      <span class="tag tag-mild">맵지않음</span>
+                    </div>
+                    <h3>[원더스푼] 한우 삼색 소보로 덮밥</h3>
+                    <p>알록달록 색감까지 맛있는 삼색 덮밥</p>
+                    <div class="price-row">
+                      <strong>4,800원</strong>
+                    </div>
+                    <span class="origin-price empty-price">0원</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="detail-box detail-box-03">
+          <div class="section-inner detail-inner">
+            <div class="detail-review-wrap" id="detail-review">
+              <div class="detail-review-head">
+                <h2>상품후기</h2>
+
+                <div class="detail-review-score">
+                  <div class="score-stars" aria-hidden="true">
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="star full">★</span>
+                    <span class="star partial">★</span>
+                  </div>
+
+                  <div class="score-number">
+                    <strong>4.8</strong>
+                    <span>/5</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="review-photo-list">
+                <a class="review-photo-item">
+                  <img
+                    src="./images/review/RV0000584112.jpg"
+                    alt="리뷰 대표 이미지 1"
+                  />
+                </a>
+
+                <a class="review-photo-item">
+                  <img
+                    src="./images/review/RV0000586213.jpg"
+                    alt="리뷰 대표 이미지 2"
+                  />
+                </a>
+
+                <a class="review-photo-item">
+                  <img
+                    src="./images/review/RV0000586487.jpg"
+                    alt="리뷰 대표 이미지 3"
+                  />
+                </a>
+
+                <a class="review-photo-item">
+                  <img
+                    src="./images/review/RV0000586537.jpg"
+                    alt="리뷰 대표 이미지 4"
+                  />
+                </a>
+
+                <a class="review-photo-item more-item">
+                  <img
+                    src="./images/review/RV0000586788.jpg"
+                    alt="리뷰 대표 이미지 더보기"
+                  />
+                  <span class="photo-more">더보기</span>
+                </a>
+              </div>
+
+              <ul class="review-list">
+                <li class="review-item has-thumb">
+                  <div class="review-user">
+                    <div class="review-stars">
+                      <span class="on">★</span>
+                      <span class="on">★</span>
+                      <span class="on">★</span>
+                      <span class="on">★</span>
+                      <span class="on">★</span>
+                    </div>
+
+                    <div class="review-meta">
+                      <strong class="review-name">김*의</strong>
+                      <span class="purchase-tag">1회 구매</span>
+                    </div>
+
+                    <span class="review-date">2026.04.01</span>
+                  </div>
+
+                  <p class="review-body">매 주문시마다 맛있게 먹고 있습니다.</p>
+
+                  <div class="review-thumb">
+                    <img
+                      src="./images/review/RV0000584112.jpg"
+                      alt="리뷰 썸네일 1"
+                    />
+                    <span class="thumb-count">2</span>
+                  </div>
+                </li>
+
+                <li class="review-item has-thumb">
+                  <div class="review-user">
+                    <div class="review-stars">
+                      <span class="on">★</span>
+                      <span class="on">★</span>
+                      <span class="on">★</span>
+                      <span class="on">★</span>
+                      <span class="off">★</span>
+                    </div>
+
+                    <div class="review-meta">
+                      <strong class="review-name">조*명</strong>
+                      <span class="purchase-tag">1회 구매</span>
+                    </div>
+
+                    <span class="review-date">2026.03.12</span>
+                  </div>
+
+                  <p class="review-body">
+                    택배 잘 받았고 매번 잘 먹고있습니다~
+                  </p>
+
+                  <div class="review-thumb">
+                    <img
+                      src="./images/review/RV0000586213.jpg"
+                      alt="리뷰 썸네일 2"
+                    />
+                  </div>
+                </li>
+
+                <li class="review-item">
+                  <div class="review-user">
+                    <div class="review-stars">
+                      <span class="on">★</span>
+                      <span class="on">★</span>
+                      <span class="on">★</span>
+                      <span class="on">★</span>
+                      <span class="on">★</span>
+                    </div>
+
+                    <div class="review-meta">
+                      <strong class="review-name">전*원</strong>
+                      <span class="purchase-tag">1회 구매</span>
+                    </div>
+
+                    <span class="review-date">2026.03.11</span>
+                  </div>
+
+                  <p class="review-body">
+                    버섯 추가해서 먹었어요 내용물이 알차서 좋아요
+                  </p>
+                </li>
+
+                <li class="review-item has-thumb">
+                  <div class="review-user">
+                    <div class="review-stars">
+                      <span class="on">★</span>
+                      <span class="on">★</span>
+                      <span class="on">★</span>
+                      <span class="on">★</span>
+                      <span class="on">★</span>
+                    </div>
+
+                    <div class="review-meta">
+                      <strong class="review-name">선*</strong>
+                      <span class="purchase-tag">1회 구매</span>
+                    </div>
+
+                    <span class="review-date">2026.03.08</span>
+                  </div>
+
+                  <p class="review-body">
+                    1주에 1번 계속 주문중이고 만족합니다..
+                  </p>
+
+                  <div class="review-thumb">
+                    <img
+                      src="./images/review/RV0000586487.jpg"
+                      alt="리뷰 썸네일 4"
+                    />
+                  </div>
+                </li>
+
+                <li class="review-item">
+                  <div class="review-user">
+                    <div class="review-stars">
+                      <span class="on">★</span>
+                      <span class="off">★</span>
+                      <span class="off">★</span>
+                      <span class="off">★</span>
+                      <span class="off">★</span>
+                    </div>
+
+                    <div class="review-meta">
+                      <strong class="review-name">김*영</strong>
+                      <span class="purchase-tag">1회 구매</span>
+                    </div>
+
+                    <span class="review-date">2026.03.03</span>
+                  </div>
+
+                  <p class="review-body">
+                    파스타가 뚝뚝 끊어져서 숟가락으로 퍼먹음
+                  </p>
+                </li>
+              </ul>
+
+              <button type="button" class="review-more-btn">+ 더보기</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- 푸터 영역 -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-left">
+          <h2>고객센터</h2>
+          <strong>1588-3754</strong>
+          <a href="mailto:zipbanchan@sannamchon.co.kr"
+            >zipbanchan@sannamchon.co.kr</a
+          >
+
+          <p>
+            평일 08:30~17:30 / 토요일 08:30~12:00<br />
+            점심시간 12:00~13:00<br />
+            일요일, 공휴일은 휴무입니다.
+          </p>
+        </div>
+
+        <div class="footer-right">
+          <h2>집반찬연구소</h2>
+
+          <p class="company-info">
+            인천광역시 서구 가석로 26(가좌동) 집반찬연구소 대표자 : 박종철<br />
+            사업자등록번호 : 121-86-17743 통신판매업 신고번호 : 제
+            2023-인천서구-3834호 개인정보보호책임자 : 정문채<br />
+            제휴 문의 : zipbanchan@sannamchon.co.kr
+          </p>
+
+          <div class="footer-links">
+            <a href="#">집반찬연구소 소개</a>
+            <span>|</span>
+            <a href="#">이용약관</a>
+            <span>|</span>
+            <a href="#">개인정보처리방침</a>
+          </div>
+
+          <p class="copyright">
+            Copyright ⓒ SANNAMCHON CORP. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <a href="#top" class="top-btn" aria-label="맨 위로 이동">
+      <span>Top</span>
+    </a>
+  </body>
+</html>
