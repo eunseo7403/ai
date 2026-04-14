@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>책 객체 출력</title>
+  </head>
+  <body>
+    <script>
+      const book = {
+        title: "소년이 온다",
+        author: "한강",
+        price: "13,500원",
+        publishDate: "2014년 05월 19일",
+        rating: 9.9,
+      };
+
+      document.write(`책 제목: ${book.title}<br>
+저자: ${book.author}<br>
+책 가격: ${book.price}<br>
+출간일: ${book.publishDate}<br>
+평점: ${book.rating}`);
+    </script>
+  </body>
+</html>
