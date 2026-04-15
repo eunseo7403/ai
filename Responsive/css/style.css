@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* PC기기 일때 */
+
+.wrap {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.wrap .blue-green {
+  width: 100%;
+  display: flex;
+}
+
+.wrap .red {
+  background: red;
+  width: 100%;
+  height: 150px;
+}
+
+.wrap .blue {
+  background: blue;
+  width: 50%;
+  height: 120px;
+}
+
+.wrap .green {
+  background: green;
+  width: 50%;
+  height: 120px;
+}
+
+/* 노트북 기기 */
+/* 노트북 기기 해상도 */
+@media (min-width: 992px) and (max-width: 1119px) {
+  .wrap {
+    width: 100%;
+  }
+
+  body {
+    padding: 0 24px;
+  }
+}
+
+/* 태블릿 기기 */
+@media (min-width: 768px) and (max-width: 991px) {
+  .wrap {
+    width: 100%;
+  }
+
+  .wrap .blue-green .blue {
+    height: 300px;
+  }
+
+  .wrap .blue-green .green {
+    height: 300px;
+  }
+}
+/* 모바일 기기 */
+@media (min-width: 320px) and (max-width: 767px) {
+  .wrap {
+    width: 100%;
+  }
+
+  .wrap .red {
+    height: 300px;
+  }
+
+  .wrap .blue-green {
+    flex-direction: column;
+  }
+
+  .wrap .blue-green .blue {
+    width: 100%;
+    height: 300px;
+  }
+
+  .wrap .blue-green .green {
+    width: 100%;
+    height: 300px;
+  }
+}
