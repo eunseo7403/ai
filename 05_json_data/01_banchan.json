@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "쭈꾸미 풋마늘 파스타",
+    "descr": "봄기운 가득! 쭈꾸미와 풋마늘의 찰떡 궁합",
+    "price": 12800,
+    "img": "images/01_banchan/banchan1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "쭈꾸미 미나리 파스타",
+    "descr": "지금이 제철! 쭈꾸미와 미나리의 만남",
+    "price": 12800,
+    "img": "images/01_banchan/banchan2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "잡채",
+    "descr": "탱글한 면발과 맛깔진 고명이 가득",
+    "price": 12800,
+    "img": "images/01_banchan/banchan3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "한끼 한돈제육_완조리",
+    "descr": "혼자 먹기 딱 좋은. 1인분 제육볶음",
+    "price": 6800,
+    "img": "images/01_banchan/banchan4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "[원더스푼] 된장국",
+    "descr": "매일 먹어도 좋은 담백한 된장국",
+    "price": 3300,
+    "img": "images/01_banchan/banchan5.jpg"
+  },
+  {
+    "id": 6,
+    "name": "[원더스푼] 맑은 순두부찌개",
+    "descr": "맵지 않은 순두부찌개. 아이도 OK",
+    "price": 4300,
+    "img": "images/01_banchan/banchan6.jpg"
+  },
+  {
+    "id": 7,
+    "name": "[원더스푼] 맛살 계란 덮밥",
+    "descr": "고소한 맛살과 폭신한 계란의 부드러운 조합",
+    "price": 4300,
+    "img": "images/01_banchan/banchan7.jpg"
+  },
+  {
+    "id": 8,
+    "name": "[원더스푼] 한우 스테이크소스 덮밥",
+    "descr": "한우의 풍미를 그대로 담은 스테이크소스",
+    "price": 4500,
+    "img": "images/01_banchan/banchan8.jpg"
+  }
+]
