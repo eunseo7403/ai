@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>if 제 3형식(다중if)</title>
+  </head>
+  <body>
+    <script>
+      // if(조건식){
+      //     참일때 실행
+      // } else if(조건식){
+      //     참일때 실행
+      // } else if(조건식){
+      //     참일때 실행
+      // } else if(조건식){
+      // } else {
+      //     거짓일때 실행
+      // }
+
+      // 외부로부터 data를 입력받아서 국어, 영어, 수학, 컴퓨터 총점과 평균을 구하고
+      // 평균이 90점 이상이면 수, 80점 이상이면 우, 70점 이상이면 미, 60점 이상이면 양, 나머지는 가
+
+      let kor = Number(prompt("국어 점수를 입력하세요."));
+      let eng = Number(prompt("영어 점수를 입력하세요."));
+      let mat = Number(prompt("수학 점수를 입력하세요."));
+      let com = Number(prompt("컴퓨터 점수를 입력하세요."));
+
+      //   총점 구하기
+      let tot = kor + eng + mat + com;
+      //   평균 구하기 (+, -, *, /, **, %)
+      let avg = tot / 4;
+      //   평점 구하기
+      let remark = "";
+
+      if (avg >= 90) {
+        remark = "수";
+      } else if (avg >= 80) {
+        remark = "우";
+      } else if (avg >= 70) {
+        remark = "미";
+      } else if (avg >= 60) {
+        remark = "양";
+      } else {
+        remark = "가";
+      }
+
+      //   학점 구하기
+      let hak = "";
+
+      if (avg >= 95) {
+        hak = "A+";
+      } else if (avg >= 90) {
+        hak = "A";
+      } else if (avg >= 85) {
+        hak = "B+";
+      } else if (avg >= 80) {
+        hak = "B";
+      } else if (avg >= 75) {
+        hak = "C+";
+      } else if (avg >= 70) {
+        hak = "C";
+      } else if (avg >= 65) {
+        hak = "D+";
+      } else if (avg >= 60) {
+        hak = "D";
+      } else {
+        hak = "F";
+      }
+
+      document.write(`국어점수=${kor}<br>`);
+      document.write(`영어점수=${eng}<br>`);
+      document.write(`수학점수=${mat}<br>`);
+      document.write(`컴퓨터점수=${com}<br>`);
+      document.write(`총점=${tot}<br>`);
+      document.write(`평균=${avg}<br>`);
+      document.write(`평점=${remark}<br>`);
+      document.write(`학점=${hak}<br>`);
+    </script>
+  </body>
+</html>
