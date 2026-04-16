@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메인 배너 슬라이드</title>
+
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button {
+        border: 0;
+        background: none;
+        cursor: pointer;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      body {
+        min-width: 1920px;
+      }
+
+      .main-banner {
+        width: 1920px;
+        height: 480px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .mainBannerSwiper,
+      .mainBannerSwiper .swiper-wrapper,
+      .mainBannerSwiper .swiper-slide {
+        width: 100%;
+        height: 100%;
+      }
+
+      .banner-link {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .banner-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* 기본 swiper 화살표 숨김 */
+      .main-banner .swiper-button-prev::after,
+      .main-banner .swiper-button-next::after {
+        display: none;
+      }
+
+      /* 이전 / 다음 버튼 */
+      .main-banner .main-banner-prev,
+      .main-banner .main-banner-next {
+        position: absolute;
+        top: auto;
+        bottom: 24px;
+        z-index: 10;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #fff;
+        background-image: url("./images/icon/icon-arrow-right-a3a3a3-24.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 24px 24px;
+      }
+
+      .main-banner .main-banner-prev {
+        left: 362px;
+        transform: rotate(180deg);
+      }
+
+      .main-banner .main-banner-next {
+        left: 414px;
+      }
+
+      .main-banner .main-banner-prev:hover,
+      .main-banner .main-banner-next:hover {
+        background-color: #ffffff;
+      }
+
+      .main-banner .main-banner-prev:focus-visible,
+      .main-banner .main-banner-next:focus-visible {
+        outline: 2px solid #333;
+        outline-offset: 2px;
+      }
+
+      /* 페이지네이션 */
+      .main-banner .main-banner-pagination {
+        position: absolute;
+        left: auto;
+        right: 362px;
+        bottom: 24px;
+        z-index: 10;
+        width: auto;
+        min-width: 50px;
+        height: 26px;
+        padding: 0 10px;
+        border-radius: 13px;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 00;
+        text-align: center;
+      }
+
+      .main-banner .main-banner-pagination .swiper-pagination-current,
+      .main-banner .main-banner-pagination .swiper-pagination-total {
+        display: inline-block;
+        min-width: 10px;
+      }
+
+      .main-banner .main-banner-pagination .fraction-divider {
+        display: inline-block;
+        margin: 0 4px;
+        font-size: 12px;
+        opacity: 0.5;
+        position: relative;
+        top: -2px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="main-banner">
+      <div class="swiper mainBannerSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a href="#" class="banner-link">
+              <img
+                src="./images/banner/banner_1.png"
+                alt="메인 배너 1"
+                class="banner-img"
+              />
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="#" class="banner-link">
+              <img
+                src="./images/banner/banner_2.png"
+                alt="메인 배너 2"
+                class="banner-img"
+              />
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="#" class="banner-link">
+              <img
+                src="./images/banner/banner_3.png"
+                alt="메인 배너 3"
+                class="banner-img"
+              />
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="#" class="banner-link">
+              <img
+                src="./images/banner/banner_4.png"
+                alt="메인 배너 4"
+                class="banner-img"
+              />
+            </a>
+          </div>
+
+          <div class="swiper-slide">
+            <a href="#" class="banner-link">
+              <img
+                src="./images/banner/banner_5.png"
+                alt="메인 배너 5"
+                class="banner-img"
+              />
+            </a>
+          </div>
+        </div>
+
+        <!-- navigation -->
+        <button
+          type="button"
+          class="swiper-button-prev main-banner-prev"
+          aria-label="이전 슬라이드"
+        ></button>
+        <button
+          type="button"
+          class="swiper-button-next main-banner-next"
+          aria-label="다음 슬라이드"
+        ></button>
+
+        <!-- pagination -->
+        <div class="swiper-pagination main-banner-pagination"></div>
+      </div>
+    </section>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      const mainBannerSwiper = new Swiper(".mainBannerSwiper", {
+        loop: true,
+        speed: 700,
+        slidesPerView: 1,
+        effect: "slide",
+
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+
+        navigation: {
+          nextEl: ".main-banner-next",
+          prevEl: ".main-banner-prev",
+        },
+
+        pagination: {
+          el: ".main-banner-pagination",
+          type: "fraction",
+          renderFraction: function (currentClass, totalClass) {
+            return `
+              <span class="${currentClass}"></span>
+              <span class="fraction-divider">|</span>
+              <span class="${totalClass}"></span>
+            `;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

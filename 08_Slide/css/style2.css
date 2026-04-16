@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+}
+
+main .swiper {
+  width: 100%;
+  height: 480px;
+  position: relative;
+}
+
+main .swiper .swiper-button-prev::after,
+main .swiper .swiper-button-next::after {
+  display: none !important;
+}
+
+/* 슬라이드 이전 버튼 */
+main .swiper .swiper-button-prev {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background: #fff url(../images/icon/icon-arrow-left-a3a3a3-24.svg) no-repeat
+    center;
+  position: absolute;
+  left: 50%;
+  margin-left: -590px;
+  bottom: 24px;
+  top: auto;
+}
+
+/* 슬라이드 다음 버튼 */
+main .swiper .swiper-button-next {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background: #fff url(../images/icon/icon-arrow-right-a3a3a3-24.svg) no-repeat
+    center;
+  position: absolute;
+  left: 50%;
+  margin-left: -540px;
+  bottom: 24px;
+  top: auto;
+}
+
+/* 페이지 버튼 */
+main .swiper .swiper-pagination span {
+  background: #0d5611;
+}

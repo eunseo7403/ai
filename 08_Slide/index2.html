@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메인 슬라이드</title>
+    <!-- Swiper 슬라이드 적용을 위한 css 연결 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./css/style2.css" />
+  </head>
+  <body>
+    <main>
+      <!-- swiper slide -->
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img src="./images/banner/banner_1.png" alt="배너1" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/banner/banner_2.png" alt="배너2" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/banner/banner_3.png" alt="배너3" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/banner/banner_4.png" alt="배너4" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/banner/banner_5.png" alt="배너5" />
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <!-- <div class="swiper-scrollbar"></div> -->
+      </div>
+    </main>
+    <!-- Swiper 슬라이드 적용을 위한 javascript 연결 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper", {
+        // Optional parameters
+        // 슬라이드 방향
+        direction: "horizontal",
+        // 자동실행
+        autoplay: {
+          delay: 3000, // 3초마다 슬라이드 넘김 (1000 = 1초)
+          disableOnInteraction: false, // 사용자 클릭 후에도 자동 재생 유지
+        },
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          type: "fraction", // 분수 형태 지정
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+          el: ".swiper-scrollbar",
+        },
+      });
+    </script>
+  </body>
+</html>
