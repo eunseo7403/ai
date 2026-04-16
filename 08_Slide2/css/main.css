@@ -1058,4 +1058,11 @@ main .banner .banner-icon img {
     gap: 4px;
     margin-bottom: 4px;
   }
+  main .day-banchan .day-banchan-slider-wrap {
+    overflow: hidden;
+  }
+
+  main .day-banchan .dayBanchanSwiper {
+    overflow: hidden;
+  }
 }
