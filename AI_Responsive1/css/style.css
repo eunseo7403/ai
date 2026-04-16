@@ -1,0 +1,359 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playball&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Cormorant Garamond", serif;
+  color: #151515;
+  line-height: 1.65;
+  background: linear-gradient(
+    to bottom,
+    #dcc8b7 0%,
+    #d3beac 32%,
+    #c4b09f 68%,
+    #b19f92 100%
+  );
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.site-wrap {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  background: #eadfd5;
+}
+
+.hero-media,
+.logo {
+  grid-area: 1 / 1;
+}
+
+.hero-media {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 58% 40%;
+}
+
+.logo {
+  align-self: center;
+  justify-self: end;
+  margin-right: 44px;
+  z-index: 1;
+  font-family: "Playball", cursive;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #111;
+}
+
+.gnb {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.gnb ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.gnb li {
+  background: rgba(216, 41, 35, 0.82);
+  transition: background 0.25s ease;
+}
+
+.gnb li + li {
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.gnb li:hover {
+  background: rgba(216, 41, 35, 1);
+}
+
+.gnb a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  color: #fff;
+  font-size: 1.12rem;
+  font-weight: 600;
+  opacity: 0.82;
+  transition: opacity 0.25s ease;
+}
+
+.gnb a:hover {
+  opacity: 1;
+}
+
+.content {
+  background: #f7f7f5;
+  padding: 24px;
+}
+
+.about-title {
+  margin-bottom: 24px;
+  text-align: center;
+  font-family: "Playball", cursive;
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #111;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 235px;
+  gap: 24px;
+  align-items: start;
+}
+
+.about-copy h3 {
+  margin-bottom: 10px;
+  font-family: "Playball", cursive;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #111;
+}
+
+.about-copy p {
+  margin-bottom: 22px;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #1f1f1f;
+  text-align: justify;
+}
+
+.about-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.photo-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.photo-grid figure {
+  overflow: hidden;
+  background: #cbc1b2;
+  aspect-ratio: 1.42 / 1;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) sepia(38%) brightness(0.9);
+  transition:
+    filter 0.35s ease,
+    transform 0.35s ease;
+}
+
+.photo-grid figure:hover img {
+  filter: none;
+  transform: scale(1.03);
+}
+
+.footer {
+  background: #33343a;
+  text-align: center;
+  padding: 14px 10px 16px;
+}
+
+.footer p {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* tablet */
+@media (max-width: 1023px) {
+  body {
+    background: linear-gradient(
+      to bottom,
+      #dcc8b7 0%,
+      #d3beac 34%,
+      #c4b09f 70%,
+      #b19f92 100%
+    );
+  }
+
+  .site-wrap {
+    width: calc(100% - 48px);
+  }
+
+  .hero {
+    height: 300px;
+  }
+
+  .hero-media img {
+    object-position: center 42%;
+  }
+
+  .logo {
+    align-self: center;
+    justify-self: end;
+    margin-right: 40px;
+    font-size: 2.8rem;
+  }
+
+  .content {
+    padding: 24px;
+  }
+
+  .about-title {
+    margin-bottom: 24px;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 24px;
+  }
+}
+
+/* mobile */
+@media (max-width: 767px) {
+  body {
+    background: linear-gradient(
+      to bottom,
+      #dcc8b7 0%,
+      #d3beac 36%,
+      #c4b09f 72%,
+      #b19f92 100%
+    );
+  }
+
+  .site-wrap {
+    width: calc(100% - 32px);
+  }
+
+  .hero {
+    height: 560px;
+  }
+
+  .hero-media img {
+    width: auto;
+    height: 100%;
+    min-width: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: 56% 50%;
+  }
+
+  .logo {
+    align-self: start;
+    justify-self: end;
+    margin-top: 24px;
+    margin-right: 22px;
+    font-size: 2.6rem;
+  }
+
+  .gnb {
+    bottom: 118px;
+  }
+
+  .gnb ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 34px;
+  }
+
+  .gnb li {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .gnb li + li {
+    border-left: none;
+  }
+
+  .gnb a {
+    height: 62px;
+    font-size: 1.15rem;
+  }
+
+  .content {
+    padding: 16px;
+  }
+
+  .about-title {
+    margin-bottom: 16px;
+  }
+
+  .about-copy h3 {
+    margin-bottom: 8px;
+  }
+
+  .about-copy p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    text-align: justify;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .photo-grid figure {
+    aspect-ratio: 1.26 / 1;
+  }
+
+  .footer {
+    padding: 18px 10px 20px;
+  }
+
+  .footer p {
+    font-size: 1.25rem;
+  }
+}
