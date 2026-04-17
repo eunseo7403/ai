@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Html과 JavaScript의 연동</title>
+  </head>
+  <body>
+    <ul>
+      <li>data 1</li>
+      <li>data 2</li>
+      <li>data 3</li>
+      <li>data 4</li>
+      <li>data 5</li>
+      <li>data 6</li>
+      <li>data 7</li>
+      <li>data 8</li>
+      <li>data 9</li>
+      <li>data 10</li>
+      <li>data 11</li>
+      <li>data 12</li>
+      <li>data 13</li>
+      <li>data 14</li>
+      <li>data 15</li>
+      <li>data 16</li>
+      <li>data 17</li>
+      <li>data 18</li>
+      <li>data 19</li>
+      <li>data 20</li>
+    </ul>
+    <hr />
+    <script>
+      let output = "<ul>";
+      for (let i = 1; i <= 20; i++) {
+        output = output + "<li>" + "data" + i + "</li>";
+      }
+      output = output + "</ul>";
+      document.write(output);
+    </script>
+  </body>
+</html>
