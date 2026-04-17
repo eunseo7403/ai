@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+  </head>
+  <body>
+    <label for="">출생월:</label>
+    <select name="" id="">
+      <option value="">1월</option>
+      <option value="">2월</option>
+      <option value="">3월</option>
+      <option value="">4월</option>
+      <option value="">5월</option>
+      <option value="">6월</option>
+      <option value="">7월</option>
+      <option value="">8월</option>
+      <option value="">9월</option>
+      <option value="">10월</option>
+      <option value="">11월</option>
+      <option value="">12월</option>
+    </select>
+    <label for="">출생일:</label>
+    <select name="" id="">
+      <option value="">1일</option>
+      <option value="">2일</option>
+      <option value="">3일</option>
+      <option value="">4일</option>
+      <option value="">5일</option>
+      <option value="">6일</option>
+      <option value="">7일</option>
+      <option value="">8일</option>
+      <option value="">9일</option>
+      <option value="">10일</option>
+      <option value="">11일</option>
+      <option value="">12일</option>
+      <option value="">13일</option>
+      <option value="">14일</option>
+      <option value="">15일</option>
+      <option value="">16일</option>
+      <option value="">17일</option>
+      <option value="">18일</option>
+      <option value="">19일</option>
+      <option value="">20일</option>
+      <option value="">21일</option>
+      <option value="">22일</option>
+      <option value="">23일</option>
+      <option value="">24일</option>
+      <option value="">25일</option>
+      <option value="">26일</option>
+      <option value="">27일</option>
+      <option value="">28일</option>
+      <option value="">29일</option>
+      <option value="">30일</option>
+      <option value="">31일</option>
+    </select>
+    <label for="">출생년도:</label>
+    <select name="" id="">
+      <option value="">1900년도</option>
+      <option value="">1900년도</option>
+      <option value="">1900년도</option>
+      <option value="">1900년도</option>
+    </select>
+    <hr />
+    <!-- 자바스크립트 사용 -->
+    <label for="">출생월:</label>
+    <script>
+      // 1월~12월 목록상자
+      let output = "<select>";
+      for (let i = 1; i <= 12; i++) {
+        output = output + "<option>" + i + "월" + "</option>";
+      }
+      output = output + "</select>";
+      // outpt 변수 웹브라우저에 출력
+      document.write(output);
+    </script>
+    <label for="">출생일:</label>
+    <script>
+      // 1일~31일 목록상자
+      let output2 = "<select>";
+      for (let i = 1; i <= 31; i++) {
+        output2 = output2 + "<option>" + i + "일" + "</option>";
+      }
+      output2 = output2 + "</select>";
+      // outpt 변수 웹브라우저에 출력
+      document.write(output2);
+    </script>
+    <label for="">출생년도:</label>
+    <script>
+      // 1일~31일 목록상자
+      let output3 = "<select>";
+      for (let i = 2026; i >= 1900; i--) {
+        output3 = output3 + "<option>" + i + "년도" + "</option>";
+      }
+      output3 = output3 + "</select>";
+      // outpt 변수 웹브라우저에 출력
+      document.write(output3);
+    </script>
+  </body>
+</html>
