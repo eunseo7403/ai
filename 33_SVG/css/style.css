@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  /* width: 100%; */
+  width: 100vw;
+  /* 디스플레이 크기에 상관없이 한 화면에 보이게 하는 단위: vh   */
+  height: 100vh;
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 벡터 도형의 면을 채울때 */
+section .svg {
+  fill: blue;
+  fill: none;
+
+  /* 벡터 도형의 선을 바꿀때 */
+  stroke: green;
+
+  /* 벡터 도형의 선의 두께 */
+  stroke-width: 1px;
+
+  /* 벡터 도형의 가로 크기 */
+  width: 800px;
+}
