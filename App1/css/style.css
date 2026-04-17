@@ -376,8 +376,11 @@ body {
   font-weight: 700;
 }
 
-.nav-item i {
-  font-size: 19px;
+.nav-item .nav-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  flex-shrink: 0;
 }
 
 .nav-item.active {
