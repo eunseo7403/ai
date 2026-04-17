@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom객체 제어</title>
+  </head>
+  <body>
+    <!-- 자바스크립트 쓸거면 id로 (프로그램제어:스크립트, 디자인:클래스) -->
+    <ul id="list" class="gnb"></ul>
+    <label for="">출생월</label>
+    <select name="" id="month"></select>
+    <label for="">출생일</label>
+    <select name="" id="day"></select>
+    <label for="">출생년도</label>
+    <select name="" id="year"></select>
+    <script>
+      //ul태그요소를 자바스크립트로 가져와서 메모리 변수에 기억
+      let list = document.getElementById("list");
+      console.log(list);
+      let output = "";
+      //   지역변수
+      for (let i = 1; i <= 100; i++) {
+        output = output + `<li>data${i}</li>`;
+      }
+      list.innerHTML = output;
+
+      //  출생월
+      let month = document.getElementById("month");
+      console.log(month);
+      let output2 = "";
+      //   지역변수 {}를 빠져나가면 let 선언한게 초기화 되기 때문에 다시 사용 가능
+      for (let i = 1; i <= 12; i++) {
+        output2 = output2 + `<option>${i}월</option>`;
+      }
+      month.innerHTML = output2;
+
+      //  출생월
+      let day = document.getElementById("day");
+      console.log(day);
+      let output3 = "";
+      //   지역변수 {}를 빠져나가면 let 선언한게 초기화 되기 때문에 다시 사용 가능
+      for (let i = 1; i <= 31; i++) {
+        output3 = output3 + `<option>${i}일</option>`;
+      }
+      day.innerHTML = output3;
+
+      //  출생월
+      let year = document.getElementById("year");
+      console.log(year);
+      let output4 = "";
+      //   지역변수 {}를 빠져나가면 let 선언한게 초기화 되기 때문에 다시 사용 가능
+      for (let i = 2026; i >= 1900; i--) {
+        output4 = output4 + `<option>${i}년도</option>`;
+      }
+      year.innerHTML = output4;
+    </script>
+  </body>
+</html>
