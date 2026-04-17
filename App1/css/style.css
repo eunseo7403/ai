@@ -1,0 +1,391 @@
+@charset "utf-8";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #ebebeb;
+  font-family:
+    "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  color: #333;
+  overflow-x: hidden;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* 모바일 웹 전체 대응 느낌 */
+.app {
+  position: relative;
+  width: 100%;
+  max-width: 576px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: #f3f3f3;
+  overflow-x: hidden;
+  box-shadow: none;
+}
+
+/* 추후 교체 가능: ./images/hero-bike.jpg */
+.hero {
+  position: relative;
+  height: 340px;
+  padding: 20px 22px 28px;
+  background-image: url("https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1200&q=80");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.05) 48%,
+    rgba(0, 0, 0, 0.15)
+  );
+}
+
+.hero-refresh-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+
+.hero-content {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 20px;
+  z-index: 2;
+  color: #fff;
+}
+
+.hero-sub {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.88;
+  letter-spacing: 0.3px;
+}
+
+.hero-title {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+
+.main-content {
+  padding: 18px 0 98px;
+}
+
+.summary-section {
+  display: flex;
+  gap: 10px;
+  padding: 0 22px;
+}
+
+.weather-card {
+  flex: 1;
+  min-width: 0;
+  padding: 16px 14px;
+  border-radius: 14px;
+  background: #f6f6f6;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.08);
+}
+
+.weather-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.weather-city {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.weather-temp {
+  display: block;
+  margin: 0 0 10px;
+  font-size: 44px !important;
+  line-height: 1;
+  font-weight: 800;
+  color: #f4a300 !important;
+  letter-spacing: -1px;
+}
+
+.weather-status {
+  margin: 12px 0 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: #767676;
+  line-height: 1.3;
+}
+
+.icon-btn {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 50%;
+  background: #ececec;
+  color: #555;
+  cursor: pointer;
+}
+
+.weather-middle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.weather-info {
+  min-width: 0;
+}
+
+.weather-temp {
+  display: block;
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 800;
+  color: #f4a300;
+  letter-spacing: -1px;
+}
+
+.weather-city {
+  margin: 8px 0 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #6d6d6d;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.weather-visual {
+  flex-shrink: 0;
+  font-size: 60px;
+  color: #b9b9b9;
+  line-height: 1;
+  margin-right: 10%;
+}
+
+.stats-col {
+  width: 122px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stat-card {
+  flex: 1;
+  min-height: 72px;
+  padding: 12px 12px 10px;
+  border-radius: 12px;
+  background: #f6f6f6;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stat-label {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: #5b5b5b;
+}
+
+.stat-value-wrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.stat-value {
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 800;
+  color: #444;
+  letter-spacing: -0.8px;
+}
+
+.stat-unit {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.1;
+}
+
+.content-section {
+  margin-top: 28px;
+}
+
+.section-title {
+  margin: 0 0 14px;
+  padding: 0 22px;
+  font-size: 17px;
+  line-height: 1.35;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  color: #3f3f3f;
+}
+
+/* 공통 row */
+.scroll-row {
+  padding: 0 22px;
+}
+
+/* 상단 작은 카드 2열 */
+/* 상단 작은 카드 swiper */
+.guide-swiper {
+  padding: 0 22px;
+}
+
+.guide-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.guide-swiper .swiper-slide {
+  width: 156px;
+  height: auto;
+  margin-right: 14px;
+}
+
+.guide-swiper .swiper-slide:last-child {
+  margin-right: 0;
+}
+
+.guide-card {
+  width: 100%;
+  height: 178px;
+  overflow: hidden;
+  background: #ddd;
+}
+
+/* 하단 큰 카드 세로 스택 */
+.story-row {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 0 22px;
+}
+
+.story-card {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ddd;
+}
+
+.story-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.18),
+    rgba(0, 0, 0, 0.05) 38%,
+    rgba(0, 0, 0, 0.18)
+  );
+}
+
+.story-copy {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 2;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.45;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.22);
+}
+
+.bottom-nav {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 20;
+  width: 100%;
+  max-width: 576px;
+  height: 74px;
+  padding: 16px 6px calc(10px + env(safe-area-inset-bottom));
+  background: #fff;
+  border-top: 1px solid #dfdfdf;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 52px;
+  color: #b5b5b5;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.nav-item i {
+  font-size: 19px;
+}
+
+.nav-item.active {
+  color: #f2a000;
+}
+
+@media (max-width: 390px) {
+  .story-card {
+    height: 400px;
+  }
+}

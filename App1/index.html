@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>제주도 자전거길 App</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="hero">
+        <div class="hero-overlay"></div>
+
+        <button
+          class="hero-refresh-btn"
+          id="locationRefreshBtn"
+          aria-label="현재 위치 날씨 새로고침"
+        >
+          <i class="fa-solid fa-location-crosshairs"></i>
+        </button>
+
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span id="userName">김은서</span>님 안녕하세요.<br />
+            즐거운 자전거 여행되세요
+          </h1>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <section class="summary-section">
+          <div class="weather-card">
+            <div class="weather-top">
+              <p class="weather-city" id="weatherCity">현재 위치 확인 중</p>
+
+              <button
+                class="icon-btn"
+                id="citySearchBtn"
+                aria-label="도시 검색"
+              >
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+
+            <div class="weather-middle">
+              <div class="weather-info">
+                <strong class="weather-temp" id="weatherTemp">20°</strong>
+                <p class="weather-status" id="weatherStatus">
+                  날씨 불러오는 중...
+                </p>
+              </div>
+
+              <div class="weather-visual" id="weatherVisual">
+                <i class="fa-solid fa-cloud-sun"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats-col">
+            <article class="stat-card">
+              <p class="stat-label">완주코스</p>
+              <div class="stat-value-wrap">
+                <strong class="stat-value" id="completedCourse">1</strong>
+                <span class="stat-unit">/10</span>
+              </div>
+            </article>
+
+            <article class="stat-card">
+              <p class="stat-label">이동거리</p>
+              <div class="stat-value-wrap">
+                <strong class="stat-value" id="rideDistance">15</strong>
+                <span class="stat-unit">km</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <h2 class="section-title">제주도 자전거 여행정보 가이드</h2>
+
+          <div class="guide-swiper swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <article class="guide-card">
+                  <img
+                    src="./images/guide-01.jpg"
+                    alt="자전거 코스 1"
+                    onerror="
+                      this.src =
+                        'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80'
+                    "
+                  />
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="guide-card">
+                  <img
+                    src="./images/guide-02.jpg"
+                    alt="자전거 코스 2"
+                    onerror="
+                      this.src =
+                        'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80'
+                    "
+                  />
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="guide-card">
+                  <img
+                    src="./images/guide-03.jpg"
+                    alt="자전거 코스 3"
+                    onerror="
+                      this.src =
+                        'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80'
+                    "
+                  />
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="guide-card">
+                  <img
+                    src="./images/guide-04.jpg"
+                    alt="자전거 코스 4"
+                    onerror="
+                      this.src =
+                        'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80'
+                    "
+                  />
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <h2 class="section-title">제주도 자전거 여행정보 가이드</h2>
+
+          <div class="scroll-row story-row">
+            <article class="story-card">
+              <img
+                src="./images/story-01.jpg"
+                alt="패키지 코스 1"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=1200&q=80'
+                "
+              />
+              <div class="story-overlay"></div>
+              <div class="story-copy">
+                제주도 자전거 여행 패키지<br />
+                첫번째 코스 이야기
+              </div>
+            </article>
+
+            <article class="story-card">
+              <img
+                src="./images/story-02.jpg"
+                alt="패키지 코스 2"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80'
+                "
+              />
+              <div class="story-overlay"></div>
+              <div class="story-copy">
+                제주도 자전거 여행 패키지<br />
+                첫번째 코스 이야기
+              </div>
+            </article>
+
+            <article class="story-card">
+              <img
+                src="./images/story-03.jpg"
+                alt="패키지 코스 3"
+                onerror="
+                  this.src =
+                    'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80'
+                "
+              />
+              <div class="story-overlay"></div>
+              <div class="story-copy">
+                제주도 자전거 여행 패키지<br />
+                첫번째 코스 이야기
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <nav class="bottom-nav">
+        <a href="#" class="nav-item active">
+          <i class="fa-solid fa-house"></i>
+          <span>홈</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="fa-regular fa-file-lines"></i>
+          <span>커뮤니티</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="fa-regular fa-map"></i>
+          <span>코스</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="fa-solid fa-crown"></i>
+          <span>랭킹</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="fa-regular fa-user"></i>
+          <span>마이</span>
+        </a>
+      </nav>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./script/script.js"></script>
+  </body>
+</html>
