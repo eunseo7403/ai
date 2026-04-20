@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>경주 맛집 리스트</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="drawer" id="drawer">
+        <button
+          type="button"
+          class="drawer-close"
+          id="drawerClose"
+          aria-label="메뉴 닫기"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="drawer-title">메뉴</div>
+
+        <button type="button" class="drawer-link" data-drawer-action="all">
+          전체 맛집 보기
+        </button>
+        <button
+          type="button"
+          class="drawer-link"
+          data-drawer-action="favorites"
+        >
+          즐겨찾기 보기
+        </button>
+        <button type="button" class="drawer-link" data-drawer-action="reload">
+          공공데이터 새로고침
+        </button>
+      </aside>
+
+      <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+      <header class="app-header">
+        <button
+          type="button"
+          class="brand"
+          id="brandHomeBtn"
+          aria-label="홈으로 이동"
+        >
+          <img
+            src="./images/symbol.jpg"
+            alt="경주 맛집 리스트 로고"
+            class="brand-logo"
+          />
+          <strong class="brand-title">경주 맛집 리스트</strong>
+        </button>
+
+        <button
+          type="button"
+          class="menu-btn"
+          id="menuBtn"
+          aria-label="메뉴 열기"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </header>
+
+      <main>
+        <section class="screen active" id="listScreen">
+          <div class="search-wrap">
+            <label class="search-box" for="searchInput">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                type="search"
+                id="searchInput"
+                placeholder="가게명, 주소, 메뉴로 검색"
+                autocomplete="off"
+              />
+            </label>
+          </div>
+
+          <div class="section-head">
+            <p class="section-title" id="listCountText">전체 (0건)</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="content-area">
+            <div class="status-card loading" id="loadingBox">
+              <i class="fa-solid fa-spinner fa-spin"></i>
+              <p>맛집 정보를 불러오는 중입니다.</p>
+            </div>
+
+            <div class="status-card error hidden" id="errorBox">
+              <i class="fa-solid fa-circle-exclamation"></i>
+              <p id="errorText">데이터를 불러오지 못했습니다.</p>
+            </div>
+
+            <div id="listContainer" class="place-list"></div>
+
+            <button type="button" class="more-btn hidden" id="moreBtn">
+              더보기
+            </button>
+          </div>
+        </section>
+
+        <section class="screen" id="detailScreen">
+          <div class="detail-hero-wrap">
+            <img
+              id="detailImage"
+              class="detail-hero"
+              src=""
+              alt="맛집 대표 이미지"
+            />
+            <div id="detailImageFallback" class="detail-hero fallback hidden">
+              <i class="fa-solid fa-utensils"></i>
+            </div>
+          </div>
+
+          <div class="detail-content">
+            <div class="detail-title-row">
+              <div>
+                <h2 id="detailName" class="detail-name">맛집명</h2>
+                <p id="detailCategory" class="detail-category">카테고리</p>
+              </div>
+
+              <div class="detail-actions">
+                <button
+                  type="button"
+                  class="icon-btn"
+                  id="shareBtn"
+                  aria-label="공유"
+                >
+                  <i class="fa-solid fa-share-nodes"></i>
+                </button>
+
+                <button
+                  type="button"
+                  class="icon-btn"
+                  id="detailFavoriteBtn"
+                  aria-label="즐겨찾기"
+                >
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+            </div>
+
+            <ul class="detail-meta" id="detailMetaList"></ul>
+
+            <div class="map-box" id="map"></div>
+            <button type="button" class="route-btn" id="routeBtn">
+              길찾기
+            </button>
+
+            <div class="review-summary" id="reviewSummary"></div>
+
+            <form id="reviewForm" class="review-form">
+              <div class="review-top-row">
+                <input
+                  type="text"
+                  id="reviewNickname"
+                  placeholder="닉네임(선택)"
+                  maxlength="20"
+                />
+                <input
+                  type="password"
+                  id="reviewPassword"
+                  placeholder="비밀번호"
+                  maxlength="20"
+                  required
+                />
+              </div>
+
+              <textarea
+                id="reviewText"
+                placeholder="리뷰를 작성해 주세요."
+                maxlength="300"
+                required
+              ></textarea>
+
+              <button type="submit" class="submit-btn">리뷰 등록</button>
+            </form>
+
+            <div id="reviewList" class="review-list"></div>
+          </div>
+        </section>
+      </main>
+
+      <nav class="bottom-nav">
+        <button type="button" class="nav-btn is-active" data-tab="all">
+          맛집
+        </button>
+        <button type="button" class="nav-btn" data-tab="favorites">
+          즐겨찾기
+        </button>
+      </nav>
+    </div>
+
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=3426f89206a177f340149da521e8a0ea&libraries=services"></script>
+    <script src="./script/script.js"></script>
+  </body>
+</html>
