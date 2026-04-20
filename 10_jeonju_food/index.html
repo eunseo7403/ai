@@ -1,0 +1,243 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>전주 맛집 모아보기</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="menu-backdrop" id="menuBackdrop"></div>
+
+      <aside class="menu-sheet" id="menuSheet" aria-hidden="true">
+        <div class="menu-sheet-head">
+          <strong>메뉴</strong>
+          <button
+            type="button"
+            class="icon-btn menu-close-btn"
+            id="menuCloseBtn"
+            aria-label="메뉴 닫기"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="menu-sheet-body">
+          <button type="button" class="menu-link-btn" id="menuAllBtn">
+            <i class="fa-solid fa-store"></i>
+            <span>전체 맛집 보기</span>
+          </button>
+
+          <button type="button" class="menu-link-btn" id="menuFavBtn">
+            <i class="fa-solid fa-heart"></i>
+            <span>즐겨찾기 보기</span>
+          </button>
+
+          <button type="button" class="menu-link-btn" id="menuHomeBtn">
+            <i class="fa-solid fa-house"></i>
+            <span>목록 화면으로 이동</span>
+          </button>
+        </div>
+      </aside>
+
+      <section class="screen screen-list is-active" id="listView">
+        <header class="topbar">
+          <a href="#" class="brand" id="brandHomeBtn">
+            <img src="./images/symbol.jpg" alt="전주 맛집 로고" />
+            <strong>전주 맛집 모아보기</strong>
+          </a>
+
+          <button
+            type="button"
+            class="icon-btn"
+            id="menuOpenBtn"
+            aria-label="메뉴 열기"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </header>
+
+        <div class="search-field">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="가게명, 주소, 메뉴로 검색"
+            autocomplete="off"
+          />
+          <button
+            type="button"
+            class="clear-search"
+            id="clearSearchBtn"
+            aria-label="검색어 지우기"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="result-bar">
+          <span id="resultText">전체 (0건)</span>
+        </div>
+
+        <ul class="restaurant-list" id="restaurantList"></ul>
+
+        <p class="empty-state" id="listEmpty" hidden>검색 결과가 없습니다.</p>
+
+        <button type="button" class="load-more-btn" id="loadMoreBtn">
+          더보기
+        </button>
+      </section>
+
+      <section class="screen screen-detail" id="detailView" aria-hidden="true">
+        <header class="topbar">
+          <a href="#" class="brand" id="detailBrandHomeBtn">
+            <img src="./images/symbol.jpg" alt="전주 맛집 로고" />
+            <strong>전주 맛집 모아보기</strong>
+          </a>
+
+          <button
+            type="button"
+            class="icon-btn"
+            id="detailMenuOpenBtn"
+            aria-label="메뉴 열기"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </header>
+
+        <div class="detail-hero">
+          <img id="detailImage" src="" alt="맛집 대표 이미지" />
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-title-row">
+            <div class="detail-title-wrap">
+              <h2 id="detailName">맛집명</h2>
+              <p id="detailCategory">업종</p>
+            </div>
+
+            <div class="detail-actions">
+              <button
+                type="button"
+                class="circle-btn"
+                id="shareBtn"
+                aria-label="공유하기"
+              >
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+
+              <button
+                type="button"
+                class="circle-btn"
+                id="detailFavoriteBtn"
+                aria-label="즐겨찾기"
+              >
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </div>
+
+          <ul class="detail-info-list">
+            <li class="detail-info-item" id="addressRow">
+              <i class="fa-solid fa-location-dot"></i>
+              <span id="detailAddress">주소</span>
+            </li>
+
+            <li class="detail-info-item" id="menuRow">
+              <i class="fa-solid fa-utensils"></i>
+              <span id="detailMenu">대표 메뉴</span>
+            </li>
+
+            <li class="detail-info-item" id="hoursRow">
+              <i class="fa-solid fa-clock"></i>
+              <span id="detailHours">운영 시간</span>
+            </li>
+
+            <li class="detail-info-item" id="phoneRow">
+              <i class="fa-solid fa-phone"></i>
+              <span id="detailPhone">전화번호</span>
+            </li>
+
+            <li class="detail-info-item" id="optionRow">
+              <i class="fa-solid fa-square-parking"></i>
+              <span id="detailOptions">부가 정보</span>
+            </li>
+          </ul>
+
+          <div class="map-box" id="map">
+            <div class="map-fallback-text">지도를 불러오는 중입니다.</div>
+          </div>
+
+          <button type="button" class="route-btn" id="routeBtn">길찾기</button>
+
+          <div class="rating-row">
+            <i class="fa-solid fa-star"></i>
+            <strong id="detailRatingText">0.0</strong>
+            <span id="detailReviewCountText">(리뷰 0건)</span>
+          </div>
+
+          <form class="review-form" id="reviewForm">
+            <div class="review-input-row">
+              <input
+                type="text"
+                id="reviewNickname"
+                placeholder="닉네임(선택)"
+                maxlength="20"
+              />
+              <input
+                type="password"
+                id="reviewPassword"
+                placeholder="비밀번호"
+                maxlength="20"
+                required
+              />
+            </div>
+
+            <textarea
+              id="reviewContent"
+              placeholder="리뷰를 작성해 주세요."
+              maxlength="300"
+              required
+            ></textarea>
+
+            <button type="submit" class="review-submit-btn">리뷰 등록</button>
+          </form>
+
+          <ul class="review-list" id="reviewList"></ul>
+          <p class="empty-review" id="emptyReview">등록된 리뷰가 없습니다.</p>
+        </div>
+      </section>
+
+      <nav class="bottom-nav">
+        <button type="button" class="nav-btn is-active" data-tab="all">
+          맛집
+        </button>
+        <button type="button" class="nav-btn" data-tab="favorites">
+          즐겨찾기
+        </button>
+      </nav>
+
+      <div class="toast" id="toast"></div>
+    </div>
+
+    <script src="./script/script.js"></script>
+  </body>
+</html>
