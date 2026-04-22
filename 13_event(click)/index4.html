@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클릭 이벤트3</title>
+  </head>
+  <body>
+    <button>red</button>
+    <button>blue</button>
+    <button>green</button>
+    <hr />
+    <div></div>
+
+    <script>
+      let btn = document.querySelectorAll("button");
+      console.log(btn);
+      let box = document.querySelector("div");
+      console.log(box);
+      box.style.width = "500px";
+      box.style.height = "500px";
+      box.style.border = "10px solid black";
+
+      for (let i = 0; i < btn.length; i++) {
+        btn[i].style.cursor = "pointer";
+      }
+
+      btn[0].addEventListener("click", function () {
+        box.style.background = "red";
+      });
+
+      btn[1].addEventListener("click", function () {
+        box.style.background = "blue";
+      });
+
+      btn[2].addEventListener("click", function () {
+        box.style.background = "green";
+      });
+    </script>
+  </body>
+</html>

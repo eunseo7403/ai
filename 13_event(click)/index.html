@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>마우스 이벤트</title>
+  </head>
+  <body>
+    <h1>큰 제목 태그</h1>
+    <h2>중간 제목 태그</h2>
+    <p>첫번째 문단</p>
+
+    <script>
+      let tit1 = document.querySelector("h1");
+      console.log(tit1);
+      // h1 태그를 클릭하면 글자색이 바뀌는 코드
+
+      // 1. 고전방식 이벤트
+      tit1.onclick = function () {
+        //   함수 안에 코드를 실행
+        // tit1.style.color = "red"; <- 이것도 됨
+        // this 키워드 -> 나 자신의 객체 <- 이걸 더 많이 쓰는듯!
+        this.style.color = "red";
+      };
+    </script>
+  </body>
+</html>

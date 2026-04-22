@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Click 이벤트</title>
+  </head>
+  <body>
+    <h1 id="txt">제일 큰 제목 태그</h1>
+    <h2 id="txt2">두번째 큰 제목 태그</h2>
+    <p>첫번째 문단</p>
+
+    <script>
+      // h1 클릭시 글자색이 빨간색으로
+      let tit = document.getElementById("txt");
+      console.log(tit);
+      tit.addEventListener("click", function () {
+        // 실행시킬 코드
+        tit.style.color = "red";
+        this.style.background = "yellow";
+      });
+
+      // h2 클릭시 글자색이 파란색으로
+      let tit2 = document.getElementById("txt2");
+      console.log(tit2);
+      tit2.addEventListener("click", function () {
+        this.style.border = "solid 10px red";
+      });
+
+      let ppp = document.querySelector("p");
+      console.log(ppp);
+      // p 마우스 hover(enter)시 글자색이 빨간색, 글자크기가 24px
+      ppp.addEventListener("mouseenter", function () {
+        this.style.fontSize = "24px";
+        this.style.color = "red";
+      });
+
+      // 마우스 leave시 글자크기 16px 글자색 검정색
+      ppp.addEventListener("mouseleave", function () {
+        this.style.fontSize = "16px";
+        this.style.color = "black";
+      });
+    </script>
+  </body>
+</html>
