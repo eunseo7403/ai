@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문서객체선택(class)</title>
+  </head>
+  <body>
+    <h1 class="txt">큰 제목 태그1</h1>
+    <h1 class="txt">큰 제목 태그2</h1>
+    <h1 class="txt">큰 제목 태그3</h1>
+    <p class="ppp">여기는 첫번째 문단입니다.</p>
+
+    <script>
+      // document.getElementsByClassName("클래스이름")
+      let tit = document.getElementsByClassName("txt");
+      console.log(tit);
+
+      tit[0].style.border = "5px solid red";
+      tit[1].style.border = "5px solid blue";
+      tit[2].style.border = "5px solid green";
+
+      let p1 = document.getElementsByClassName("ppp");
+      console.log(p1);
+      p1[0].style.border = "2px dotted #000";
+    </script>
+  </body>
+</html>

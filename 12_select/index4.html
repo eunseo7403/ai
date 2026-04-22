@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문서객체선택방법 (query Selector())</title>
+  </head>
+  <body>
+    <div class="box">
+      <h1>큰 제목 태그1</h1>
+      <h1>큰 제목 태그2</h1>
+      <h1>큰 제목 태그3</h1>
+    </div>
+
+    <h1>큰 제목 태그4</h1>
+    <h1>큰 제목 태그5</h1>
+
+    <script>
+      // querySelector("") css로 부모자식간의 선택자를 줄때
+      let tit = document.querySelector(".box h1");
+      console.log(tit);
+      tit.style.border = "5px solid red";
+
+      let tit2 = document.querySelectorAll(".box h1");
+      console.log(tit2);
+
+      tit2[0].style.background = "red";
+      tit2[1].style.background = "blue";
+      tit2[2].style.background = "green";
+    </script>
+  </body>
+</html>

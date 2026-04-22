@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>태그 선택자</title>
+  </head>
+  <body>
+    <h1>큰 제목1</h1>
+    <h1>큰 제목2</h1>
+    <h1>큰 제목3</h1>
+    <p>첫 번째 문단입니다</p>
+
+    <script>
+      // getElementsByTagname("") -> tagname으로 문서객체를 선택
+      // 여러개 선택될때에는 배열로 선택해서 처리
+
+      // 1. 문서 객체 선택
+      let tit = document.getElementsByTagName("h1");
+      console.log(tit);
+
+      tit[0].style.color = "red";
+      tit[1].style.color = "blue";
+      tit[2].style.color = "green";
+
+      let para = document.getElementsByTagName("p");
+      console.log(para);
+      para[0].style.color = "pink";
+      para[0].style.fontSize = "20px";
+    </script>
+  </body>
+</html>
