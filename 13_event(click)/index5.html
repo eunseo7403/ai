@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클릭이벤트</title>
+    <style>
+      .box {
+        width: 646px;
+        display: flex;
+        gap: 20px;
+      }
+
+      .box div {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+      }
+
+      .orange {
+        background: orange;
+      }
+
+      .lightblue {
+        background: lightblue;
+      }
+
+      .lightpurple {
+        background: rgb(225, 173, 230);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>제이쿼리 함수</h1>
+    <button id="btn1">숨김</button>
+    <button id="btn2">보이기</button>
+    <button id="btn3">토글</button>
+    <button id="btn4">늘리기</button>
+    <button id="btn5">줄이기</button>
+    <hr />
+    <div class="box">
+      <div class="orange">보이기/숨기기</div>
+      <div class="lightblue">토글</div>
+      <div class="lightpurple">가로/세로 크기</div>
+    </div>
+
+    <script>
+      let btn1 = document.getElementById("btn1");
+      console.log(btn1);
+      let box1 = document.querySelector(".box .orange");
+      console.log(box1);
+      let btn2 = document.getElementById("btn2");
+      console.log(btn2);
+
+      btn1.addEventListener("click", function () {
+        box1.style.display = "none";
+      });
+
+      btn2.addEventListener("click", function () {
+        box1.style.display = "block";
+      });
+
+      let btn3 = document.getElementById("btn3");
+      console.log(btn3);
+      let bluebox = document.querySelector(".box .lightblue");
+      console.log(bluebox);
+
+      btn3.addEventListener("click", function () {
+        if (bluebox.style.display == "none") {
+          //참일때
+          bluebox.style.display = "block";
+        } else {
+          //거짓일때
+          bluebox.style.display = "none";
+        }
+      });
+
+      let btn4 = document.getElementById("btn4");
+      console.log(btn4);
+      let purplebox = document.querySelector(".box .lightpurple");
+      console.log(purplebox);
+
+      btn4.addEventListener("click", function () {
+        purplebox.style.width = "600px";
+        purplebox.style.height = "600px";
+      });
+
+      btn5.addEventListener("click", function () {
+        purplebox.style.width = "200px";
+        purplebox.style.height = "200px";
+      });
+    </script>
+  </body>
+</html>
