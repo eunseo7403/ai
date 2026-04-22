@@ -17,24 +17,39 @@
     </ul>
 
     <script>
-      let name = document.getElementsByTagName("ul li");
-      name[0].style.background = "yellow";
-      name[0].style.fontSize = "24px";
-      name[1].style.background = "orange";
-      name[1].style.color = "#fff";
-      name[1].style.listStyle = "none";
+      //   let name = document.getElementsByTagName("ul li");
+      //   name[0].style.background = "yellow";
+      //   name[0].style.fontSize = "24px";
+      // name[1].style.background = "orange";
+      // name[1].style.color = "#fff";
+      // name[1].style.listStyle = "none";
 
-      name[2].style.background = "yellow";
-      name[2].style.fontSize = "24px";
-      name[3].style.background = "orange";
-      name[3].style.color = "#fff";
-      name[3].style.listStyle = "none";
+      //   name[2].style.background = "yellow";
+      //   name[2].style.fontSize = "24px";
+      //   name[3].style.background = "orange";
+      //   name[3].style.color = "#fff";
+      //   name[3].style.listStyle = "none";
 
-      name[4].style.background = "yellow";
-      name[4].style.fontSize = "24px";
-      name[5].style.background = "orange";
-      name[5].style.color = "#fff";
-      name[5].style.listStyle = "none";
+      //   name[4].style.background = "yellow";
+      //   name[4].style.fontSize = "24px";
+      //   name[5].style.background = "orange";
+      //   name[5].style.color = "#fff";
+      //   name[5].style.listStyle = "none";
+
+      //반복문
+      let name = document.querySelectorAll("ul li");
+      console.log(name);
+      for (let i = 0; i < name.length; i++) {
+        // 짝수, 홀수 판단 (%는 나머지까지 구할때 ==0 이니까 나머지값이 0일때 라는 뜻)
+        if (i % 2 == 0) {
+          name[i].style.background = "yellow";
+          name[i].style.fontSize = "24px";
+        } else {
+          name[i].style.background = "orange";
+          name[i].style.color = "#fff";
+          name[i].style.listStyle = "none";
+        }
+      }
     </script>
   </body>
 </html>
