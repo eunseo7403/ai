@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+.box1,
+.box2,
+.box3 {
+  width: 640px;
+  height: 200px;
+  border: 5px solid #ccc;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.box1 div,
+.box2 div,
+.box3 div {
+  width: 200px;
+  height: 200px;
+}
+
+.box1 div:first-child {
+  background: red;
+}
+
+.box1 div:last-child {
+  background: green;
+}
+
+.box2 div:first-child {
+  background: orange;
+}
+
+.box2 div:nth-child(2) {
+  background: yellow;
+}
+
+.box2 div:last-child {
+  background: lightskyblue;
+}
+
+/* .box3 div:first-child {
+  background: aqua;
+} */
+
+.box3 div:last-child {
+  background: blueviolet;
+}
+
+/* 공중에 배치 */
+.box2 {
+  position: relative;
+}
+
+.box2 .ani {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.bg {
+  background: gold;
+}
