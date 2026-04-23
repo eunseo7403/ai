@@ -16,6 +16,7 @@
 .box3 div {
   width: 200px;
   height: 200px;
+  transition: all 1s ease-in-out;
 }
 
 .box1 div:first-child {
@@ -53,10 +54,28 @@
 
 .box2 .ani {
   position: absolute;
-  right: 0;
+  left: 440px;
   top: 0;
 }
 
 .bg {
   background: gold;
+}
+
+.fade-hidden {
+  transition: all 1s ease-in-out;
+  opacity: 0;
+}
+
+.slidebox {
+  transition: all 1s ease-in-out;
+}
+
+.box2 .slide-hidden {
+  height: 0;
+  opacity: 0;
+}
+
+.box2 .ani-move {
+  left: 900px;
 }
