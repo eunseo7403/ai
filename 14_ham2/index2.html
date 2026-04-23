@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수응용2</title>
+  </head>
+  <body>
+    <script>
+      function bmi(name, height, weight) {
+        let result = Math.floor(weight / ((height * height) / 10000));
+        document.write(`${name}님의 체질량지수는 ${result}입니다.<br>`);
+      }
+
+      bmi("홀쭉이", 50, 160);
+      bmi("코린이", 60, 170);
+      bmi("퉁퉁이", 77, 180);
+    </script>
+  </body>
+</html>

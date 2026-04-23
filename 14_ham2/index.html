@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수응용1</title>
+  </head>
+  <body>
+    <script>
+      let song1 =
+        "1절<br>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세<br>";
+      let song2 =
+        "2절<br>남산위에 저 소나무 철갑을 두른듯 바람서리 불변함은 우리기상 일세<br>";
+      let song3 =
+        "3절<br>가을하늘 공활한데 높고 구름없이  밝은달은 우리가슴 일편단심일세세<br>";
+      let song4 =
+        "4절<br>이 기상과 이 맘으로 충성을 다하여 괴로우나 즐거우나 나라사랑하세<br>";
+
+      function song(text) {
+        document.write(
+          `${text}(후렴)무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세<br><br>`,
+        );
+      }
+
+      song(song1);
+      song(song2);
+      song(song3);
+      song(song4);
+    </script>
+  </body>
+</html>

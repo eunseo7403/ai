@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수응용3</title>
+  </head>
+  <body>
+    <script>
+      let amount = 3650000;
+      let term = 1;
+      let rate = 4;
+      function inter() {
+        let sum = (amount * term * rate) / 100;
+        return sum;
+      }
+
+      document.write(`맡긴 금액은 ${amount}원 입니다. <br>`);
+      document.write(`이자는 ${inter()}원 입니다.<br>`);
+      document.write(`최종 받을 금액은 ${amount + inter()}원 입니다.<br>`);
+    </script>
+  </body>
+</html>
