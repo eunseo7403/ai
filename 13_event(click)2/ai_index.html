@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>순수 JavaScript 애니메이션</title>
+
+    <style>
+      /* 전체 기본 여백 제거 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* body 기본 스타일 */
+      body {
+        padding: 10px;
+        background: #efefef;
+        font-family: "Malgun Gothic", "맑은 고딕", sans-serif;
+        color: #000;
+      }
+
+      /* 제목 */
+      h1 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      /* 설명 리스트 */
+      .guide {
+        margin-bottom: 16px;
+        padding-left: 24px;
+        line-height: 1.7;
+        font-size: 16px;
+      }
+
+      /* 버튼 묶음 */
+      .btn-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+
+      /* 버튼 스타일 */
+      .btn-wrap button {
+        padding: 4px 10px;
+        border: 1px solid #999;
+        background: #fff;
+        cursor: pointer;
+      }
+
+      /* 구분선 */
+      hr {
+        margin: 8px 0 12px;
+        border: none;
+        border-top: 1px solid #999;
+      }
+
+      /* 각 줄 */
+      .row {
+        margin-bottom: 50px;
+      }
+
+      /* 박스들을 감싸는 영역 */
+      .frame {
+        width: 700px;
+        min-height: 210px;
+        border: 4px solid #c8c8c8;
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 0;
+        background: transparent;
+      }
+
+      /* 공통 박스 */
+      .box {
+        width: 200px;
+        height: 200px;
+        padding: 8px;
+        color: #000;
+        font-size: 14px;
+        overflow: hidden;
+      }
+
+      /* 박스별 배경색 */
+      .box-red {
+        background: red;
+      }
+
+      .box-green {
+        background: green;
+      }
+
+      .box-yellow {
+        background: #ffcc00;
+      }
+
+      .box-lime {
+        background: #ccff00;
+      }
+
+      .box-cyan {
+        background: #1fb6df;
+
+        /* left 값을 움직이기 위해 position 필요 */
+        position: relative;
+
+        /* 처음 위치 */
+        left: 0;
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>[ JavaScript 애니메이션 관련 메서드 ]</h1>
+
+    <ol class="guide">
+      <li>fadeIn()</li>
+      <li>fadeOut()</li>
+      <li>fadeToggle()</li>
+      <li>slideUp()</li>
+      <li>slideDown()</li>
+      <li>slideToggle()</li>
+      <li>animate()</li>
+    </ol>
+
+    <!-- 버튼 영역 -->
+    <div class="btn-wrap">
+      <button id="btnFadeIn">fadeIn</button>
+      <button id="btnFadeOut">fadeOut</button>
+      <button id="btnFadeToggle">fadeToggle</button>
+      <button id="btnSlideUp">slideUp</button>
+      <button id="btnSlideDown">slideDown</button>
+      <button id="btnSlideToggle">slideToggle</button>
+      <button id="btnAni1">ani1</button>
+      <button id="btnAni2">ani2</button>
+    </div>
+
+    <hr />
+
+    <!-- 첫 번째 줄 -->
+    <div class="row">
+      <div class="frame">
+        <div class="box box-red" id="boxFade">fadeIn / fadeOut</div>
+        <div class="box box-green" id="boxFadeToggle">fadeToggle</div>
+      </div>
+    </div>
+
+    <!-- 두 번째 줄 -->
+    <div class="row">
+      <div class="frame">
+        <div class="box box-yellow" id="boxSlide">slideUp / slideDown</div>
+        <div class="box box-lime" id="boxSlideToggle">slideToggle</div>
+        <div class="box box-cyan" id="boxAni">Animation</div>
+      </div>
+    </div>
+
+    <script>
+      /* =========================
+         1. 박스 요소를 변수에 저장
+      ========================= */
+
+      // fadeIn / fadeOut 할 빨간 박스
+      const boxFade = document.getElementById("boxFade");
+
+      // fadeToggle 할 초록 박스
+      const boxFadeToggle = document.getElementById("boxFadeToggle");
+
+      // slideUp / slideDown 할 노란 박스
+      const boxSlide = document.getElementById("boxSlide");
+
+      // slideToggle 할 연두 박스
+      const boxSlideToggle = document.getElementById("boxSlideToggle");
+
+      // ani1 / ani2 할 파란 박스
+      const boxAni = document.getElementById("boxAni");
+
+      /* =========================
+         2. 버튼 요소를 변수에 저장
+      ========================= */
+
+      const btnFadeIn = document.getElementById("btnFadeIn");
+      const btnFadeOut = document.getElementById("btnFadeOut");
+      const btnFadeToggle = document.getElementById("btnFadeToggle");
+
+      const btnSlideUp = document.getElementById("btnSlideUp");
+      const btnSlideDown = document.getElementById("btnSlideDown");
+      const btnSlideToggle = document.getElementById("btnSlideToggle");
+
+      const btnAni1 = document.getElementById("btnAni1");
+      const btnAni2 = document.getElementById("btnAni2");
+
+      /* =========================
+         3. fade 관련 함수
+      ========================= */
+
+      // 요소를 서서히 사라지게 하는 함수
+      function fadeOut(element, duration = 600) {
+        // opacity가 천천히 바뀌도록 transition 설정
+        element.style.transition = `opacity ${duration}ms`;
+
+        // 시작 상태는 보이는 상태
+        element.style.opacity = "1";
+
+        // 다음 화면 그리는 순간 opacity를 0으로 변경
+        requestAnimationFrame(function () {
+          element.style.opacity = "0";
+        });
+
+        // 애니메이션이 끝난 뒤 완전히 숨김
+        setTimeout(function () {
+          element.style.display = "none";
+        }, duration);
+      }
+
+      // 요소를 서서히 나타나게 하는 함수
+      function fadeIn(element, duration = 600, displayValue = "block") {
+        // 먼저 화면에 보여야 하므로 display 설정
+        element.style.display = displayValue;
+
+        // 처음에는 안 보이게 시작
+        element.style.opacity = "0";
+
+        // opacity 변화 애니메이션 설정
+        element.style.transition = `opacity ${duration}ms`;
+
+        // 다음 프레임에서 opacity를 1로 변경
+        requestAnimationFrame(function () {
+          element.style.opacity = "1";
+        });
+      }
+
+      // 보이면 숨기고, 숨겨져 있으면 나타나게 하는 함수
+      function fadeToggle(element, duration = 600, displayValue = "block") {
+        const style = window.getComputedStyle(element);
+
+        if (style.display === "none") {
+          fadeIn(element, duration, displayValue);
+        } else {
+          fadeOut(element, duration);
+        }
+      }
+
+      /* =========================
+         4. slide 관련 함수
+      ========================= */
+
+      // 요소가 위로 접히듯 사라지는 함수
+      function slideUp(element, duration = 600) {
+        // transition 적용
+        element.style.transition = `height ${duration}ms, padding-top ${duration}ms, padding-bottom ${duration}ms, opacity ${duration}ms`;
+
+        // 현재 높이를 시작값으로 저장
+        element.style.height = element.offsetHeight + "px";
+
+        // 내용이 박스 밖으로 보이지 않게 처리
+        element.style.overflow = "hidden";
+
+        // 현재는 보이는 상태
+        element.style.opacity = "1";
+
+        // 다음 프레임에서 높이, 패딩, 투명도를 줄임
+        requestAnimationFrame(function () {
+          element.style.height = "0px";
+          element.style.paddingTop = "0px";
+          element.style.paddingBottom = "0px";
+          element.style.opacity = "0";
+        });
+
+        // 애니메이션 끝나면 display none 처리
+        setTimeout(function () {
+          element.style.display = "none";
+        }, duration);
+      }
+
+      // 요소가 아래로 펼쳐지듯 나타나는 함수
+      function slideDown(element, duration = 600) {
+        // 화면에 다시 보이게 설정
+        element.style.display = "block";
+
+        // 원래 박스 높이
+        const fullHeight = 200;
+
+        // 넘치는 내용 숨기기
+        element.style.overflow = "hidden";
+
+        // 시작 상태: 접혀 있는 상태
+        element.style.height = "0px";
+        element.style.paddingTop = "0px";
+        element.style.paddingBottom = "0px";
+        element.style.opacity = "0";
+
+        // transition 설정
+        element.style.transition = `height ${duration}ms, padding-top ${duration}ms, padding-bottom ${duration}ms, opacity ${duration}ms`;
+
+        // 다음 프레임에서 원래 크기로 펼치기
+        requestAnimationFrame(function () {
+          element.style.height = fullHeight + "px";
+          element.style.paddingTop = "8px";
+          element.style.paddingBottom = "8px";
+          element.style.opacity = "1";
+        });
+      }
+
+      // 보이면 slideUp, 숨겨져 있으면 slideDown
+      function slideToggle(element, duration = 600) {
+        const style = window.getComputedStyle(element);
+
+        if (style.display === "none") {
+          slideDown(element, duration);
+        } else {
+          slideUp(element, duration);
+        }
+      }
+
+      /* =========================
+         5. ani 관련 함수
+      ========================= */
+
+      // ani1 버튼 클릭 시
+      // Animation 박스를 오른쪽으로 500px 이동
+      function ani1() {
+        boxAni.style.transition = "left 800ms";
+        boxAni.style.left = "500px";
+      }
+
+      // ani2 버튼 클릭 시
+      // Animation 박스를 다시 원래 위치로 이동
+      function ani2() {
+        boxAni.style.transition = "left 800ms";
+        boxAni.style.left = "0px";
+      }
+
+      /* =========================
+         6. 버튼과 함수 연결
+      ========================= */
+
+      // fadeIn 버튼 클릭 -> 빨간 박스 나타남
+      btnFadeIn.addEventListener("click", function () {
+        fadeIn(boxFade);
+      });
+
+      // fadeOut 버튼 클릭 -> 빨간 박스 사라짐
+      btnFadeOut.addEventListener("click", function () {
+        fadeOut(boxFade);
+      });
+
+      // fadeToggle 버튼 클릭 -> 초록 박스 토글
+      btnFadeToggle.addEventListener("click", function () {
+        fadeToggle(boxFadeToggle);
+      });
+
+      // slideUp 버튼 클릭 -> 노란 박스 접힘
+      btnSlideUp.addEventListener("click", function () {
+        slideUp(boxSlide);
+      });
+
+      // slideDown 버튼 클릭 -> 노란 박스 펼쳐짐
+      btnSlideDown.addEventListener("click", function () {
+        slideDown(boxSlide);
+      });
+
+      // slideToggle 버튼 클릭 -> 연두 박스 토글
+      btnSlideToggle.addEventListener("click", function () {
+        slideToggle(boxSlideToggle);
+      });
+
+      // ani1 버튼 클릭 -> 파란 박스 오른쪽 500px 이동
+      btnAni1.addEventListener("click", function () {
+        ani1();
+      });
+
+      // ani2 버튼 클릭 -> 파란 박스 원래 위치로 복귀
+      btnAni2.addEventListener("click", function () {
+        ani2();
+      });
+    </script>
+  </body>
+</html>
