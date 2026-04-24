@@ -2415,6 +2415,9 @@
         </div>
       </div>
     </footer>
+
+    <button type="button" class="top-btn" aria-label="맨 위로 이동">TOP</button>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
@@ -2501,6 +2504,31 @@
           );
 
           activeContent.classList.add("active");
+        });
+      });
+
+      // TOP 버튼
+      const topBtn = document.querySelector(".top-btn");
+      const banchanTitle = document.querySelector(".banchan .title");
+
+      function toggleTopButton() {
+        const triggerPoint =
+          banchanTitle.getBoundingClientRect().bottom + window.scrollY;
+
+        if (window.scrollY > triggerPoint) {
+          topBtn.classList.add("active");
+        } else {
+          topBtn.classList.remove("active");
+        }
+      }
+
+      window.addEventListener("scroll", toggleTopButton);
+      window.addEventListener("load", toggleTopButton);
+
+      topBtn.addEventListener("click", function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
         });
       });
     </script>
