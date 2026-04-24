@@ -1,0 +1,1082 @@
+body {
+  background: #fff;
+  color: #111;
+}
+
+/* 배너(슬라이드) 영역 */
+/* #slider {
+  width: 100%;
+  height: 500px;
+  background: url("../images/banner/imgi_35_banner_4f8fd895dc91e1c17e274d2ee73a8da4.png")
+    no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+} */
+
+.main-banner {
+  width: 100%;
+  height: 480px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.mainBannerSwiper,
+.mainBannerSwiper .swiper-wrapper,
+.mainBannerSwiper .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.banner-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 기본 swiper 화살표 숨김 */
+.main-banner .swiper-button-prev::after,
+.main-banner .swiper-button-next::after {
+  display: none;
+}
+
+/* 이전 / 다음 버튼 */
+.main-banner .main-banner-prev,
+.main-banner .main-banner-next {
+  position: absolute;
+  top: auto;
+  bottom: 24px;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  background-image: url("../images/icon/icon-arrow-right-a3a3a3-24.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px 24px;
+}
+
+.main-banner .main-banner-prev {
+  left: 362px;
+  transform: rotate(180deg);
+}
+
+.main-banner .main-banner-next {
+  left: 414px;
+}
+
+.main-banner .main-banner-prev:hover,
+.main-banner .main-banner-next:hover {
+  background-color: #ffffff;
+}
+
+.main-banner .main-banner-prev:focus-visible,
+.main-banner .main-banner-next:focus-visible {
+  outline: 2px solid #333;
+  outline-offset: 2px;
+}
+
+/* 페이지네이션 */
+.main-banner .main-banner-pagination {
+  position: absolute;
+  left: auto;
+  right: 362px;
+  bottom: 24px;
+  z-index: 10;
+  width: auto;
+  min-width: 50px;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 13px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 14px;
+  line-height: 25px;
+  font-weight: 0;
+  text-align: center;
+}
+
+.main-banner .main-banner-pagination .swiper-pagination-current,
+.main-banner .main-banner-pagination .swiper-pagination-total {
+  display: inline-block;
+  min-width: 10px;
+}
+
+.main-banner .main-banner-pagination .fraction-divider {
+  display: inline-block;
+  margin: 0 4px;
+  font-size: 12px;
+  opacity: 0.5;
+  position: relative;
+}
+
+/* 메인 영역 */
+main {
+  width: 1200px;
+  min-height: 600px;
+  margin: 0 auto;
+}
+
+/* 공통 타이틀 */
+main .title {
+  text-align: center;
+}
+
+main .title h2 {
+  margin-bottom: 16px;
+  font-size: 28px;
+  font-weight: 600;
+  color: #111;
+}
+
+main .title p {
+  margin-bottom: 42px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #505050;
+}
+
+/* 반찬 영역 */
+main .banchan {
+  width: 100%;
+  min-height: 1256px;
+  padding: 50px 16px 16px;
+}
+
+main .banchan .product {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* 집밥 한 끼 */
+main .day-banchan {
+  width: 100%;
+  padding: 50px 16px 16px;
+}
+
+/* 집밥 한 끼 swiper */
+main .day-banchan .day-banchan-slider-wrap {
+  position: relative;
+}
+
+main .day-banchan .dayBanchanSwiper {
+  width: 100%;
+  overflow: hidden;
+}
+
+main .day-banchan .dayBanchanSwiper .swiper-wrapper {
+  align-items: flex-start;
+}
+
+main .day-banchan .dayBanchanSwiper .swiper-slide {
+  height: auto;
+}
+
+main .day-banchan .dayBanchanSwiper .meal-card {
+  width: 100%;
+  background: transparent;
+}
+
+main .day-banchan .dayBanchanSwiper .meal-thumb {
+  width: 100%;
+  height: 370px;
+  border-radius: 4px;
+}
+
+main .day-banchan .dayBanchanSwiper .meal-thumb .food-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+main .day-banchan .day-banchan-prev,
+main .day-banchan .day-banchan-next {
+  position: absolute;
+  top: 40%;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  background-image: url("../images/icon/icon-arrow-right-a3a3a3-24.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transform: translateY(-50%);
+}
+
+main .day-banchan .day-banchan-prev::after,
+main .day-banchan .day-banchan-next::after {
+  display: none;
+}
+
+main .day-banchan .day-banchan-prev {
+  left: -20px;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+main .day-banchan .day-banchan-next {
+  right: -20px;
+}
+
+main .day-banchan .day-banchan-prev:hover,
+main .day-banchan .day-banchan-next:hover {
+  background-color: #fff;
+}
+
+main .day-banchan .day-banchan-prev.swiper-button-disabled,
+main .day-banchan .day-banchan-next.swiper-button-disabled {
+  opacity: 0.4;
+}
+
+@media (max-width: 768px) {
+  main .day-banchan .day-banchan-slider-wrap {
+    overflow: visible;
+  }
+
+  main .day-banchan .dayBanchanSwiper {
+    overflow: visible;
+  }
+
+  main .day-banchan .dayBanchanSwiper .meal-thumb {
+    height: 240px;
+    border: 1px solid #efefef;
+  }
+
+  main .day-banchan .day-banchan-prev,
+  main .day-banchan .day-banchan-next {
+    display: none;
+  }
+}
+
+/* 새로 나온 반찬 */
+main .new-banchan {
+  width: 100%;
+  padding: 50px 16px 16px;
+}
+
+main .new-banchan .new-product {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* MD 추천 반찬 */
+main .md-banchan {
+  width: 100%;
+  padding: 50px 16px 16px;
+}
+
+main .md-banchan .category-list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 26px 0 42px;
+}
+
+main .md-banchan .category-list a {
+  height: 34px;
+  padding: 24px;
+  border-radius: 999px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+main .md-banchan .category-list a:not(.active) {
+  font-weight: 500;
+}
+
+main .md-banchan .category-list a.active {
+  background: #0d5611;
+  color: #fff;
+  font-weight: 600;
+}
+
+main .md-banchan .md-product {
+  width: 100%;
+  display: none;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+main .md-banchan .md-product.active {
+  display: flex;
+}
+
+/* 반찬 / 집밥 / 새반찬 / MD 카드 공통 */
+main .banchan .card,
+main .day-banchan .meal-card,
+main .new-banchan .card,
+main .md-banchan .card {
+  width: 280px;
+  background: #0d5611;
+}
+
+main .banchan .card-thumb,
+main .day-banchan .meal-thumb,
+main .new-banchan .card-thumb,
+main .md-banchan .card-thumb {
+  position: relative;
+  width: 280px;
+  height: 370px;
+  background: #fff;
+  overflow: hidden;
+}
+
+main .banchan .card-thumb .food-img,
+main .day-banchan .meal-thumb .food-img,
+main .new-banchan .card-thumb .food-img,
+main .md-banchan .card-thumb .food-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+main .banchan .card-info,
+main .day-banchan .meal-info,
+main .new-banchan .card-info,
+main .md-banchan .card-info {
+  width: 100%;
+  height: 162px;
+  padding: 12px 0 16px;
+  background: #fff;
+}
+
+main .banchan .card-info .tag-wrap,
+main .day-banchan .meal-info .tag-wrap,
+main .new-banchan .card-info .tag-wrap,
+main .md-banchan .card-info .tag-wrap {
+  margin-bottom: 8px;
+}
+
+main .banchan .card-info .tag,
+main .day-banchan .meal-info .meal-tag,
+main .new-banchan .card-info .tag,
+main .md-banchan .card-info .tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 4px 5px;
+  border-radius: 3px;
+  margin-right: 4px;
+}
+
+main .banchan .card-info .tag.tag-new,
+main .day-banchan .meal-info .meal-tag.tag-new,
+main .new-banchan .card-info .tag.tag-new,
+main .md-banchan .card-info .tag.tag-new {
+  color: #d24e44;
+  background: #f7d9d3;
+}
+
+main .banchan .card-info .tag.tag-hot,
+main .new-banchan .card-info .tag.tag-hot,
+main .md-banchan .card-info .tag.tag-hot {
+  color: #3b7f44;
+  background: #dbe6dc;
+}
+
+main .banchan .card-info .tag.tag-mild,
+main .day-banchan .meal-info .meal-tag.tag-mild,
+main .new-banchan .card-info .tag.tag-mild,
+main .md-banchan .card-info .tag.tag-mild {
+  color: #e29a1f;
+  background: #f9edd8;
+}
+
+main .banchan .card-info h3,
+main .day-banchan .meal-info h3,
+main .new-banchan .card-info h3,
+main .md-banchan .card-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #111;
+  margin-bottom: 6px;
+  word-break: keep-all;
+}
+
+main .banchan .card-info p,
+main .day-banchan .meal-info p,
+main .new-banchan .card-info p,
+main .md-banchan .card-info p {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #565656;
+  margin-bottom: 6px;
+  word-break: keep-all;
+}
+
+main .banchan .card-info .price-row,
+main .day-banchan .meal-info .price-row,
+main .new-banchan .card-info .price-row,
+main .md-banchan .card-info .price-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+main .banchan .card-info .price-row .sale,
+main .day-banchan .meal-info .price-row .sale,
+main .new-banchan .card-info .price-row .sale,
+main .md-banchan .card-info .price-row .sale {
+  font-size: 18px;
+  font-weight: 700;
+  color: #bd2420;
+}
+
+main .banchan .card-info .price-row strong,
+main .day-banchan .meal-info .price-row strong,
+main .new-banchan .card-info .price-row strong,
+main .md-banchan .card-info .price-row strong {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+}
+
+main .banchan .card-info .origin-price,
+main .day-banchan .meal-info .origin-price,
+main .new-banchan .card-info .origin-price,
+main .md-banchan .card-info .origin-price {
+  font-size: 14px;
+  font-weight: 500;
+  color: #767676;
+  text-decoration: line-through;
+}
+
+main .banchan .card-info .origin-price.empty-price,
+main .new-banchan .card-info .origin-price.empty-price,
+main .md-banchan .card-info .origin-price.empty-price {
+  visibility: hidden;
+}
+
+/* 집밥 한 끼 / MD 할인 배지 */
+main .day-banchan .meal-thumb .sale-badge,
+main .md-banchan .card-thumb .sale-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #bd2420;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* 잠금 아이콘 */
+main .day-banchan .meal-thumb .lock-badge,
+main .new-banchan .card-thumb .card-lock,
+main .md-banchan .card-thumb .card-lock {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  width: 42px;
+  height: 42px;
+  display: block;
+  object-fit: contain;
+  z-index: 2;
+}
+
+/* 배너 영역 */
+main .banner {
+  width: 100%;
+  height: 200px;
+  align-content: center;
+}
+
+main .banner .banner-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+main .banner .banner-item {
+  width: calc((100% - 16px) / 3);
+  min-height: 92px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 18px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .banner .banner-text strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+main .banner .banner-text p {
+  font-size: 15px;
+  font-weight: 500;
+  color: #505050;
+}
+
+main .banner .banner-icon {
+  width: 48px;
+  height: 48px;
+  background: #0f5f17;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+main .banner .banner-icon img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* -------------------- mobile -------------------- */
+@media (max-width: 768px) {
+  html {
+    overflow-y: auto;
+  }
+
+  body {
+    padding-top: 67px;
+  }
+
+  /* header */
+  header {
+    height: 67px;
+    grid-template-columns: 24px 1fr 24px;
+    padding: 16px;
+    border-bottom: 1px solid #ececec;
+  }
+
+  header .search {
+    width: 24px;
+    height: 24px;
+  }
+
+  header .search .search-box {
+    width: 24px;
+    height: 24px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    padding: 0;
+    overflow: visible;
+  }
+
+  header .search .search-box input {
+    display: none;
+  }
+
+  header .search .search-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    padding: 0;
+    background: #0f5f17;
+  }
+
+  header .search .search-btn img {
+    width: 14px;
+    height: 14px;
+  }
+
+  header .logo {
+    height: auto;
+  }
+
+  header .logo img {
+    width: 88px;
+    height: 35px;
+    max-width: none;
+    max-height: none;
+    margin: 0 auto;
+  }
+
+  header .right {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    gap: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header .right .top-menu,
+  header .right .bottom-menu {
+    display: none;
+  }
+
+  header .right::before {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: #333;
+    box-shadow:
+      0 -6px 0 #333,
+      0 6px 0 #333;
+  }
+
+  /* main banner */
+  .main-banner {
+    width: 100%;
+    height: 200px;
+  }
+
+  .mainBannerSwiper,
+  .mainBannerSwiper .swiper-wrapper,
+  .mainBannerSwiper .swiper-slide {
+    width: 100%;
+    height: 100%;
+  }
+
+  .banner-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #f5f5f5;
+  }
+
+  .banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* 모바일 배너 버튼 */
+  .main-banner .main-banner-prev,
+  .main-banner .main-banner-next {
+    width: 32px;
+    height: 32px;
+    bottom: 16px;
+    background-size: 18px 18px;
+  }
+
+  .main-banner .main-banner-prev {
+    left: 16px;
+  }
+
+  .main-banner .main-banner-next {
+    left: 56px;
+  }
+
+  /* 모바일 페이지네이션 */
+  .main-banner .main-banner-pagination {
+    right: 16px;
+    bottom: 16px;
+    min-width: 44px;
+    height: 24px;
+    padding: 0 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    line-height: 24px;
+  }
+
+  .main-banner .main-banner-pagination .fraction-divider {
+    margin: 0 3px;
+    font-size: 10px;
+  }
+
+  /* main */
+  main {
+    width: 100%;
+    min-height: auto;
+  }
+
+  main .banchan,
+  main .day-banchan,
+  main .new-banchan,
+  main .md-banchan {
+    padding: 48px 16px 0;
+  }
+
+  main .title {
+    position: relative;
+    text-align: left;
+    padding-right: 18px;
+    margin-bottom: 16px;
+  }
+
+  main .title::after {
+    content: "";
+    position: absolute;
+    right: 2px;
+    top: 7px;
+    width: 7px;
+    height: 7px;
+    border-top: 1.5px solid #333;
+    border-right: 1.5px solid #333;
+    transform: rotate(45deg);
+  }
+
+  main .title h2 {
+    margin-bottom: 4px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  main .title p {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #767676;
+  }
+
+  /* grid */
+  main .banchan .product,
+  main .day-banchan .meal-list,
+  main .new-banchan .new-product {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 8px;
+    row-gap: 16px;
+  }
+
+  main .md-banchan .md-product {
+    display: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 8px;
+    row-gap: 16px;
+  }
+
+  main .md-banchan .md-product.active {
+    display: grid;
+  }
+
+  main .banchan .product > a {
+    width: 100%;
+  }
+
+  main .banchan .card,
+  main .day-banchan .meal-card,
+  main .new-banchan .card,
+  main .md-banchan .card {
+    width: 100%;
+    background: transparent;
+  }
+
+  main .banchan .card-thumb,
+  main .day-banchan .meal-thumb,
+  main .new-banchan .card-thumb,
+  main .md-banchan .card-thumb {
+    width: 100%;
+    height: 240px;
+    border: 1px solid #efefef;
+    border-radius: 4px;
+  }
+
+  main .banchan .card-thumb .food-img,
+  main .day-banchan .meal-thumb .food-img,
+  main .new-banchan .card-thumb .food-img,
+  main .md-banchan .card-thumb .food-img {
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  main .banchan .card-info,
+  main .day-banchan .meal-info,
+  main .new-banchan .card-info,
+  main .md-banchan .card-info {
+    height: auto;
+    padding: 8px 0 0;
+  }
+
+  main .banchan .card-info .tag-wrap,
+  main .day-banchan .meal-info .tag-wrap,
+  main .new-banchan .card-info .tag-wrap,
+  main .md-banchan .card-info .tag-wrap {
+    margin-bottom: 4px;
+  }
+
+  main .banchan .card-info .tag,
+  main .day-banchan .meal-info .meal-tag,
+  main .new-banchan .card-info .tag,
+  main .md-banchan .card-info .tag {
+    margin-right: 2px;
+    padding: 4px 4px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  main .banchan .card-info h3,
+  main .day-banchan .meal-info h3,
+  main .new-banchan .card-info h3,
+  main .md-banchan .card-info h3 {
+    margin-bottom: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    min-height: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: keep-all;
+  }
+
+  main .banchan .card-info p,
+  main .day-banchan .meal-info p,
+  main .new-banchan .card-info p,
+  main .md-banchan .card-info p {
+    margin-bottom: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: #767676;
+    min-height: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  main .banchan .card-info .price-row,
+  main .day-banchan .meal-info .price-row,
+  main .new-banchan .card-info .price-row,
+  main .md-banchan .card-info .price-row {
+    gap: 4px;
+    margin-bottom: 2px;
+    flex-wrap: wrap;
+  }
+
+  main .banchan .card-info .price-row .sale,
+  main .day-banchan .meal-info .price-row .sale,
+  main .new-banchan .card-info .price-row .sale,
+  main .md-banchan .card-info .price-row .sale {
+    font-size: 16px;
+  }
+
+  main .banchan .card-info .price-row strong,
+  main .day-banchan .meal-info .price-row strong,
+  main .new-banchan .card-info .price-row strong,
+  main .md-banchan .card-info .price-row strong {
+    font-size: 16px;
+  }
+
+  main .banchan .card-info .origin-price,
+  main .day-banchan .meal-info .origin-price,
+  main .new-banchan .card-info .origin-price,
+  main .md-banchan .card-info .origin-price {
+    font-size: 12px;
+  }
+
+  main .banchan .card-info .origin-price.empty-price,
+  main .new-banchan .card-info .origin-price.empty-price,
+  main .md-banchan .card-info .origin-price.empty-price {
+    display: none;
+  }
+
+  /* sale badge */
+  main .day-banchan .meal-thumb .sale-badge,
+  main .md-banchan .card-thumb .sale-badge {
+    top: 8px;
+    left: 8px;
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  /* lock badge */
+  main .day-banchan .meal-thumb .lock-badge,
+  main .new-banchan .card-thumb .card-lock,
+  main .md-banchan .card-thumb .card-lock {
+    right: 8px;
+    bottom: 8px;
+    width: 30px;
+    height: 30px;
+  }
+
+  /* 모바일 노출 개수 */
+  main .banchan .product > *:nth-child(n + 9) {
+    display: none;
+  }
+
+  main .day-banchan .meal-list > *:nth-child(n + 5) {
+    display: none;
+  }
+
+  main .new-banchan .new-product > *:nth-child(n + 9) {
+    display: none;
+  }
+
+  main .md-banchan .md-product > *:nth-child(n + 9) {
+    display: none;
+  }
+
+  /* category */
+  main .md-banchan .category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0;
+    overflow: visible;
+    white-space: normal;
+    justify-content: flex-start;
+    padding-bottom: 0;
+  }
+
+  main .md-banchan .category-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  main .md-banchan .category-list a {
+    flex-shrink: 0;
+    white-space: nowrap;
+    height: 28px;
+    padding: 4px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* banner */
+  main .banner {
+    height: auto;
+    padding: 32px 16px 0;
+  }
+
+  main .banner .banner-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  main .banner .banner-item {
+    width: 100%;
+    min-height: 88px;
+    padding: 0 16px;
+    border-radius: 8px;
+  }
+
+  main .banner .banner-text strong {
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  main .banner .banner-text p {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #111;
+  }
+
+  main .banner .banner-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 6px;
+  }
+
+  main .banner .banner-icon img {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* footer */
+  footer {
+    margin-top: 40px;
+    background: #f7f7f7;
+  }
+
+  footer .footer-inner {
+    width: 100%;
+    padding: 24px 16px 32px;
+    display: block;
+  }
+
+  footer .footer-left,
+  footer .footer-right {
+    width: 100%;
+  }
+
+  footer .footer-left {
+    margin-bottom: 20px;
+  }
+
+  footer .footer-left h2,
+  footer .footer-right h2 {
+    margin-bottom: 6px;
+    font-size: 12px;
+  }
+
+  footer .footer-left strong {
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+
+  footer .footer-left a {
+    margin-bottom: 12px;
+  }
+
+  footer .footer-left a,
+  footer .footer-left p,
+  footer .footer-right .company-info,
+  footer .footer-links a,
+  footer .footer-links span,
+  footer .copyright {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  footer .footer-right .company-info {
+    margin-bottom: 12px;
+  }
+
+  footer .footer-links {
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 4px;
+  }
+
+  main .day-banchan .day-banchan-slider-wrap {
+    overflow: hidden;
+  }
+
+  main .day-banchan .dayBanchanSwiper {
+    overflow: hidden;
+  }
+}
