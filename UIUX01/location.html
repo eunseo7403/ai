@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>AURA Location</title>
+
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/location.css" />
+
+    <!-- Kakao Map API -->
+    <!-- YOUR_KAKAO_JAVASCRIPT_KEY 부분에 본인의 카카오 JavaScript 키를 입력해주세요. -->
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=3426f89206a177f340149da521e8a0ea&libraries=services"></script>
+  </head>
+
+  <body class="location-page">
+    <div class="location-wrap">
+      <!-- header -->
+      <header class="location-header">
+        <a href="./my.html" class="location-back-button">
+          <img src="./images/icons/back.png" alt="뒤로가기" />
+        </a>
+
+        <h1>위치 설정</h1>
+      </header>
+
+      <!-- map -->
+      <main class="location-main">
+        <div id="map" class="location-map"></div>
+
+        <button type="button" class="current-map-button" id="mapCurrentButton">
+          <img src="./images/my/current-location.png" alt="현재 위치" />
+        </button>
+
+        <!-- bottom search panel -->
+        <section class="location-search-panel" id="searchPanel">
+          <form class="location-search-form" id="locationSearchForm">
+            <label for="locationSearchInput" class="search-icon">
+              <img src="./images/my/search.png" alt="검색" />
+            </label>
+
+            <input
+              type="text"
+              id="locationSearchInput"
+              placeholder="도로명, 장소, 주소 검색"
+              autocomplete="off"
+            />
+
+            <button
+              type="button"
+              class="search-clear-button"
+              id="searchClearButton"
+              aria-label="검색어 삭제"
+            >
+              <img src="./images/my/close.png" alt="" />
+            </button>
+          </form>
+
+          <div class="location-panel-content">
+            <div class="recent-top">
+              <h2>이전 검색어</h2>
+
+              <button type="button" class="recent-edit-button">
+                편집하기
+                <span>›</span>
+              </button>
+            </div>
+
+            <ul class="recent-list" id="recentList"></ul>
+
+            <ul class="search-result-list" id="searchResultList"></ul>
+
+            <button
+              type="button"
+              class="find-current-button"
+              id="findCurrentButton"
+            >
+              <img src="./images/my/current-location.png" alt="" />
+              현재 위치로 찾기
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script/location.js"></script>
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=3426f89206a177f340149da521e8a0ea&libraries=services"></script>
+  </body>
+</html>
