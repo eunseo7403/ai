@@ -12,6 +12,7 @@ const recentList = document.getElementById("recentList");
 const searchResultList = document.getElementById("searchResultList");
 const findCurrentButton = document.getElementById("findCurrentButton");
 const mapCurrentButton = document.getElementById("mapCurrentButton");
+const recentEditButton = document.querySelector(".recent-edit-button");
 
 let map;
 let marker = null;
@@ -19,6 +20,7 @@ let places;
 let geocoder;
 let recentLocations = [];
 let searchTimer = null;
+let isEditMode = false;
 
 /* ================================
    초기 실행
@@ -48,15 +50,9 @@ const initMap = () => {
   places = new kakao.maps.services.Places();
   geocoder = new kakao.maps.services.Geocoder();
 
-  // 처음에는 마커 없음
-  // 지도 직접 클릭 시 마커 생성 + 주소 저장
-  kakao.maps.event.addListener(map, "click", (mouseEvent) => {
-    const latlng = mouseEvent.latLng;
-    const lat = latlng.getLat();
-    const lon = latlng.getLng();
-
-    moveMap(lat, lon);
-    getAddressByCoords(lat, lon);
+  // 지도 클릭 시 위치를 찍지 않고, 올라온 검색 패널만 내려감
+  kakao.maps.event.addListener(map, "click", () => {
+    closeSearchPanel();
   });
 };
 
@@ -86,7 +82,7 @@ const bindEvents = () => {
     openSearchPanel();
   });
 
-  // 입력할 때 자동 검색
+  // 검색어 입력 시 자동 검색
   searchInput.addEventListener("input", () => {
     const keyword = searchInput.value.trim();
     const hasValue = keyword !== "";
@@ -107,7 +103,7 @@ const bindEvents = () => {
     }, 400);
   });
 
-  // 엔터 / 모바일 검색키 눌렀을 때 검색
+  // 엔터 / 모바일 검색키 입력 시 검색
   searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -122,6 +118,7 @@ const bindEvents = () => {
     searchPlaces(keyword);
   });
 
+  // 검색어 삭제 버튼
   searchClearButton.addEventListener("click", () => {
     searchInput.value = "";
     searchClearButton.classList.remove("active");
@@ -133,6 +130,7 @@ const bindEvents = () => {
     searchInput.focus();
   });
 
+  // 현재 위치로 찾기
   findCurrentButton.addEventListener("click", () => {
     findCurrentLocation();
   });
@@ -140,10 +138,24 @@ const bindEvents = () => {
   mapCurrentButton.addEventListener("click", () => {
     findCurrentLocation();
   });
+
+  // 이전 검색어 편집하기
+  recentEditButton.addEventListener("click", () => {
+    toggleRecentEditMode();
+  });
 };
 
 const openSearchPanel = () => {
   searchPanel.classList.add("active");
+
+  setTimeout(() => {
+    map.relayout();
+  }, 300);
+};
+
+const closeSearchPanel = () => {
+  searchPanel.classList.remove("active");
+  searchInput.blur();
 
   setTimeout(() => {
     map.relayout();
@@ -193,6 +205,9 @@ const searchAddress = (keyword) => {
 };
 
 const renderSearchResults = (placesData) => {
+  isEditMode = false;
+  updateEditButtonText();
+
   recentList.classList.add("hidden");
   searchResultList.classList.remove("hidden");
   searchResultList.innerHTML = "";
@@ -330,6 +345,29 @@ const removeRecentLocation = (name) => {
   renderRecentLocations();
 };
 
+const toggleRecentEditMode = () => {
+  isEditMode = !isEditMode;
+
+  // 검색 결과를 보고 있던 중 편집하기를 누르면 이전 검색어 목록으로 전환
+  searchInput.value = "";
+  searchClearButton.classList.remove("active");
+
+  searchResultList.innerHTML = "";
+  searchResultList.classList.add("hidden");
+  recentList.classList.remove("hidden");
+
+  updateEditButtonText();
+  renderRecentLocations();
+};
+
+const updateEditButtonText = () => {
+  if (!recentEditButton) return;
+
+  recentEditButton.innerHTML = isEditMode
+    ? "완료 <span>›</span>"
+    : "편집하기 <span>›</span>";
+};
+
 const renderRecentLocations = () => {
   recentList.innerHTML = "";
 
@@ -343,22 +381,30 @@ const renderRecentLocations = () => {
     nameButton.textContent = name;
 
     nameButton.addEventListener("click", () => {
+      if (isEditMode) return;
+
       searchInput.value = name;
       searchClearButton.classList.add("active");
       searchPlaces(name);
     });
 
-    const deleteButton = document.createElement("button");
-    deleteButton.type = "button";
-    deleteButton.className = "recent-delete-button";
-    deleteButton.textContent = "×";
-
-    deleteButton.addEventListener("click", () => {
-      removeRecentLocation(name);
-    });
-
     li.appendChild(nameButton);
-    li.appendChild(deleteButton);
+
+    if (isEditMode) {
+      const deleteButton = document.createElement("button");
+      deleteButton.type = "button";
+      deleteButton.className = "recent-delete-button";
+
+      // 직접 아이콘을 넣고 싶으면 아래 이미지 경로만 바꿔주세요.
+      deleteButton.innerHTML = `<img src="./images/my/close.png" alt="삭제" />`;
+
+      deleteButton.addEventListener("click", () => {
+        removeRecentLocation(name);
+      });
+
+      li.appendChild(deleteButton);
+    }
+
     recentList.appendChild(li);
   });
 };
