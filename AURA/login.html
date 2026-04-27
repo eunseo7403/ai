@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>AURA Login</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/login.css" />
+  </head>
+
+  <body class="login-page">
+    <main class="login-screen">
+      <section class="login-inner">
+        <!-- 로고 -->
+        <div class="login-logo">
+          <img src="./images/icons/Logo2.svg" alt="AURA 로고" />
+        </div>
+
+        <!-- 로그인 폼 -->
+        <form class="login-form" id="loginForm">
+          <div class="input-group">
+            <label for="userId" class="sr-only">아이디 또는 이메일</label>
+            <input
+              type="text"
+              id="userId"
+              placeholder="아이디 또는 이메일을 입력해주세요."
+              autocomplete="username"
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="userPw" class="sr-only">비밀번호</label>
+            <input
+              type="password"
+              id="userPw"
+              placeholder="비밀번호를 입력해주세요."
+              autocomplete="current-password"
+            />
+          </div>
+
+          <div class="login-options">
+            <label class="option-label">
+              <input type="checkbox" />
+              <span class="check-icon"></span>
+              자동 로그인
+            </label>
+
+            <label class="option-label">
+              <input type="checkbox" />
+              <span class="check-icon"></span>
+              아이디 저장
+            </label>
+          </div>
+
+          <button type="submit" class="login-button">로그인</button>
+        </form>
+
+        <button
+          type="button"
+          class="signup-link"
+          data-coming-soon="이메일 회원가입"
+        >
+          이메일로 회원가입
+        </button>
+
+        <div class="divider">
+          <span></span>
+          <p>또는</p>
+          <span></span>
+        </div>
+
+        <!-- 소셜 로그인 -->
+        <div class="social-login">
+          <button
+            type="button"
+            class="social-button"
+            data-coming-soon="카카오 로그인"
+            aria-label="카카오 로그인"
+          >
+            <img src="./images/onboarding/kakao.png" alt="" />
+          </button>
+
+          <button
+            type="button"
+            class="social-button"
+            data-coming-soon="구글 로그인"
+            aria-label="구글 로그인"
+          >
+            <img src="./images/onboarding/google.png" alt="" />
+          </button>
+
+          <button
+            type="button"
+            class="social-button"
+            data-coming-soon="네이버 로그인"
+            aria-label="네이버 로그인"
+          >
+            <img src="./images/onboarding/naver.png" alt="" />
+          </button>
+
+          <button
+            type="button"
+            class="social-button"
+            data-coming-soon="페이스북 로그인"
+            aria-label="페이스북 로그인"
+          >
+            <img src="./images/onboarding/Facebook.png" alt="" />
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script/common.js"></script>
+    <script src="./script/login.js"></script>
+  </body>
+</html>

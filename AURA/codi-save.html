@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>AURA Codi Save</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/codi-save.css" />
+  </head>
+
+  <body class="codi-save-page">
+    <div class="codi-save-wrap">
+      <!-- header -->
+      <header class="codi-save-header">
+        <a
+          href="./codi.html"
+          class="codi-save-back-button"
+          aria-label="뒤로가기"
+        >
+          <img src="./images/icons/back.png" alt="" />
+        </a>
+
+        <h1>코디 저장</h1>
+      </header>
+
+      <!-- main -->
+      <main class="codi-save-main">
+        <!-- preview -->
+        <section class="codi-preview-section">
+          <h2>코디 조합 미리보기</h2>
+
+          <div class="codi-preview-img">
+            <img
+              src="./images/clothes/codi/outerwear.png"
+              alt="아우터"
+              class="preview-layer preview-outer"
+              data-preview-category="아우터"
+            />
+
+            <img
+              src="./images/clothes/codi/top.png"
+              alt="상의"
+              class="preview-layer preview-top"
+              data-preview-category="상의"
+            />
+
+            <img
+              src="./images/clothes/codi/bottom.png"
+              alt="하의"
+              class="preview-layer preview-bottom"
+              data-preview-category="하의"
+            />
+
+            <img
+              src="./images/clothes/04.png"
+              alt="신발"
+              class="preview-layer preview-shoes is-hidden"
+              data-preview-category="신발"
+            />
+
+            <img
+              src="./images/clothes/03.png"
+              alt="악세서리"
+              class="preview-layer preview-accessory is-hidden"
+              data-preview-category="악세서리"
+            />
+
+            <img
+              src="./images/clothes/11.png"
+              alt="모자"
+              class="preview-layer preview-hat is-hidden"
+              data-preview-category="모자"
+            />
+
+            <img
+              src="./images/clothes/12.png"
+              alt="가방"
+              class="preview-layer preview-bag is-hidden"
+              data-preview-category="가방"
+            />
+          </div>
+        </section>
+
+        <!-- clothes list -->
+        <section class="codi-clothes-section">
+          <div class="section-title-row">
+            <h2>옷 목록</h2>
+
+            <button type="button" class="section-link edit-clothes-button">
+              수정하기
+              <span>›</span>
+            </button>
+          </div>
+
+          <div class="codi-clothes-scroll">
+            <article class="codi-clothes-card" data-category="아우터">
+              <button
+                type="button"
+                class="clothes-delete-button"
+                aria-label="아우터 삭제"
+              >
+                <img src="./images/icons/my/close.png" alt="" />
+              </button>
+
+              <div class="clothes-thumb">
+                <img src="./images/clothes/codi/outerwear.png" alt="아우터" />
+              </div>
+
+              <h3>
+                아우터
+                <span>· 1개</span>
+              </h3>
+            </article>
+
+            <article class="codi-clothes-card" data-category="상의">
+              <button
+                type="button"
+                class="clothes-delete-button"
+                aria-label="상의 삭제"
+              >
+                <img src="./images/icons/my/close.png" alt="" />
+              </button>
+
+              <div class="clothes-thumb">
+                <img src="./images/clothes/codi/top.png" alt="상의" />
+              </div>
+
+              <h3>
+                상의
+                <span>· 1개</span>
+              </h3>
+            </article>
+
+            <article class="codi-clothes-card" data-category="하의">
+              <button
+                type="button"
+                class="clothes-delete-button"
+                aria-label="하의 삭제"
+              >
+                <img src="./images/icons/my/close.png" alt="" />
+              </button>
+
+              <div class="clothes-thumb">
+                <img src="./images/clothes/codi/bottom.png" alt="하의" />
+              </div>
+
+              <h3>
+                하의
+                <span>· 1개</span>
+              </h3>
+            </article>
+
+            <button type="button" class="codi-clothes-add-card">
+              <span class="add-icon">
+                <img src="./images/icons/plus.svg" alt="" />
+              </span>
+              추가
+            </button>
+          </div>
+        </section>
+
+        <button type="button" class="codi-save-button">저장하기</button>
+      </main>
+
+      <section
+        class="clothes-select-sheet"
+        id="clothesSelectSheet"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="clothesSelectTitle"
+        aria-hidden="true"
+      >
+        <div class="clothes-select-panel">
+          <div class="clothes-select-sticky">
+            <div class="clothes-select-top">
+              <h2 id="clothesSelectTitle">옷 선택하기</h2>
+
+              <button
+                type="button"
+                class="clothes-select-close"
+                aria-label="닫기"
+              >
+                <img src="./images/icons/my/close.png" alt="" />
+              </button>
+            </div>
+
+            <div
+              class="clothes-select-tabs"
+              role="tablist"
+              aria-label="옷 선택 카테고리"
+            >
+              <button
+                type="button"
+                class="select-category-tab active"
+                role="tab"
+                aria-selected="true"
+                data-category="전체"
+              >
+                전체
+              </button>
+
+              <button
+                type="button"
+                class="select-category-tab"
+                role="tab"
+                aria-selected="false"
+                data-category="모자"
+              >
+                모자
+              </button>
+
+              <button
+                type="button"
+                class="select-category-tab"
+                role="tab"
+                aria-selected="false"
+                data-category="아우터"
+              >
+                아우터
+              </button>
+
+              <button
+                type="button"
+                class="select-category-tab"
+                role="tab"
+                aria-selected="false"
+                data-category="상의"
+              >
+                상의
+              </button>
+
+              <button
+                type="button"
+                class="select-category-tab"
+                role="tab"
+                aria-selected="false"
+                data-category="하의"
+              >
+                하의
+              </button>
+
+              <button
+                type="button"
+                class="select-category-tab"
+                role="tab"
+                aria-selected="false"
+                data-category="신발"
+              >
+                신발
+              </button>
+
+              <button
+                type="button"
+                class="select-category-tab"
+                role="tab"
+                aria-selected="false"
+                data-category="가방"
+              >
+                가방
+              </button>
+
+              <button
+                type="button"
+                class="select-category-tab"
+                role="tab"
+                aria-selected="false"
+                data-category="악세서리"
+              >
+                악세서리
+              </button>
+            </div>
+          </div>
+
+          <div class="clothes-select-list" id="clothesSelectList"></div>
+        </div>
+      </section>
+
+      <!-- common tab bar -->
+      <nav class="app-tabbar">
+        <a href="./home.html" class="tabbar-item">
+          <img src="./images/tab/home.png" alt="" />
+          <span>홈</span>
+        </a>
+
+        <a href="./closet.html" class="tabbar-item">
+          <img src="./images/tab/closet.png" alt="" />
+          <span>옷장</span>
+        </a>
+
+        <a href="./codi.html" class="tabbar-item active" aria-current="page">
+          <img src="./images/tab/codi-active.png" alt="" />
+          <span>코디</span>
+        </a>
+
+        <a href="./community.html" class="tabbar-item">
+          <img src="./images/tab/community.png" alt="" />
+          <span>커뮤니티</span>
+        </a>
+
+        <a href="./my.html" class="tabbar-item">
+          <img src="./images/tab/my.png" alt="" />
+          <span>마이</span>
+        </a>
+      </nav>
+    </div>
+
+    <script src="./script/common.js"></script>
+    <script src="./script/codi-save.js"></script>
+  </body>
+</html>
