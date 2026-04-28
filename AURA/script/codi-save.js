@@ -349,11 +349,11 @@ selectCategoryTabs.forEach((tab) => {
   tab.addEventListener("click", () => {
     selectCategoryTabs.forEach((item) => {
       item.classList.remove("active");
-      item.setAttribute("aria-selected", "false");
+      item.setAttribute("aria-pressed", "false");
     });
 
     tab.classList.add("active");
-    tab.setAttribute("aria-selected", "true");
+    tab.setAttribute("aria-pressed", "true");
     currentSelectCategory = tab.dataset.category;
 
     renderSelectList();

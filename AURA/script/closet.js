@@ -47,11 +47,11 @@ closetTabs.forEach((tab) => {
   tab.addEventListener("click", () => {
     closetTabs.forEach((item) => {
       item.classList.remove("active");
-      item.setAttribute("aria-selected", "false");
+      item.setAttribute("aria-pressed", "false");
     });
 
     tab.classList.add("active");
-    tab.setAttribute("aria-selected", "true");
+    tab.setAttribute("aria-pressed", "true");
 
     currentCategory = tab.dataset.category;
     isExpanded = false;

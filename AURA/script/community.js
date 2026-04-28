@@ -305,11 +305,11 @@ communityTabs.forEach((tab) => {
   tab.addEventListener("click", () => {
     communityTabs.forEach((item) => {
       item.classList.remove("active");
-      item.setAttribute("aria-selected", "false");
+      item.setAttribute("aria-pressed", "false");
     });
 
     tab.classList.add("active");
-    tab.setAttribute("aria-selected", "true");
+    tab.setAttribute("aria-pressed", "true");
     currentFilter = tab.dataset.filter;
     visibleCount = 3;
 
