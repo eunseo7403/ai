@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>한국한복문화예술협회</title>
+
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="top-util">
+        <div class="header-inner">
+          <ul class="util-menu">
+            <li>
+              <a href="./login.html" class="util-login">
+                <img src="./images/icons/login.svg" alt="" />
+                로그인
+              </a>
+            </li>
+            <li>
+              <a href="./join.html">회원가입</a>
+            </li>
+            <li>
+              <a href="./mypage.html">마이페이지</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="header-main">
+        <div class="header-inner header-main-inner">
+          <h1 class="logo">
+            <a href="./index.html">
+              <img src="./images/logo.png" alt="한국한복문화예술협회" />
+            </a>
+          </h1>
+
+          <nav class="gnb" aria-label="주요 메뉴">
+            <ul>
+              <li>
+                <a href="./sub1.html" data-menu="intro">협회소개</a>
+              </li>
+              <li>
+                <a href="./sub2.html" data-menu="pr">홍보광장</a>
+              </li>
+              <li>
+                <a href="./sub3.html" data-menu="azalea">아젤리아패션그룹</a>
+              </li>
+              <li>
+                <a href="./sub4.html" data-menu="exchange">국제교류체험관</a>
+              </li>
+              <li>
+                <a href="./sub5.html" data-menu="welfare">
+                  나눔과기쁨 &amp; 복지관
+                </a>
+              </li>
+              <li>
+                <a href="./sub6.html" data-menu="partner">협력기관</a>
+              </li>
+            </ul>
+          </nav>
+
+          <button
+            type="button"
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            aria-label="모바일 메뉴 열기"
+            aria-expanded="false"
+          >
+            <img src="./images/icons/menu.svg" alt="" />
+          </button>
+        </div>
+      </div>
+
+      <nav class="mobile-nav" id="mobileNav" aria-label="모바일 메뉴">
+        <div class="mobile-nav-content">
+          <ul class="mobile-nav-list" id="mobileMenuList"></ul>
+        </div>
+
+        <ul class="mobile-util-menu">
+          <li>
+            <a href="./login.html" class="util-login">
+              <img src="./images/icons/login.svg" alt="" />
+              로그인
+            </a>
+          </li>
+          <li>
+            <a href="./join.html">회원가입</a>
+          </li>
+          <li>
+            <a href="./mypage.html">마이페이지</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sub-menu-wrap" id="subMenuWrap">
+        <div class="sub-menu-inner">
+          <p class="sub-menu-title" id="subMenuTitle">협회소개</p>
+
+          <nav class="sub-menu-nav" aria-label="하위 메뉴">
+            <ul id="subMenuList"></ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-page">
+      <section class="main-visual" aria-label="메인 배너">
+        <picture>
+          <source media="(max-width: 767px)" srcset="./images/mo_banner.png" />
+          <source
+            media="(max-width: 1024px)"
+            srcset="./images/tab_banner.png"
+          />
+          <img src="./images/pc_banner.png" alt="한복을 입은 남녀" />
+        </picture>
+
+        <div class="main-visual-text">
+          <div class="main-inner">
+            <div class="visual-copy">
+              <strong>한복</strong>
+              <p class="visual-sub-title">한국의 전통의상</p>
+              <p class="visual-desc">
+                “ 아름다운 우리 옷 한복<br />
+                전통에 스며들다. ”
+              </p>
+            </div>
+
+            <p class="visual-en-copy">be influenced by tradition</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="main-product" aria-labelledby="productTitle">
+        <div class="main-inner product-inner">
+          <div class="product-number">01</div>
+
+          <div class="product-info">
+            <p class="product-category">
+              <img src="./images/yin-yang.png" alt="" />
+              태극문양디자인등록
+            </p>
+            <h2 id="productTitle">한복드레스</h2>
+            <p>디자인등록특허<br />제30-1087062호</p>
+          </div>
+
+          <div class="product-thumb">
+            <img src="./images/pc_banner.png" alt="한복드레스" />
+          </div>
+
+          <button type="button" class="product-menu-btn" aria-label="더보기">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </section>
+
+      <section class="media-section" aria-label="홍보 자료">
+        <div class="main-inner">
+          <div class="media-grid">
+            <article class="media-box poster-box">
+              <div class="section-head">
+                <div>
+                  <h2>포스터</h2>
+                  <p>Poster</p>
+                </div>
+
+                <button
+                  type="button"
+                  class="plus-btn"
+                  aria-label="포스터 더보기"
+                >
+                  <img src="./images/icons/more.svg" alt="" />
+                </button>
+              </div>
+
+              <div class="poster-list">
+                <img
+                  src="./images/poster02.png"
+                  alt="무궁화 퀸 모델 콘테스트 포스터"
+                />
+                <img
+                  src="./images/poster01.png"
+                  alt="인터내셔널 CEO K스타 모델 콘테스트 포스터"
+                />
+              </div>
+            </article>
+
+            <article class="media-box video-box">
+              <div class="section-head">
+                <div>
+                  <h2>동영상</h2>
+                  <p>Video</p>
+                </div>
+
+                <button
+                  type="button"
+                  class="plus-btn"
+                  aria-label="동영상 더보기"
+                >
+                  <img src="./images/icons/more.svg" alt="" />
+                </button>
+              </div>
+
+              <div class="video-frame">
+                <img src="./images/symbol.png" alt="동영상 썸네일" />
+              </div>
+            </article>
+
+            <article class="media-box youtube-box">
+              <div class="section-head">
+                <div>
+                  <h2>유튜브</h2>
+                  <p>Youtube</p>
+                </div>
+
+                <button
+                  type="button"
+                  class="plus-btn"
+                  aria-label="유튜브 더보기"
+                >
+                  <img src="./images/icons/more.svg" alt="" />
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="notice-section" aria-labelledby="noticeTitle">
+        <div class="main-inner">
+          <div class="notice-title-box">
+            <h2 id="noticeTitle">공지사항</h2>
+            <p>한국한복문화예술협회 문화 소통구</p>
+
+            <div
+              class="notice-tab-list"
+              role="group"
+              aria-label="공지사항 분류"
+            >
+              <button type="button" class="is-active" data-filter="all">
+                전체
+              </button>
+              <button type="button" data-filter="notice">공지사항</button>
+              <button type="button" data-filter="news">뉴스</button>
+            </div>
+          </div>
+
+          <div class="notice-card-list">
+            <article class="notice-card is-active" data-category="notice">
+              <span class="notice-badge">공지</span>
+              <h3>2025년도 한국한복문화예술협회 공지사항</h3>
+              <p>
+                행사 및 프로그램과 관련된 중요한 소식을 빠르게 안내해 드립니다.
+                업데이트되는 공지사항을 확인하시고, 놓치지 말고 필요한 정보를
+                챙겨보세요!
+              </p>
+              <time datetime="2025-01-16">2025-01-16</time>
+            </article>
+
+            <article class="notice-card" data-category="notice">
+              <span class="notice-badge">공지</span>
+              <h3>공지사항</h3>
+              <p>
+                행사 및 프로그램과 관련된 중요한 소식과 안내를 확인하세요. 최신
+                정보를 통해 원활한 참여와 소통을 도와드립니다.
+              </p>
+              <time datetime="2025-01-12">2025-01-12</time>
+            </article>
+
+            <article class="notice-card" data-category="notice">
+              <span class="notice-badge">공지</span>
+              <h3>2025 K-선비한복모델 선발대회</h3>
+              <p>
+                전통과 현대가 어우러진 축제의 장으로 여러분을 초대합니다! 다양한
+                공연, 체험 프로그램, 전시 등이 마련되어 있습니다.
+              </p>
+              <time datetime="2025-01-09">2025-01-09</time>
+            </article>
+
+            <article class="notice-card" data-category="notice">
+              <span class="notice-badge">공지</span>
+              <h3>
+                2025년도 각 복지센터와 함께하는 소외 계층을 위한 전통문화 기부
+                프로젝트
+              </h3>
+              <p>
+                한복을 기부받아 전통문화 체험 프로그램이나 해외 문화 교류 행사에
+                활용하는 프로젝트입니다.
+              </p>
+              <time datetime="2025-01-03">2025-01-03</time>
+            </article>
+
+            <article class="notice-card" data-category="news">
+              <span class="notice-badge news">뉴스</span>
+              <h3>
+                [MJ포토] 아젤리아드레스 임은주 문화 지킴이·알리미 디자이너 목표"
+              </h3>
+              <p>
+                대한민국 경제살리기 포럼 데이터자산공제회 공정회가 지난 6월 25일
+                서울 영등포구 여의도 63컨벤션센터에서 개최됐다.
+              </p>
+              <time datetime="2021-07-05">2021-07-05</time>
+            </article>
+
+            <article class="notice-card" data-category="news">
+              <span class="notice-badge news">뉴스</span>
+              <h3>
+                [MJ포토] 아젤리아드레스 임은주 문화 지킴이·알리미 디자이너 목표"
+              </h3>
+              <p>
+                아젤리아 드레스 패션쇼 현장에서 한국 전통문화의 아름다움을
+                알리는 무대가 진행되었습니다.
+              </p>
+              <time datetime="2021-07-05">2021-07-05</time>
+            </article>
+
+            <article class="notice-card" data-category="news">
+              <span class="notice-badge news">뉴스</span>
+              <h3>
+                [MJ포토] 아젤리아드레스 임은주 문화 지킴이·알리미 디자이너 목표"
+              </h3>
+              <p>
+                전통과 현대가 조화롭게 어우러진 한복 패션 무대를 통해 다양한
+                문화 활동을 선보였습니다.
+              </p>
+              <time datetime="2021-07-05">2021-07-05</time>
+            </article>
+
+            <article class="notice-card" data-category="news">
+              <span class="notice-badge news">뉴스</span>
+              <h3>
+                [MJ포토] 아젤리아드레스 임은주 문화 지킴이·알리미 디자이너 목표"
+              </h3>
+              <p>
+                한국한복문화예술협회의 문화 교류 활동과 한복의 아름다움을
+                소개하는 보도자료입니다.
+              </p>
+              <time datetime="2021-07-05">2021-07-05</time>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery-section" aria-labelledby="galleryTitle">
+        <div class="main-inner gallery-inner">
+          <div class="gallery-title-box">
+            <h2 id="galleryTitle">갤러리</h2>
+            <p>사진으로 본 문화현장</p>
+          </div>
+
+          <div class="gallery-swiper swiper">
+            <div class="gallery-track swiper-wrapper">
+              <article class="gallery-card swiper-slide">
+                <img
+                  src="./images/gall01.png"
+                  alt="제13회 효창원 8위 선열 숭모제전"
+                />
+                <div class="gallery-text">
+                  <h3>제13회 효창원 8위 선열 숭모제전</h3>
+                  <time datetime="2023-11-15">2023-11-15</time>
+                  <span class="gallery-more">
+                    <img src="./images/icons/arrow.svg" alt="" />
+                  </span>
+                </div>
+              </article>
+
+              <article class="gallery-card swiper-slide">
+                <img
+                  src="./images/gall02.png"
+                  alt="제13회 효창원 8위 선열 숭모제전"
+                />
+                <div class="gallery-text">
+                  <h3>제13회 효창원 8위 선열 숭모제전</h3>
+                  <time datetime="2023-11-15">2023-11-15</time>
+                  <span class="gallery-more">
+                    <img src="./images/icons/arrow.svg" alt="" />
+                  </span>
+                </div>
+              </article>
+
+              <article class="gallery-card swiper-slide">
+                <img
+                  src="./images/gall03.png"
+                  alt="제13회 효창원 8위 선열 숭모제전"
+                />
+                <div class="gallery-text">
+                  <h3>제13회 효창원 8위 선열 숭모제전</h3>
+                  <time datetime="2023-11-15">2023-11-15</time>
+                  <span class="gallery-more">
+                    <img src="./images/icons/arrow.svg" alt="" />
+                  </span>
+                </div>
+              </article>
+
+              <article class="gallery-card swiper-slide">
+                <img
+                  src="./images/gall04.png"
+                  alt="제13회 효창원 8위 선열 숭모제전"
+                />
+                <div class="gallery-text">
+                  <h3>제13회 효창원 8위 선열 숭모제전</h3>
+                  <time datetime="2023-11-15">2023-11-15</time>
+                  <span class="gallery-more">
+                    <img src="./images/icons/arrow.svg" alt="" />
+                  </span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <button
+      type="button"
+      class="top-button"
+      id="topButton"
+      aria-label="맨 위로 이동"
+    >
+      <img src="./images/icons/up_line2.svg" alt="" />
+    </button>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <h2 class="footer-logo">
+          <img src="./images/logo2.png" alt="한국한복문화예술협회" />
+        </h2>
+
+        <address class="footer-info">
+          <span>Homepage : www.khanbok.kr</span>
+          <span>Mobile : 010-7385-7888</span>
+          <span>Email : tj142536@naver.com</span>
+          <span>
+            Office : 서울특별시 용산구 후암로4길 64 (64, Huam-ro 4-gil, Seoul,
+            Korea)
+          </span>
+        </address>
+
+        <ul class="sns-list" aria-label="SNS 바로가기">
+          <li>
+            <a href="#" aria-label="유튜브">
+              <img src="./images/icons/sns1.svg" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="인스타그램">
+              <img src="./images/icons/sns2.svg" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="페이스북">
+              <img src="./images/icons/sns3.svg" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="블로그">
+              <img src="./images/icons/sns4.svg" alt="" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="./script/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./script/main.js"></script>
+  </body>
+</html>

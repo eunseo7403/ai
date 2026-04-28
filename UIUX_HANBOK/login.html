@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인 | 한국한복문화예술협회</title>
+
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/login.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="top-util">
+        <div class="header-inner">
+          <ul class="util-menu">
+            <li>
+              <a href="./login.html" class="util-login">
+                <img src="./images/icons/login.svg" alt="" />
+                로그인
+              </a>
+            </li>
+            <li>
+              <a href="./join.html">회원가입</a>
+            </li>
+            <li>
+              <a href="./mypage.html">마이페이지</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="header-main">
+        <div class="header-inner header-main-inner">
+          <h1 class="logo">
+            <a href="./index.html">
+              <img src="./images/logo.png" alt="한국한복문화예술협회" />
+            </a>
+          </h1>
+
+          <nav class="gnb" aria-label="주요 메뉴">
+            <ul>
+              <li>
+                <a href="./sub1.html" data-menu="intro">협회소개</a>
+              </li>
+              <li>
+                <a href="./sub2.html" data-menu="pr">홍보광장</a>
+              </li>
+              <li>
+                <a href="./sub3.html" data-menu="azalea">아젤리아패션그룹</a>
+              </li>
+              <li>
+                <a href="./sub4.html" data-menu="exchange">국제교류체험관</a>
+              </li>
+              <li>
+                <a href="./sub5.html" data-menu="welfare"
+                  >나눔과기쁨 &amp; 복지관</a
+                >
+              </li>
+              <li>
+                <a href="./sub6.html" data-menu="partner">협력기관</a>
+              </li>
+            </ul>
+          </nav>
+          <button
+            type="button"
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            aria-label="모바일 메뉴 열기"
+            aria-expanded="false"
+          >
+            <img src="./images/icons/menu.svg" alt="" />
+          </button>
+        </div>
+      </div>
+
+      <nav class="mobile-nav" id="mobileNav" aria-label="모바일 메뉴">
+        <div class="mobile-nav-content">
+          <ul class="mobile-nav-list" id="mobileMenuList"></ul>
+        </div>
+
+        <ul class="mobile-util-menu">
+          <li>
+            <a href="./login.html" class="util-login">
+              <img src="./images/icons/login.svg" alt="" />
+              로그인
+            </a>
+          </li>
+          <li>
+            <a href="./join.html">회원가입</a>
+          </li>
+          <li>
+            <a href="./mypage.html">마이페이지</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sub-menu-wrap" id="subMenuWrap">
+        <div class="sub-menu-inner">
+          <p class="sub-menu-title" id="subMenuTitle">협회소개</p>
+
+          <nav class="sub-menu-nav" aria-label="하위 메뉴">
+            <ul id="subMenuList"></ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="login-main">
+      <section class="login-section" aria-labelledby="loginTitle">
+        <!-- 로그인 화면 -->
+        <article class="login-card" id="loginPanel">
+          <h2 id="loginTitle" class="login-title">로그인</h2>
+
+          <form class="login-form" id="loginForm">
+            <div class="form-field">
+              <label for="userId" class="blind">아이디</label>
+              <input
+                type="text"
+                id="userId"
+                name="userId"
+                placeholder="아이디를 입력하세요."
+              />
+            </div>
+
+            <div class="form-field input-icon-field">
+              <label for="userPw" class="blind">비밀번호</label>
+              <input
+                type="password"
+                id="userPw"
+                name="userPw"
+                placeholder="비밀번호를 입력하세요."
+              />
+
+              <button
+                type="button"
+                class="input-icon-btn password-toggle js-toggle-password"
+                data-target="userPw"
+                data-icon-show="./images/icons/visibility_off.svg"
+                data-icon-hide="./images/icons/visibility.svg"
+                aria-label="비밀번호 보기"
+              >
+                <img src="./images/icons/visibility_off.svg" alt="" />
+              </button>
+
+              <button
+                type="button"
+                class="input-icon-btn input-clear js-clear-input"
+                data-target="userPw"
+                aria-label="비밀번호 지우기"
+              >
+                <img src="./images/icons/cancle.svg" alt="" />
+              </button>
+            </div>
+
+            <div class="login-option-row">
+              <label class="save-check">
+                <input type="checkbox" id="saveId" />
+                <span class="check-circle"></span>
+                <span>ID/PW 저장</span>
+              </label>
+
+              <div class="login-links">
+                <a href="./join.html">회원가입</a>
+                <button type="button" class="text-link" id="goFindId">
+                  아이디 찾기
+                </button>
+                <button type="button" class="text-link" id="goFindPw">
+                  비밀번호 찾기
+                </button>
+              </div>
+            </div>
+
+            <button type="submit" class="primary-btn">로그인</button>
+          </form>
+        </article>
+
+        <!-- 아이디/비밀번호 찾기 화면 -->
+        <article class="find-card" id="findPanel" hidden>
+          <div
+            class="find-tabs"
+            role="tablist"
+            aria-label="아이디 비밀번호 찾기"
+          >
+            <button
+              type="button"
+              class="find-tab is-active"
+              id="idTab"
+              data-tab="id"
+            >
+              아이디 찾기
+            </button>
+            <button type="button" class="find-tab" id="pwTab" data-tab="pw">
+              비밀번호 찾기
+            </button>
+          </div>
+
+          <div class="find-body">
+            <!-- 아이디 찾기 입력 -->
+            <div class="find-step" id="idFindForm">
+              <h2 class="find-title">아이디 찾기</h2>
+              <p class="find-desc">
+                인증 후 비밀번호를 재설정 하실 수 있습니다.
+              </p>
+
+              <form class="find-form" id="idForm">
+                <div class="form-field">
+                  <label for="findName" class="blind">이름</label>
+                  <input
+                    type="text"
+                    id="findName"
+                    name="findName"
+                    placeholder="이름"
+                  />
+                </div>
+
+                <div class="phone-row">
+                  <label for="phoneFirst" class="blind">휴대폰 앞자리</label>
+                  <select id="phoneFirst" name="phoneFirst">
+                    <option value="010">010</option>
+                    <option value="011">011</option>
+                    <option value="016">016</option>
+                    <option value="017">017</option>
+                    <option value="018">018</option>
+                    <option value="019">019</option>
+                  </select>
+
+                  <span class="phone-dash">-</span>
+
+                  <label for="phoneMiddle" class="blind"
+                    >휴대폰 가운데 번호</label
+                  >
+                  <input
+                    type="text"
+                    id="phoneMiddle"
+                    name="phoneMiddle"
+                    maxlength="4"
+                    placeholder="0000"
+                  />
+
+                  <span class="phone-dash">-</span>
+
+                  <label for="phoneLast" class="blind">휴대폰 끝 번호</label>
+                  <input
+                    type="text"
+                    id="phoneLast"
+                    name="phoneLast"
+                    maxlength="4"
+                    placeholder="0000"
+                  />
+                </div>
+
+                <button type="submit" class="primary-btn">아이디 확인</button>
+              </form>
+            </div>
+
+            <!-- 아이디 찾기 성공 -->
+            <div class="find-step" id="idFindSuccess" hidden>
+              <h2 class="find-title">아이디 찾기</h2>
+              <p class="find-desc">회원님의 정보와 일치하는 아이디입니다.</p>
+
+              <div class="result-box">
+                <span>아이디</span>
+                <strong id="foundId">ABCD1234</strong>
+              </div>
+
+              <button type="button" class="primary-btn js-go-login">
+                로그인
+              </button>
+              <button type="button" class="outline-btn js-go-pw">
+                비밀번호 찾기
+              </button>
+            </div>
+
+            <!-- 아이디 찾기 실패 -->
+            <div class="find-step" id="idFindFail" hidden>
+              <h2 class="find-title">아이디 찾기</h2>
+
+              <div class="result-box fail-box">
+                <img
+                  class="warning-icon"
+                  src="./images/icons/warning.svg"
+                  alt=""
+                />
+                <p>해당하는 사용자를 찾을 수 없습니다.</p>
+              </div>
+
+              <button type="button" class="outline-btn js-go-login">
+                로그인 페이지로 이동
+              </button>
+            </div>
+
+            <!-- 비밀번호 찾기 인증 방법 -->
+            <div class="find-step" id="pwFindMethod" hidden>
+              <h2 class="find-title">비밀번호 찾기</h2>
+              <p class="find-desc">
+                인증 후 비밀번호를 재설정 하실 수 있습니다.
+              </p>
+
+              <div class="cert-button-group">
+                <button type="button" class="outline-btn js-start-auth">
+                  <img src="./images/icons/mail.svg" alt="" />
+                  이메일로 인증하기
+                </button>
+
+                <button type="button" class="outline-btn js-start-auth">
+                  <img src="./images/icons/phone.svg" alt="" />
+                  휴대폰으로 인증하기
+                </button>
+              </div>
+            </div>
+
+            <!-- 인증번호 입력 -->
+            <div class="find-step" id="pwAuthCode" hidden>
+              <h2 class="find-title">비밀번호 찾기</h2>
+              <p class="find-desc">
+                인증 후 비밀번호를 재설정 하실 수 있습니다.
+              </p>
+
+              <form class="find-form" id="authCodeForm">
+                <div class="form-field auth-code-field">
+                  <label for="authCode" class="blind">인증번호</label>
+                  <input
+                    type="text"
+                    id="authCode"
+                    name="authCode"
+                    placeholder="인증번호"
+                  />
+                  <span class="timer" id="authTimer">3:00</span>
+                </div>
+
+                <button type="submit" class="primary-btn">인증하기</button>
+              </form>
+            </div>
+
+            <!-- 비밀번호 재설정 -->
+            <div class="find-step" id="pwResetForm" hidden>
+              <h2 class="find-title">비밀번호 재설정</h2>
+              <p class="find-desc">변경할 비밀번호를 입력해주세요.</p>
+
+              <form class="find-form" id="resetPwForm">
+                <div class="form-field input-icon-field">
+                  <label for="newPw" class="blind">새 비밀번호</label>
+                  <input
+                    type="password"
+                    id="newPw"
+                    name="newPw"
+                    placeholder="새로운 비밀번호를 입력하세요."
+                  />
+
+                  <button
+                    type="button"
+                    class="input-icon-btn password-toggle js-toggle-password"
+                    data-target="newPw"
+                    data-icon-show="./images/icons/visibility_off.svg"
+                    data-icon-hide="./images/icons/visibility.svg"
+                    aria-label="새 비밀번호 보기"
+                  >
+                    <img src="./images/icons/visibility_off.svg" alt="" />
+                  </button>
+
+                  <button
+                    type="button"
+                    class="input-icon-btn input-clear js-clear-input"
+                    data-target="newPw"
+                    aria-label="새 비밀번호 지우기"
+                  >
+                    <img src="./images/icons/cancle.svg" alt="" />
+                  </button>
+                </div>
+
+                <div class="form-field">
+                  <label for="newPwCheck" class="blind">비밀번호 확인</label>
+                  <input
+                    type="password"
+                    id="newPwCheck"
+                    name="newPwCheck"
+                    placeholder="비밀번호를 한번 더 입력하세요."
+                  />
+                </div>
+
+                <button type="submit" class="primary-btn">변경하기</button>
+              </form>
+            </div>
+
+            <!-- 비밀번호 재설정 완료 -->
+            <div class="find-step" id="pwResetComplete" hidden>
+              <h2 class="find-title">비밀번호 재설정</h2>
+
+              <p class="complete-desc">
+                비밀번호 재설정 완료되었습니다.<br />
+                재 로그인 후 적용됩니다.
+              </p>
+
+              <button type="button" class="primary-btn js-go-login">
+                로그인
+              </button>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <h2 class="footer-logo">
+          <img src="./images/logo2.png" alt="한국한복문화예술협회" />
+        </h2>
+
+        <address class="footer-info">
+          <span>Homepage : www.khanbok.kr</span>
+          <span>Mobile : 010-7385-7888</span>
+          <span>Email : tj142536@naver.com</span>
+          <span>
+            Office : 서울특별시 용산구 후암로4길 64 (64, Huam-ro 4-gil, Seoul,
+            Korea)
+          </span>
+        </address>
+
+        <ul class="sns-list" aria-label="SNS 바로가기">
+          <li>
+            <a href="#" aria-label="유튜브">
+              <img src="./images/icons/sns1.svg" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="인스타그램">
+              <img src="./images/icons/sns2.svg" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="페이스북">
+              <img src="./images/icons/sns3.svg" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="블로그">
+              <img src="./images/icons/sns4.svg" alt="" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="./script/common.js"></script>
+    <script src="./script/login.js"></script>
+  </body>
+</html>
