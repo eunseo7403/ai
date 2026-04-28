@@ -1,17 +1,14 @@
 <!doctype html>
 <html lang="ko">
   <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AURA MY</title>
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/common.css" />
-    <link rel="stylesheet" href="./css/my.css" />
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/my.css">
   </head>
 
   <body class="my-page">
@@ -19,7 +16,7 @@
       <!-- header -->
       <header class="my-header">
         <a href="./home.html" class="my-back-button" aria-label="뒤로가기">
-          <img src="./images/icons/back.png" alt="" />
+          <img src="./images/icons/back.png" alt="">
         </a>
         <h1>MY</h1>
       </header>
@@ -29,14 +26,14 @@
         <!-- profile -->
         <section class="my-profile">
           <div class="profile-img">
-            <img src="./images/icons/my/profile.png" alt="프로필 이미지" />
+            <img src="./images/icons/my/profile.png" alt="프로필 이미지">
           </div>
 
           <div class="profile-info">
             <div class="profile-name-row">
               <h2>싹난감자</h2>
               <button type="button" class="profile-edit-button">
-                <img src="./images/icons/my/pencil.png" alt="프로필 수정" />
+                <img src="./images/icons/my/pencil.png" alt="프로필 수정">
               </button>
             </div>
 
@@ -46,12 +43,12 @@
 
         <!-- location button -->
         <a href="./location.html?from=my" class="location-change-button">
-          <img src="./images/icons/my/location.png" alt="" />
+          <img src="./images/icons/my/location.png" alt="">
           현재 위치 변경
         </a>
 
         <!-- stats -->
-        <section class="my-stats">
+        <div class="my-stats">
           <div class="stat-item">
             <strong>총 게시물</strong>
             <span>5</span>
@@ -66,21 +63,21 @@
             <strong>댓글 수</strong>
             <span>27</span>
           </div>
-        </section>
+        </div>
 
         <!-- menu list -->
-        <section class="my-menu-list">
+        <div class="my-menu-list">
           <button
             type="button"
             class="my-menu-item"
             data-coming-soon="공지사항"
           >
-            <div class="menu-left">
-              <img src="./images/icons/my/note.png" alt="" />
+            <span class="menu-left">
+              <img src="./images/icons/my/note.png" alt="">
               <span>공지사항</span>
-            </div>
+            </span>
 
-            <img src="./images/icons/my/back.png" alt="" class="menu-arrow" />
+            <img src="./images/icons/my/back.png" alt="" class="menu-arrow">
           </button>
 
           <button
@@ -88,12 +85,12 @@
             class="my-menu-item"
             data-coming-soon="알림설정"
           >
-            <div class="menu-left">
-              <img src="./images/icons/my/bell.png" alt="" />
+            <span class="menu-left">
+              <img src="./images/icons/my/bell.png" alt="">
               <span>알림설정</span>
-            </div>
+            </span>
 
-            <img src="./images/icons/my/back.png" alt="" class="menu-arrow" />
+            <img src="./images/icons/my/back.png" alt="" class="menu-arrow">
           </button>
 
           <button
@@ -101,12 +98,12 @@
             class="my-menu-item"
             data-coming-soon="자주 묻는 질문"
           >
-            <div class="menu-left">
-              <img src="./images/icons/my/question.png" alt="" />
+            <span class="menu-left">
+              <img src="./images/icons/my/question.png" alt="">
               <span>자주 묻는 질문</span>
-            </div>
+            </span>
 
-            <img src="./images/icons/my/back.png" alt="" class="menu-arrow" />
+            <img src="./images/icons/my/back.png" alt="" class="menu-arrow">
           </button>
 
           <button
@@ -114,12 +111,12 @@
             class="my-menu-item"
             data-coming-soon="서비스 안내"
           >
-            <div class="menu-left">
-              <img src="./images/icons/my/hand.png" alt="" />
+            <span class="menu-left">
+              <img src="./images/icons/my/hand.png" alt="">
               <span>서비스 안내</span>
-            </div>
+            </span>
 
-            <img src="./images/icons/my/back.png" alt="" class="menu-arrow" />
+            <img src="./images/icons/my/back.png" alt="" class="menu-arrow">
           </button>
 
           <button
@@ -127,40 +124,40 @@
             class="my-menu-item"
             data-coming-soon="고객센터"
           >
-            <div class="menu-left">
-              <img src="./images/icons/my/headset.png" alt="" />
+            <span class="menu-left">
+              <img src="./images/icons/my/headset.png" alt="">
               <span>고객센터</span>
-            </div>
+            </span>
 
-            <img src="./images/icons/my/back.png" alt="" class="menu-arrow" />
+            <img src="./images/icons/my/back.png" alt="" class="menu-arrow">
           </button>
-        </section>
+        </div>
       </main>
 
       <!-- common tab bar -->
       <nav class="app-tabbar">
         <a href="./home.html" class="tabbar-item">
-          <img src="./images/tab/home.png" alt="" />
+          <img src="./images/tab/home.png" alt="">
           <span>홈</span>
         </a>
 
         <a href="./closet.html" class="tabbar-item">
-          <img src="./images/tab/closet.png" alt="" />
+          <img src="./images/tab/closet.png" alt="">
           <span>옷장</span>
         </a>
 
         <a href="./codi.html" class="tabbar-item">
-          <img src="./images/tab/codi.png" alt="" />
+          <img src="./images/tab/codi.png" alt="">
           <span>코디</span>
         </a>
 
         <a href="./community.html" class="tabbar-item">
-          <img src="./images/tab/community.png" alt="" />
+          <img src="./images/tab/community.png" alt="">
           <span>커뮤니티</span>
         </a>
 
         <a href="./my.html" class="tabbar-item active" aria-current="page">
-          <img src="./images/tab/my-active.png" alt="" />
+          <img src="./images/tab/my-active.png" alt="">
           <span>마이</span>
         </a>
       </nav>

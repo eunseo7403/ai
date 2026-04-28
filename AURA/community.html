@@ -1,17 +1,14 @@
 <!doctype html>
 <html lang="ko">
   <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AURA Community</title>
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/common.css" />
-    <link rel="stylesheet" href="./css/community.css" />
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/community.css">
   </head>
 
   <body class="community-page">
@@ -23,7 +20,7 @@
           class="community-back-button"
           aria-label="뒤로가기"
         >
-          <img src="./images/icons/back.png" alt="" />
+          <img src="./images/icons/back.png" alt="">
         </a>
 
         <h1>커뮤니티</h1>
@@ -32,13 +29,12 @@
       <!-- main -->
       <main class="community-main">
         <!-- filter tabs -->
-        <section class="community-tab-section">
-          <div class="community-tabs" role="tablist" aria-label="커뮤니티 정렬">
+        <div class="community-tab-section">
+          <div class="community-tabs" role="group" aria-label="커뮤니티 정렬 필터">
             <button
               type="button"
               class="community-tab active"
-              role="tab"
-              aria-selected="true"
+              aria-pressed="true"
               data-filter="recent"
             >
               최근순
@@ -47,8 +43,7 @@
             <button
               type="button"
               class="community-tab"
-              role="tab"
-              aria-selected="false"
+              aria-pressed="false"
               data-filter="popular"
             >
               인기순
@@ -57,17 +52,16 @@
             <button
               type="button"
               class="community-tab"
-              role="tab"
-              aria-selected="false"
+              aria-pressed="false"
               data-filter="liked"
             >
               좋아요
             </button>
           </div>
-        </section>
+        </div>
 
         <!-- post list -->
-        <section class="community-list-section">
+        <div class="community-list-section">
           <div class="community-list" id="communityList"></div>
 
           <p class="community-empty-message hidden" id="communityEmptyMessage">
@@ -87,17 +81,17 @@
       <!-- common tab bar -->
       <nav class="app-tabbar">
         <a href="./home.html" class="tabbar-item">
-          <img src="./images/tab/home.png" alt="" />
+          <img src="./images/tab/home.png" alt="">
           <span>홈</span>
         </a>
 
         <a href="./closet.html" class="tabbar-item">
-          <img src="./images/tab/closet.png" alt="" />
+          <img src="./images/tab/closet.png" alt="">
           <span>옷장</span>
         </a>
 
         <a href="./codi.html" class="tabbar-item">
-          <img src="./images/tab/codi.png" alt="" />
+          <img src="./images/tab/codi.png" alt="">
           <span>코디</span>
         </a>
 
@@ -106,12 +100,12 @@
           class="tabbar-item active"
           aria-current="page"
         >
-          <img src="./images/tab/community-active.png" alt="" />
+          <img src="./images/tab/community-active.png" alt="">
           <span>커뮤니티</span>
         </a>
 
         <a href="./my.html" class="tabbar-item">
-          <img src="./images/tab/my.png" alt="" />
+          <img src="./images/tab/my.png" alt="">
           <span>마이</span>
         </a>
       </nav>

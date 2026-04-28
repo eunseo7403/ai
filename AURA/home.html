@@ -1,24 +1,20 @@
 <!doctype html>
 <html lang="ko">
   <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AURA Home</title>
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
 
     <!-- Swiper CSS -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
-    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/home.css">
   </head>
 
   <body class="home-page">
@@ -27,7 +23,7 @@
       <header class="home-header">
         <h1 class="home-logo">
           <a href="./home.html">
-            <img src="./images/icons/Logo3.svg" alt="AURA 로고" />
+            <img src="./images/icons/Logo3.svg" alt="AURA 로고">
           </a>
         </h1>
         <button
@@ -36,18 +32,18 @@
           aria-label="알림 보기"
           data-coming-soon="알림"
         >
-          <img src="./images/icons/bell.svg" alt="" />
+          <img src="./images/icons/bell.svg" alt="">
         </button>
       </header>
 
       <!-- main -->
       <main class="home-main">
         <!-- weather card -->
-        <section class="weather-card">
+        <div class="weather-card">
           <div class="weather-info">
             <p class="weather-location">
               <a href="./location.html?from=home" class="weather-setting-link">
-                <img src="./images/icons/setting.png" alt="위치 설정" />
+                <img src="./images/icons/setting.png" alt="위치 설정">
               </a>
 
               <span class="weather-location-text">현재 위치 확인 중</span>
@@ -58,7 +54,7 @@
           </div>
 
           <div class="weather-clothes">
-            <img src="./images/clothes/main.png" alt="추천 옷 이미지" />
+            <img src="./images/clothes/main.png" alt="추천 옷 이미지">
           </div>
 
           <p class="weather-message">
@@ -66,7 +62,7 @@
               오늘 저녁엔 가벼운 가디건을 챙겨가는게 좋아요.
             </span>
           </p>
-        </section>
+        </div>
 
         <!-- recommend outfit -->
         <section class="home-section recommend-section">
@@ -80,14 +76,14 @@
           </div>
 
           <div class="recommend-list">
-            <article
+            <div
               class="recommend-card active"
               role="button"
               tabindex="0"
               aria-pressed="true"
             >
               <div class="recommend-thumb">
-                <img src="./images/clothes/maincodi01.png" alt="캐주얼 코디" />
+                <img src="./images/clothes/maincodi01.png" alt="캐주얼 코디">
               </div>
 
               <div class="recommend-info">
@@ -99,16 +95,16 @@
               </div>
 
               <span class="recommend-badge purple">AI 추천</span>
-            </article>
+            </div>
 
-            <article
+            <div
               class="recommend-card"
               role="button"
               tabindex="0"
               aria-pressed="false"
             >
               <div class="recommend-thumb">
-                <img src="./images/clothes/maincodi02.png" alt="미니멀 코디" />
+                <img src="./images/clothes/maincodi02.png" alt="미니멀 코디">
               </div>
 
               <div class="recommend-info">
@@ -120,16 +116,16 @@
               </div>
 
               <span class="recommend-badge beige">내 옷장</span>
-            </article>
+            </div>
 
-            <article
+            <div
               class="recommend-card"
               role="button"
               tabindex="0"
               aria-pressed="false"
             >
               <div class="recommend-thumb">
-                <img src="./images/clothes/maincodi03.png" alt="트랜디 코디" />
+                <img src="./images/clothes/maincodi03.png" alt="트랜디 코디">
               </div>
 
               <div class="recommend-info">
@@ -141,7 +137,7 @@
               </div>
 
               <span class="recommend-badge lavender">신규</span>
-            </article>
+            </div>
           </div>
 
           <button type="button" class="save-codi-button">
@@ -169,14 +165,13 @@
               <strong>오늘</strong>
               <img
                 src="./images/icons/weather/lucidity-active.svg"
-                alt="오늘 날씨"
-              />
+                alt="오늘 날씨">
               <span>--°</span>
             </button>
 
             <button type="button" class="weekly-item" aria-pressed="false">
               <strong>화</strong>
-              <img src="./images/icons/weather/blur.svg" alt="화요일 날씨" />
+              <img src="./images/icons/weather/blur.svg" alt="화요일 날씨">
               <span>--°</span>
             </button>
 
@@ -184,14 +179,13 @@
               <strong>수</strong>
               <img
                 src="./images/icons/weather/lucidity.svg"
-                alt="수요일 날씨"
-              />
+                alt="수요일 날씨">
               <span>--°</span>
             </button>
 
             <button type="button" class="weekly-item" aria-pressed="false">
               <strong>목</strong>
-              <img src="./images/icons/weather/rain.svg" alt="목요일 날씨" />
+              <img src="./images/icons/weather/rain.svg" alt="목요일 날씨">
               <span>--°</span>
             </button>
 
@@ -199,20 +193,19 @@
               <strong>금</strong>
               <img
                 src="./images/icons/weather/lightning.svg"
-                alt="금요일 날씨"
-              />
+                alt="금요일 날씨">
               <span>--°</span>
             </button>
 
             <button type="button" class="weekly-item" aria-pressed="false">
               <strong>토</strong>
-              <img src="./images/icons/weather/snow.svg" alt="토요일 날씨" />
+              <img src="./images/icons/weather/snow.svg" alt="토요일 날씨">
               <span>--°</span>
             </button>
 
             <button type="button" class="weekly-item" aria-pressed="false">
               <strong>일</strong>
-              <img src="./images/icons/weather/blur.svg" alt="일요일 날씨" />
+              <img src="./images/icons/weather/blur.svg" alt="일요일 날씨">
               <span>--°</span>
             </button>
           </div>
@@ -233,21 +226,19 @@
             <article
               class="popular-card"
               data-post-id="post-1"
-              role="link"
               tabindex="0"
             >
               <div class="popular-img">
                 <img
                   src="https://unsplash.com/photos/nimElTcTNyY/download?force=true&w=640"
-                  alt="비비드 스트릿룩"
-                />
+                  alt="비비드 스트릿룩">
 
                 <button
                   type="button"
                   class="heart-button"
                   data-post-id="post-1"
                 >
-                  <img src="./images/icons/heart.png" alt="좋아요" />
+                  <img src="./images/icons/heart.png" alt="좋아요">
                 </button>
               </div>
 
@@ -258,21 +249,19 @@
             <article
               class="popular-card"
               data-post-id="post-2"
-              role="link"
               tabindex="0"
             >
               <div class="popular-img">
                 <img
                   src="https://unsplash.com/photos/LPLJGX0UnTE/download?force=true&w=640"
-                  alt="로맨틱 화이트 룩"
-                />
+                  alt="로맨틱 화이트 룩">
 
                 <button
                   type="button"
                   class="heart-button"
                   data-post-id="post-2"
                 >
-                  <img src="./images/icons/heart.png" alt="좋아요" />
+                  <img src="./images/icons/heart.png" alt="좋아요">
                 </button>
               </div>
 
@@ -283,21 +272,19 @@
             <article
               class="popular-card"
               data-post-id="post-4"
-              role="link"
               tabindex="0"
             >
               <div class="popular-img">
                 <img
                   src="https://unsplash.com/photos/eB9WHlT8yeA/download?force=true&w=640"
-                  alt="클래식 윈터 코디"
-                />
+                  alt="클래식 윈터 코디">
 
                 <button
                   type="button"
                   class="heart-button"
                   data-post-id="post-4"
                 >
-                  <img src="./images/icons/heart.png" alt="좋아요" />
+                  <img src="./images/icons/heart.png" alt="좋아요">
                 </button>
               </div>
 
@@ -311,21 +298,19 @@
             <article
               class="popular-card"
               data-post-id="post-3"
-              role="link"
               tabindex="0"
             >
               <div class="popular-img">
                 <img
                   src="https://unsplash.com/photos/Y5AvIS752zU/download?force=true&w=640"
-                  alt="트렌디 스트릿 룩"
-                />
+                  alt="트렌디 스트릿 룩">
 
                 <button
                   type="button"
                   class="heart-button"
                   data-post-id="post-3"
                 >
-                  <img src="./images/icons/heart.png" alt="좋아요" />
+                  <img src="./images/icons/heart.png" alt="좋아요">
                 </button>
               </div>
 
@@ -336,21 +321,19 @@
             <article
               class="popular-card"
               data-post-id="post-5"
-              role="link"
               tabindex="0"
             >
               <div class="popular-img">
                 <img
                   src="https://unsplash.com/photos/lzm5dzQaROc/download?force=true&w=640"
-                  alt="시크 데일리 룩"
-                />
+                  alt="시크 데일리 룩">
 
                 <button
                   type="button"
                   class="heart-button"
                   data-post-id="post-5"
                 >
-                  <img src="./images/icons/heart.png" alt="좋아요" />
+                  <img src="./images/icons/heart.png" alt="좋아요">
                 </button>
               </div>
 
@@ -364,15 +347,14 @@
         </section>
 
         <!-- community banner swiper -->
-        <section class="community-banner-section">
+        <div class="community-banner-section">
           <div class="swiper community-banner-swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="community-banner">
                   <img
                     src="./images/banner/banner1.png"
-                    alt="주간 커뮤니티 추천"
-                  />
+                    alt="주간 커뮤니티 추천">
                 </div>
               </div>
 
@@ -380,8 +362,7 @@
                 <div class="community-banner">
                   <img
                     src="./images/banner/banner2.png"
-                    alt="주간 커뮤니티 추천"
-                  />
+                    alt="주간 커뮤니티 추천">
                 </div>
               </div>
 
@@ -389,39 +370,38 @@
                 <div class="community-banner">
                   <img
                     src="./images/banner/banner3.png"
-                    alt="주간 커뮤니티 추천"
-                  />
+                    alt="주간 커뮤니티 추천">
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </main>
 
       <!-- common tab bar -->
       <nav class="app-tabbar">
         <a href="./home.html" class="tabbar-item active" aria-current="page">
-          <img src="./images/tab/home-active.png" alt="" />
+          <img src="./images/tab/home-active.png" alt="">
           <span>홈</span>
         </a>
 
         <a href="./closet.html" class="tabbar-item">
-          <img src="./images/tab/closet.png" alt="" />
+          <img src="./images/tab/closet.png" alt="">
           <span>옷장</span>
         </a>
 
         <a href="./codi.html" class="tabbar-item">
-          <img src="./images/tab/codi.png" alt="" />
+          <img src="./images/tab/codi.png" alt="">
           <span>코디</span>
         </a>
 
         <a href="./community.html" class="tabbar-item">
-          <img src="./images/tab/community.png" alt="" />
+          <img src="./images/tab/community.png" alt="">
           <span>커뮤니티</span>
         </a>
 
         <a href="./my.html" class="tabbar-item">
-          <img src="./images/tab/my.png" alt="" />
+          <img src="./images/tab/my.png" alt="">
           <span>마이</span>
         </a>
       </nav>

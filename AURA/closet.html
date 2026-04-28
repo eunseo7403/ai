@@ -1,17 +1,14 @@
 <!doctype html>
 <html lang="ko">
   <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AURA Closet</title>
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/common.css" />
-    <link rel="stylesheet" href="./css/closet.css" />
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/closet.css">
   </head>
 
   <body class="closet-page">
@@ -19,7 +16,7 @@
       <!-- header -->
       <header class="closet-header">
         <a href="./home.html" class="closet-back-button" aria-label="뒤로가기">
-          <img src="./images/icons/back.png" alt="" />
+          <img src="./images/icons/back.png" alt="">
         </a>
 
         <h1>내 옷장</h1>
@@ -28,28 +25,27 @@
       <!-- main -->
       <main class="closet-main">
         <!-- sticky area -->
-        <section class="closet-top-area">
+        <div class="closet-top-area">
           <button
             type="button"
             class="photo-add-button"
             data-coming-soon="사진 추가"
           >
-            <img src="./images/icons/photo.png" alt="" />
+            <img src="./images/icons/photo.png" alt="">
             사진으로 한번에 추가하기
           </button>
-        </section>
+        </div>
 
-        <section class="closet-tab-area">
+        <div class="closet-tab-area">
           <div
             class="closet-tab-scroll"
-            role="tablist"
-            aria-label="옷장 카테고리"
+            role="group"
+            aria-label="옷장 카테고리 필터"
           >
             <button
               type="button"
               class="closet-tab active"
-              role="tab"
-              aria-selected="true"
+              aria-pressed="true"
               data-category="전체"
             >
               전체
@@ -57,8 +53,7 @@
             <button
               type="button"
               class="closet-tab"
-              role="tab"
-              aria-selected="false"
+              aria-pressed="false"
               data-category="모자"
             >
               모자
@@ -66,8 +61,7 @@
             <button
               type="button"
               class="closet-tab"
-              role="tab"
-              aria-selected="false"
+              aria-pressed="false"
               data-category="아우터"
             >
               아우터
@@ -75,8 +69,7 @@
             <button
               type="button"
               class="closet-tab"
-              role="tab"
-              aria-selected="false"
+              aria-pressed="false"
               data-category="상의"
             >
               상의
@@ -84,8 +77,7 @@
             <button
               type="button"
               class="closet-tab"
-              role="tab"
-              aria-selected="false"
+              aria-pressed="false"
               data-category="하의"
             >
               하의
@@ -93,8 +85,7 @@
             <button
               type="button"
               class="closet-tab"
-              role="tab"
-              aria-selected="false"
+              aria-pressed="false"
               data-category="신발"
             >
               신발
@@ -102,8 +93,7 @@
             <button
               type="button"
               class="closet-tab"
-              role="tab"
-              aria-selected="false"
+              aria-pressed="false"
               data-category="가방"
             >
               가방
@@ -111,14 +101,13 @@
             <button
               type="button"
               class="closet-tab"
-              role="tab"
-              aria-selected="false"
+              aria-pressed="false"
               data-category="악세서리"
             >
               악세서리
             </button>
           </div>
-        </section>
+        </div>
 
         <!-- title row -->
         <section class="closet-list-section">
@@ -134,7 +123,7 @@
           <div class="closet-list">
             <article class="closet-item" data-category="상의">
               <div class="closet-thumb">
-                <img src="./images/clothes/01.png" alt="티셔츠" />
+                <img src="./images/clothes/01.png" alt="티셔츠">
               </div>
 
               <div class="closet-info">
@@ -150,7 +139,7 @@
 
             <article class="closet-item" data-category="아우터">
               <div class="closet-thumb">
-                <img src="./images/clothes/02.png" alt="자켓" />
+                <img src="./images/clothes/02.png" alt="자켓">
               </div>
 
               <div class="closet-info">
@@ -166,7 +155,7 @@
 
             <article class="closet-item" data-category="악세서리">
               <div class="closet-thumb">
-                <img src="./images/clothes/03.png" alt="목도리" />
+                <img src="./images/clothes/03.png" alt="목도리">
               </div>
 
               <div class="closet-info">
@@ -182,7 +171,7 @@
 
             <article class="closet-item" data-category="신발">
               <div class="closet-thumb">
-                <img src="./images/clothes/04.png" alt="스니커즈" />
+                <img src="./images/clothes/04.png" alt="스니커즈">
               </div>
 
               <div class="closet-info">
@@ -198,7 +187,7 @@
 
             <article class="closet-item" data-category="상의">
               <div class="closet-thumb">
-                <img src="./images/clothes/05.png" alt="니트 스웨터" />
+                <img src="./images/clothes/05.png" alt="니트 스웨터">
               </div>
 
               <div class="closet-info">
@@ -214,7 +203,7 @@
 
             <article class="closet-item" data-category="하의">
               <div class="closet-thumb">
-                <img src="./images/clothes/06.png" alt="데님 팬츠" />
+                <img src="./images/clothes/06.png" alt="데님 팬츠">
               </div>
 
               <div class="closet-info">
@@ -230,7 +219,7 @@
 
             <article class="closet-item" data-category="신발">
               <div class="closet-thumb">
-                <img src="./images/clothes/07.png" alt="샌들" />
+                <img src="./images/clothes/07.png" alt="샌들">
               </div>
 
               <div class="closet-info">
@@ -246,7 +235,7 @@
 
             <article class="closet-item" data-category="아우터">
               <div class="closet-thumb">
-                <img src="./images/clothes/08.png" alt="울 코트" />
+                <img src="./images/clothes/08.png" alt="울 코트">
               </div>
 
               <div class="closet-info">
@@ -262,7 +251,7 @@
 
             <article class="closet-item" data-category="하의">
               <div class="closet-thumb">
-                <img src="./images/clothes/09.png" alt="슬랙스" />
+                <img src="./images/clothes/09.png" alt="슬랙스">
               </div>
 
               <div class="closet-info">
@@ -278,7 +267,7 @@
 
             <article class="closet-item" data-category="상의">
               <div class="closet-thumb">
-                <img src="./images/clothes/10.png" alt="후드티" />
+                <img src="./images/clothes/10.png" alt="후드티">
               </div>
 
               <div class="closet-info">
@@ -294,7 +283,7 @@
 
             <article class="closet-item extra-item" data-category="모자">
               <div class="closet-thumb">
-                <img src="./images/clothes/11.png" alt="버킷햇" />
+                <img src="./images/clothes/11.png" alt="버킷햇">
               </div>
 
               <div class="closet-info">
@@ -310,7 +299,7 @@
 
             <article class="closet-item extra-item" data-category="가방">
               <div class="closet-thumb">
-                <img src="./images/clothes/12.png" alt="미니백" />
+                <img src="./images/clothes/12.png" alt="미니백">
               </div>
 
               <div class="closet-info">
@@ -332,27 +321,27 @@
       <!-- common tab bar -->
       <nav class="app-tabbar">
         <a href="./home.html" class="tabbar-item">
-          <img src="./images/tab/home.png" alt="" />
+          <img src="./images/tab/home.png" alt="">
           <span>홈</span>
         </a>
 
         <a href="./closet.html" class="tabbar-item active" aria-current="page">
-          <img src="./images/tab/closet-active.png" alt="" />
+          <img src="./images/tab/closet-active.png" alt="">
           <span>옷장</span>
         </a>
 
         <a href="./codi.html" class="tabbar-item">
-          <img src="./images/tab/codi.png" alt="" />
+          <img src="./images/tab/codi.png" alt="">
           <span>코디</span>
         </a>
 
         <a href="./community.html" class="tabbar-item">
-          <img src="./images/tab/community.png" alt="" />
+          <img src="./images/tab/community.png" alt="">
           <span>커뮤니티</span>
         </a>
 
         <a href="./my.html" class="tabbar-item">
-          <img src="./images/tab/my.png" alt="" />
+          <img src="./images/tab/my.png" alt="">
           <span>마이</span>
         </a>
       </nav>

@@ -1,17 +1,14 @@
 <!doctype html>
 <html lang="ko">
   <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AURA Location</title>
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/common.css" />
-    <link rel="stylesheet" href="./css/location.css" />
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/location.css">
   </head>
 
   <body class="location-page">
@@ -24,7 +21,7 @@
           id="locationBackButton"
           aria-label="이전 페이지로 이동"
         >
-          <img src="./images/icons/back.png" alt="" />
+          <img src="./images/icons/back.png" alt="">
         </a>
 
         <h1>위치 설정</h1>
@@ -32,7 +29,7 @@
 
       <!-- map -->
       <main class="location-main">
-        <div id="map" class="location-map" aria-label="위치 설정 지도"></div>
+        <div id="map" class="location-map" role="region" aria-label="위치 설정 지도"></div>
 
         <button
           type="button"
@@ -40,7 +37,7 @@
           id="mapCurrentButton"
           aria-label="현재 위치로 지도 이동"
         >
-          <img src="./images/icons/my/current-location.png" alt="" />
+          <img src="./images/icons/my/current-location.png" alt="">
         </button>
 
         <!-- bottom search panel -->
@@ -49,15 +46,14 @@
             <label for="locationSearchInput" class="sr-only">위치 검색</label>
 
             <span class="search-icon" aria-hidden="true">
-              <img src="./images/icons/my/search.png" alt="" />
+              <img src="./images/icons/my/search.png" alt="">
             </span>
 
             <input
               type="text"
               id="locationSearchInput"
               placeholder="도로명, 장소, 주소 검색"
-              autocomplete="off"
-            />
+              autocomplete="off">
 
             <button
               type="button"
@@ -65,7 +61,7 @@
               id="searchClearButton"
               aria-label="검색어 삭제"
             >
-              <img src="./images/icons/my/close.png" alt="" />
+              <img src="./images/icons/my/close.png" alt="">
             </button>
           </form>
 
@@ -92,7 +88,7 @@
               class="find-current-button"
               id="findCurrentButton"
             >
-              <img src="./images/icons/my/current-location.png" alt="" />
+              <img src="./images/icons/my/current-location.png" alt="">
               현재 위치로 찾기
             </button>
           </div>
