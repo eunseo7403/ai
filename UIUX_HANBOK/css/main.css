@@ -1341,3 +1341,19 @@
     height: 32px;
   }
 }
+
+/* Mobile touch feedback */
+@media (max-width: 1024px) {
+  .visual-control-btn:active,
+  .notice-tab-list button:active,
+  .plus-btn:active,
+  .top-button:active {
+    transform: scale(0.94);
+  }
+
+  .notice-tab-list button:active,
+  .plus-btn:active,
+  .top-button:active {
+    background-color: #fff1ec;
+  }
+}

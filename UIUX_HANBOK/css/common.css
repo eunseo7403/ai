@@ -611,6 +611,25 @@ body {
   }
 }
 
+/* Touch click feedback */
+@media (max-width: 1024px) {
+  .mobile-menu-head:active,
+  .mobile-direct-link:active,
+  .mobile-sub-list a:active,
+  .mobile-util-menu a:active {
+    color: #ff4448;
+    background-color: #fff1ec;
+  }
+
+  .mobile-menu-button:active {
+    transform: translateY(-50%) scale(0.94);
+  }
+
+  .mobile-sub-list a:active {
+    font-weight: 600;
+  }
+}
+
 /* Mobile */
 @media (max-width: 767px) {
   .header-inner {
