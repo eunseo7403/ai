@@ -356,6 +356,20 @@
   min-height: 316px;
 }
 
+.youtube-frame {
+  width: 392px;
+  height: 260px;
+  overflow: hidden;
+  background-color: #111;
+}
+
+.youtube-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 /* Notice */
 .notice-section {
   padding: 48px 0;
@@ -807,8 +821,11 @@
   }
 
   .youtube-box::after {
-    content: "";
-    display: block;
+    display: none;
+    content: none;
+  }
+
+  .youtube-frame {
     width: 100%;
     height: 404px;
   }
@@ -1137,8 +1154,11 @@
   }
 
   .youtube-box::after {
-    content: "";
-    display: block;
+    display: none;
+    content: none;
+  }
+
+  .youtube-frame {
     width: 100%;
     height: 180px;
   }
